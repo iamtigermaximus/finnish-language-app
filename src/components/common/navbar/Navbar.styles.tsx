@@ -342,3 +342,49 @@ export const DropdownTrigger = styled.div`
     font-size: 1.5rem;
   }
 `;
+// Add these styles to your existing Navbar.styles.js
+
+export const SidebarDropdown = styled.div`
+  margin-bottom: 5px;
+`;
+
+export const SidebarDropdownHeader = styled.div`
+  font-weight: bold;
+  /* margin-bottom: 5px; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0;
+
+  &:hover {
+    color: tomato;
+  }
+`;
+
+export const SidebarDropdownContent = styled.div`
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+
+  &.open {
+    max-height: 1000px; /* Adjust based on your content */
+  }
+
+  &.closed {
+    max-height: 0;
+  }
+
+  a {
+    display: block;
+    padding: 2px 0;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #636363;
+    text-decoration: none;
+
+    &:hover {
+      color: tomato;
+    }
+  }
+`;

@@ -1,9 +1,12 @@
-import styles from './page.module.css';
+import Home from '@/components/home/Home';
+import React from 'react';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <div className={styles.page}>
-      <h1>HOME</h1>
+    <div>
+      <Home />
     </div>
   );
-}
+};
+
+export default HomePage;

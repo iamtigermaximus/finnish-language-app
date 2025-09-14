@@ -16,11 +16,20 @@ import {
   DropdownMenu,
   DropdownItem,
   DropdownTrigger,
+  SidebarDropdown,
+  SidebarDropdownContent,
+  SidebarDropdownHeader,
 } from './Navbar.styles';
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileDropdowns, setMobileDropdowns] = useState({
+    basics: false,
+    intermediate: false,
+    advanced: false,
+    puhekieli: false,
+  });
 
   const toggleSidebar = () => {
     setSidebarOpen((prev) => !prev);
@@ -36,6 +45,13 @@ const Navbar = () => {
 
   const handleDropdownLeave = () => {
     setActiveDropdown(null);
+  };
+
+  const toggleMobileDropdown = (dropdownName: keyof typeof mobileDropdowns) => {
+    setMobileDropdowns((prev) => ({
+      ...prev,
+      [dropdownName]: !prev[dropdownName],
+    }));
   };
 
   // Dropdown content for each section
@@ -57,12 +73,10 @@ const Navbar = () => {
       },
       { href: '/basics/basic-verbs', label: 'Basic Verbs' },
       { href: '/basics/adjectives', label: 'Adjectives' },
-
       { href: '/basics/useful-words', label: 'Useful Words' },
     ],
     intermediate: [
       { href: '/intermediate/kpt', label: 'KPT' },
-
       {
         href: '/intermediate/tenses',
         label: 'Verb Types and the Present Tense',
@@ -127,93 +141,121 @@ const Navbar = () => {
             color: '#002E83',
           }}
         >
-          <Link href="/" onClick={toggleSidebar}>
+          <Link href="/" onClick={closeSidebar}>
             Home
           </Link>
 
           {/* Basics Dropdown in Sidebar */}
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>
-              The Basics
-            </div>
-            {dropdownContent.basics.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={toggleSidebar}
-                style={{
-                  paddingLeft: '20px',
-                  display: 'block',
-                  fontSize: '14px',
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          <SidebarDropdown>
+            <SidebarDropdownHeader
+              onClick={() => toggleMobileDropdown('basics')}
+            >
+              The Basics {mobileDropdowns.basics ? '▴' : '▾'}
+            </SidebarDropdownHeader>
+            <SidebarDropdownContent
+              className={mobileDropdowns.basics ? 'open' : 'closed'}
+            >
+              {dropdownContent.basics.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeSidebar}
+                  style={{
+                    paddingLeft: '20px',
+                    display: 'block',
+                    fontSize: '14px',
+                    marginBottom: '8px',
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </SidebarDropdownContent>
+          </SidebarDropdown>
 
           {/* Intermediate Dropdown in Sidebar */}
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>
-              Intermediate
-            </div>
-            {dropdownContent.intermediate.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={toggleSidebar}
-                style={{
-                  paddingLeft: '20px',
-                  display: 'block',
-                  fontSize: '14px',
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          <SidebarDropdown>
+            <SidebarDropdownHeader
+              onClick={() => toggleMobileDropdown('intermediate')}
+            >
+              Intermediate {mobileDropdowns.intermediate ? '▴' : '▾'}
+            </SidebarDropdownHeader>
+            <SidebarDropdownContent
+              className={mobileDropdowns.intermediate ? 'open' : 'closed'}
+            >
+              {dropdownContent.intermediate.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeSidebar}
+                  style={{
+                    paddingLeft: '20px',
+                    display: 'block',
+                    fontSize: '14px',
+                    marginBottom: '8px',
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </SidebarDropdownContent>
+          </SidebarDropdown>
 
           {/* Advanced Dropdown in Sidebar */}
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>
-              Advanced
-            </div>
-            {dropdownContent.advanced.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={toggleSidebar}
-                style={{
-                  paddingLeft: '20px',
-                  display: 'block',
-                  fontSize: '14px',
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          <SidebarDropdown>
+            <SidebarDropdownHeader
+              onClick={() => toggleMobileDropdown('advanced')}
+            >
+              Advanced {mobileDropdowns.advanced ? '▴' : '▾'}
+            </SidebarDropdownHeader>
+            <SidebarDropdownContent
+              className={mobileDropdowns.advanced ? 'open' : 'closed'}
+            >
+              {dropdownContent.advanced.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeSidebar}
+                  style={{
+                    paddingLeft: '20px',
+                    display: 'block',
+                    fontSize: '14px',
+                    marginBottom: '8px',
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </SidebarDropdownContent>
+          </SidebarDropdown>
 
           {/* Spoken Finnish Dropdown in Sidebar */}
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>
-              Spoken Finnish
-            </div>
-            {dropdownContent.puhekieli.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={toggleSidebar}
-                style={{
-                  paddingLeft: '20px',
-                  display: 'block',
-                  fontSize: '14px',
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          <SidebarDropdown>
+            <SidebarDropdownHeader
+              onClick={() => toggleMobileDropdown('puhekieli')}
+            >
+              Spoken Finnish {mobileDropdowns.puhekieli ? '▴' : '▾'}
+            </SidebarDropdownHeader>
+            <SidebarDropdownContent
+              className={mobileDropdowns.puhekieli ? 'open' : 'closed'}
+            >
+              {dropdownContent.puhekieli.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeSidebar}
+                  style={{
+                    paddingLeft: '20px',
+                    display: 'block',
+                    fontSize: '14px',
+                    marginBottom: '8px',
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </SidebarDropdownContent>
+          </SidebarDropdown>
         </div>
       </Sidebar>
 
