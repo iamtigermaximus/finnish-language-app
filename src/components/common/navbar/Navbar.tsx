@@ -19,6 +19,7 @@ import {
   SidebarDropdown,
   SidebarDropdownContent,
   SidebarDropdownHeader,
+  BurgerContainer,
 } from './Navbar.styles';
 
 const Navbar = () => {
@@ -117,13 +118,21 @@ const Navbar = () => {
 
   return (
     <Navigation>
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <MobileLogoContainer>OPI SUOMEA</MobileLogoContainer>
-        <BurgerMenu onClick={toggleSidebar}>
-          <span />
-          <span />
-          <span />
-        </BurgerMenu>
+        <BurgerContainer>
+          <BurgerMenu onClick={toggleSidebar}>
+            <span />
+            <span />
+            <span />
+          </BurgerMenu>
+        </BurgerContainer>
       </div>
 
       <Sidebar className={sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}>
@@ -139,7 +148,11 @@ const Navbar = () => {
             color: '#002E83',
           }}
         >
-          <Link href="/" onClick={closeSidebar}>
+          <Link
+            href="/"
+            onClick={closeSidebar}
+            style={{ color: '#002e83', fontSize: '16px' }}
+          >
             Home
           </Link>
 

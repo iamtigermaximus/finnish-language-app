@@ -7,7 +7,7 @@ import Link from 'next/link';
 export const Navigation = styled.div`
   position: relative;
   width: 100%;
-  height: 8vh;
+  height: 10vh;
   z-index: 1000;
   background-color: #002e83;
 
@@ -204,6 +204,8 @@ export const SidebarLogoContainer = styled.div`
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0);
   border: 1px solid #002e83;
   padding: 5px 10px;
+  background-color: #002e83;
+  color: white;
 
   @media (min-width: ${bp.md}) {
     top: 100px;
@@ -220,6 +222,23 @@ export const MobileLogoContainer = styled.div`
   padding: 5px 10px;
   color: white;
   height: 8vh;
+
+  @media (min-width: ${bp.md}) {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+`;
+
+export const BurgerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0);
+  padding: 5px 10px;
+  color: white;
+  height: 10vh;
 
   @media (min-width: ${bp.md}) {
     top: 100px;
