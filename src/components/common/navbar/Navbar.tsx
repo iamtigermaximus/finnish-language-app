@@ -78,7 +78,7 @@ const Navbar = () => {
     intermediate: [
       { href: '/intermediate/kpt', label: 'KPT' },
       {
-        href: '/intermediate/tenses',
+        href: '/intermediate/verbtypes-present',
         label: 'Verb Types and the Present Tense',
       },
       { href: '/intermediate/past-tense', label: 'Past Tense' },
