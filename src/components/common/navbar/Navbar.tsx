@@ -105,15 +105,13 @@ const Navbar = () => {
       { href: '/advanced/business-finnish', label: 'Business Finnish' },
     ],
     puhekieli: [
-      { href: '/puhekieli/slang', label: 'Slang & Colloquialisms' },
       { href: '/puhekieli/pronunciation', label: 'Pronunciation' },
-      { href: '/puhekieli/dialects', label: 'Dialects' },
       {
         href: '/puhekieli/everyday-conversations',
         label: 'Everyday Conversations',
       },
       { href: '/puhekieli/informal-grammar', label: 'Informal Grammar' },
-      { href: '/puhekieli/regional-variations', label: 'Regional Variations' },
+      { href: '/puhekieli/spoken-finnish', label: 'Puhekieli' },
     ],
   };
 
