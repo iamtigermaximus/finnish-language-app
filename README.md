@@ -1,4 +1,4 @@
-# OPI SUOMI - Finnish Language Learning App
+# OPI SUOMEA - Finnish Language Learning App
 
 A modern web app to **learn Finnish easily**. Built with **Next.js**, **TypeScript**, and **Styled Components**, offering an interactive and user-friendly learning experience.
 
