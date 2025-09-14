@@ -42,7 +42,22 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  height: 100vh;
+  /* height: 100vh; */
+  margin-bottom: 20px;
+`;
+
+export const SectionTitle = styled.h3`
+  margin: 0 0 15px 0;
+  padding: 10px;
+  background-color: #2c5aa0;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.1rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 // Desktop Table (7 columns) - shows on larger screens
@@ -113,7 +128,8 @@ export const MobileTableHeader = styled.th`
 
 export const MobileTableCell = styled.td`
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 10px 5px;
+  font-size: 12px;
 
   &:first-child {
     font-weight: 500;

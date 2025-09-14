@@ -42,8 +42,9 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  height: 100vh;
+  /* height: 100vh; */
   /* background-color: orange; */
+  margin-bottom: 20px;
 `;
 
 // Desktop Table (7 columns) - shows on larger screens
