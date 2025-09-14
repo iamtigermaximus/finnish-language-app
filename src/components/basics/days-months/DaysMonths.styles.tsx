@@ -1,7 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
-// import { breakpoints as bp } from '../../lib/utils/layout';
+// import { breakpoints as bp } from '../../../../lib/utils/layout';
 
 // export const Container = styled.div`
 //   display: flex;
@@ -42,6 +42,8 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  height: 100vh;
+  /* background-color: orange; */
 `;
 
 // Desktop Table (7 columns) - shows on larger screens
