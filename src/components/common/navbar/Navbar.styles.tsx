@@ -8,11 +8,10 @@ export const Navigation = styled.div`
   position: relative;
   width: 100%;
   height: 8vh;
-  z-index: 0;
+  z-index: 1000;
   background-color: #002e83;
 
   @media (min-width: ${bp.lg}) {
-    /* height: 350px; */
     height: 10vh;
   }
 `;
@@ -60,6 +59,9 @@ export const MenuContainer = styled.div`
   gap: 12px;
   background-color: #002e83;
   padding: 8px 16px;
+  z-index: 1001;
+  align-items: center;
+  height: 40px;
 
   @media (max-width: ${bp.md}) {
     display: none;
@@ -74,16 +76,16 @@ export const MenuLink = styled(Link)`
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
   font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
 
   &:hover {
-    color: white; /* Keep the same color */
-    text-decoration: underline; /* Add underline on hover */
-    text-underline-offset: 4px; /* Optional: space between text and underline */
-    text-decoration-thickness: 2px; /* Optional: make underline thicker */
-  }
-
-  @media (min-width: ${bp.md}) {
-    /* font-size: 1.1rem; */
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
   }
 
   @media (min-width: ${bp.lg}) {
@@ -99,59 +101,22 @@ export const BurgerMenu = styled.div`
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  /* background-color: rgba(255, 255, 255, 0.85); */
   background-color: #002e83;
-
   padding: 5px;
 
   span {
     width: 25px;
     height: 3px;
-    /* background-color: black; */
     background-color: white;
-
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
-  z-index: 100;
+  z-index: 1002;
 
   @media (max-width: ${bp.md}) {
     display: flex;
   }
 `;
-
-// export const Sidebar = styled.div<{ isOpen: boolean }>`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 300px;
-//   height: 100vh;
-//   background-color: white;
-//   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   padding: 20px;
-//   transform: ${(props) =>
-//     props.isOpen ? 'translateX(0)' : 'translateX(-100%)'};
-//   transition: left 0.3s ease;
-//   z-index: 1000;
-//   gap: 20px;
-
-//   a {
-//     color: #636363;
-//     text-decoration: none;
-//     font-size: 1.25rem;
-//     font-weight: bold;
-//     &:hover {
-//       color: tomato;
-//     }
-//   }
-
-//   @media (min-width: ${bp.md}) {
-//     display: none;
-//   }
-// `;
 
 export const Sidebar = styled.div`
   position: fixed;
@@ -167,7 +132,7 @@ export const Sidebar = styled.div`
   padding: 20px;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
-  z-index: 1000;
+  z-index: 1002;
   gap: 20px;
 
   &.sidebar-open {
@@ -202,21 +167,6 @@ export const CloseButton = styled.button`
   }
 `;
 
-// export const Backdrop = styled.div<{ isOpen: boolean }>`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   background-color: rgba(0, 0, 0, 0.5);
-//   display: ${(props) => (props.isOpen ? 'block' : 'none')};
-//   z-index: 999;
-
-//   @media (min-width: ${bp.md}) {
-//     display: none;
-//   }
-// `;
-
 export const Backdrop = styled.div`
   position: fixed;
   top: 0;
@@ -225,7 +175,7 @@ export const Backdrop = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 999;
+  z-index: 1001;
 
   &.backdrop-open {
     display: block;
@@ -238,7 +188,6 @@ export const Backdrop = styled.div`
 
 export const LogoContainer = styled.div`
   position: absolute;
-  /* z-index: 99; */
   top: 20px;
   margin-bottom: 100px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -279,6 +228,7 @@ export const MobileLogoContainer = styled.div`
     display: none;
   }
 `;
+
 export const LoginButtonContainer = styled.div`
   width: 100%;
   padding: 8px;
@@ -327,5 +277,68 @@ export const AccountLogoutButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 8px;
-  /* background-color: tomato; */
+`;
+
+// Dropdown Components - FIXED WITH STRING SELECTORS
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1002;
+  min-width: 200px;
+  display: none;
+`;
+
+export const DropdownContainer = styled.div`
+  position: relative;
+  display: inline-block;
+
+  &:hover > div {
+    display: block;
+  }
+`;
+
+export const DropdownItem = styled(Link)`
+  display: block;
+  padding: 8px 12px;
+  color: #002e83;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #f0f0f0;
+    color: tomato;
+  }
+`;
+
+export const DropdownTrigger = styled.div`
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  cursor: pointer;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center; /* Add this */
+  height: 100%; /* Add this */
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  @media (min-width: ${bp.lg}) {
+    font-size: 1.5rem;
+  }
 `;
