@@ -6,7 +6,24 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  height: 100vh;
+  /* height: 100vh; */
+  /* background-color: orange; */
+  color: black;
+  margin-bottom: 20px;
+`;
+
+export const SectionTitle = styled.h3`
+  margin: 0 0 15px 0;
+  padding: 10px;
+  background-color: #2c5aa0;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.1rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 // Desktop Table (7 columns) - shows on larger screens
@@ -48,6 +65,7 @@ export const MobileCaseSection = styled.div`
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   background-color: #fafafa;
+  color: black;
 `;
 
 export const CaseTitle = styled.h3`
@@ -65,6 +83,7 @@ export const MobileTable = styled.table`
   width: 100%;
   border-collapse: collapse;
   margin: 0;
+  color: black;
 `;
 
 export const MobileTableHeader = styled.th`
@@ -73,19 +92,23 @@ export const MobileTableHeader = styled.th`
   background-color: #e9ecef;
   font-weight: bold;
   text-align: left;
+  color: black;
 `;
 
 export const MobileTableCell = styled.td`
   border: 1px solid #ddd;
   padding: 10px;
+  color: black;
 
   &:first-child {
     font-weight: 500;
     background-color: #f0f0f0;
     width: 40%;
+    color: black;
   }
 
   &:last-child {
     width: 60%;
+    color: black;
   }
 `;
