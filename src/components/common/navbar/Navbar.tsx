@@ -130,7 +130,10 @@ const Navbar = () => {
           justifyContent: 'center',
         }}
       >
-        <MobileLogoContainer>OPI SUOMEA</MobileLogoContainer>
+        <MobileLogoContainer>  
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+    OPI SUOMEA
+  </Link></MobileLogoContainer>
         <BurgerContainer>
           <BurgerMenu onClick={toggleSidebar}>
             <span />
@@ -143,7 +146,9 @@ const Navbar = () => {
       <Sidebar className={sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}>
         <CloseButton onClick={toggleSidebar}>&times;</CloseButton>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <SidebarLogoContainer>OPI SUOMEA</SidebarLogoContainer>
+          <SidebarLogoContainer>  <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+    OPI SUOMEA
+  </Link></SidebarLogoContainer>
         </div>
         <div
           style={{
