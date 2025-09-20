@@ -30,7 +30,7 @@ const Imperative = () => {
   return (
     <Container>
       <ExplanationSection>
-        <ExplanationTitle>Finnish Imperative Mood - Complete Guide</ExplanationTitle>
+        <ExplanationTitle>Finnish Imperative Mood</ExplanationTitle>
         
         <ExplanationContent>
           The imperative mood is used to give commands, make requests, or offer encouragement. Finnish has a rich system of imperative forms that vary based on who you&apos;re addressing (singular, plural, or polite) and how direct you want to be. Don&apos;t worry - the patterns are consistent and you&apos;ll master them with practice!

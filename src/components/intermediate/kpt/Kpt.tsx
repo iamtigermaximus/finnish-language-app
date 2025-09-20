@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import {
-  CaseTitle,
+  // CaseTitle,
   Container,
   MobileCaseSection,
   MobileTable,

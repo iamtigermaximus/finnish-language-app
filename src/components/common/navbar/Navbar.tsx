@@ -88,7 +88,6 @@ const Navbar = () => {
         href: '/intermediate/past-perfect-tense',
         label: 'Past Perfect Tense',
       },
-      { href: '/intermediate/negatives', label: ' Negatives' },
       { href: '/intermediate/partitive', label: 'Partitive' },
       { href: '/intermediate/word-types', label: 'Word Types' },
       { href: '/intermediate/passive', label: 'Passive' },
@@ -96,6 +95,12 @@ const Navbar = () => {
       { href: '/intermediate/imperative', label: 'Imperative' },
       { href: '/intermediate/object', label: 'Object' },
       { href: '/intermediate/adverb', label: 'Adverb' },
+      { href: '/intermediate/case-usage-helper', label: 'Case Usage Helper' },
+      { href: '/intermediate/verb-conjugator', label: 'Verb Conjugator Helper' },
+      { href: '/intermediate/connector-words', label: 'Connector Words Helper' },
+
+
+
     ],
     advanced: [
       { href: '/advanced/complex-grammar', label: 'Complex Grammar' },

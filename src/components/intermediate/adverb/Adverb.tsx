@@ -27,7 +27,7 @@ const Adverb = () => {
   return (
     <Container>
       <ExplanationSection>
-        <ExplanationTitle>Finnish Adverbs - Complete Guide</ExplanationTitle>
+        <ExplanationTitle>Finnish Adverbs</ExplanationTitle>
         
         <ExplanationContent>
           Adverbs are words that modify verbs, adjectives, or other adverbs. They provide information about how, when, where, or to what extent something happens. Finnish adverbs are fascinating because many are formed by adding specific endings to adjectives or nouns.

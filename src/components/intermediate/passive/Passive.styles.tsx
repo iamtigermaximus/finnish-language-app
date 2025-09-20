@@ -100,11 +100,10 @@ export const ExplanationSection = styled.div`
   /* border-left: 5px solid #4a6fa5; */
 `;
 
-export const ExplanationTitle = styled.h3`
-  color: #2c3e50;
+export const ExplanationTitle = styled.h2`
+  color: black;
   margin-top: 25px;
   margin-bottom: 10px;
-  font-size: 1.4rem;
   
   &:first-child {
     margin-top: 0;

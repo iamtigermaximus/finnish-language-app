@@ -109,7 +109,7 @@ export const ExplanationSection = styled.div`
   margin-bottom: 30px;
 `;
 
-export const ExplanationTitle = styled.h3`
+export const ExplanationTitle = styled.h2`
   color: #2c3e50;
   margin-top: 0;
   /* border-bottom: 2px solid #3498db; */

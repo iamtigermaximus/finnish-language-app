@@ -29,7 +29,7 @@ const Necessive = () => {
   return (
     <Container>
       <ExplanationSection>
-        <ExplanationTitle>Finnish Necessive Case (-mAAn) - Complete Guide</ExplanationTitle>
+        <ExplanationTitle>Finnish Necessive Case (-mAAn)</ExplanationTitle>
         
         <ExplanationContent>
           The necessive case (also called the agent participle or the -mAAn form) expresses necessity or obligation - something that must or should be done. It&apos;s one of the most useful and practical constructions in Finnish for giving advice, making recommendations, and expressing obligations.

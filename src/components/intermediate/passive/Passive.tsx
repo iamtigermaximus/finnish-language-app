@@ -27,7 +27,7 @@ const Passive = () => {
   return (
     <Container>
       <ExplanationSection>
-        <ExplanationTitle>Finnish Passive Voice - Complete Guide</ExplanationTitle>
+        <ExplanationTitle>Finnish Passive Voice</ExplanationTitle>
         
         <ExplanationContent>
           The passive voice in Finnish is used when the subject is not specified or when we want to emphasize the action rather than who performed it. Don&apos;t worry if it seems challenging at first - with practice, you&apos;ll find it&apos;s quite logical and consistent!

@@ -28,7 +28,7 @@ const Partitive = () => {
   return (
     <Container>
       <ExplanationSection>
-        <ExplanationTitle>Finnish Partitive Case - Complete Guide</ExplanationTitle>
+        <ExplanationTitle>Finnish Partitive Case </ExplanationTitle>
         
         <ExplanationContent>
           The partitive case is one of the most important and frequently used cases in Finnish. It indicates partiality, incompleteness, or unspecified quantity. While it might seem challenging at first, you&apos;ll find it follows consistent patterns that become intuitive with practice.
