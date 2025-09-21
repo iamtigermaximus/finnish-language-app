@@ -186,3 +186,63 @@ export interface PartitiveAnalysis {
   notes: string;
   isFinnishInput: boolean;
 }
+
+export interface NounPluralization {
+  singular: string;
+  singularStem: string;
+  pluralStem: string;
+  inessive: string;
+  adessive: string;
+  rule: string;
+  english: string;
+  exampleSentence: string;
+  exampleTranslation: string;
+}
+
+export interface PluralizationRule {
+  name: string;
+  description: string;
+  examples: NounPluralization[];
+}
+
+// API response interface
+export interface ApiNounResponse {
+  noun?: string;
+  english?: string;
+  pluralization?: NounPluralization;
+  notes?: string;
+  isFinnishInput?: boolean;
+}
+
+export interface RectionExample {
+  verb: string;
+  case: string;
+  english: string;
+  usage: string;
+  example: string;
+  translation: string;
+  negative?: string;
+  negativeExample?: string;
+  negativeTranslation?: string;
+  notes: string;
+}
+
+export interface RectionRule {
+  name: string;
+  description: string;
+  examples: RectionExample[];
+}
+
+export interface RectionAnalysis {
+  verb: string;
+  english: string;
+  rection: {
+    case: string;
+    rule: string;
+  };
+  usage: string[];
+  examples: string[];
+  translations: string[];
+  notes: string;
+  isFinnishInput: boolean;
+}
