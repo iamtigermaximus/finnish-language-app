@@ -29,7 +29,7 @@ const Navbar = () => {
     basics: false,
     intermediate: false,
     advanced: false,
-    spokenFinnish: false, // Changed from puhekieli to spokenFinnish
+    spokenFinnish: false,
   });
 
   const toggleSidebar = () => {
@@ -48,11 +48,27 @@ const Navbar = () => {
     setActiveDropdown(null);
   };
 
+  const handleDropdownItemClick = () => {
+    setActiveDropdown(null); // Close dropdown when an item is clicked
+  };
+
   const toggleMobileDropdown = (dropdownName: keyof typeof mobileDropdowns) => {
-    setMobileDropdowns((prev) => ({
-      ...prev,
-      [dropdownName]: !prev[dropdownName],
-    }));
+    setMobileDropdowns((prev) => {
+      // Create a new state object with all dropdowns closed
+      const newState = {
+        basics: false,
+        intermediate: false,
+        advanced: false,
+        spokenFinnish: false,
+      };
+      
+      // If the clicked dropdown wasn't already open, open it
+      if (!prev[dropdownName]) {
+        newState[dropdownName] = true;
+      }
+      
+      return newState;
+    });
   };
 
   // Dropdown content for each section
@@ -110,7 +126,7 @@ const Navbar = () => {
       { href: '/advanced/idioms', label: 'Idioms' },
       { href: '/advanced/business-finnish', label: 'Business Finnish' },
     ],
-    spokenFinnish: [ // Changed from puhekieli to spokenFinnish
+    spokenFinnish: [
       {
         href: '/spoken-finnish/everyday-conversations',
         label: 'Everyday Conversations',
@@ -305,7 +321,11 @@ const Navbar = () => {
           {activeDropdown === 'basics' && (
             <DropdownMenu>
               {dropdownContent.basics.map((item) => (
-                <DropdownItem key={item.href} href={item.href}>
+                <DropdownItem 
+                  key={item.href} 
+                  href={item.href}
+                  onClick={handleDropdownItemClick}
+                >
                   {item.label}
                 </DropdownItem>
               ))}
@@ -322,7 +342,11 @@ const Navbar = () => {
           {activeDropdown === 'intermediate' && (
             <DropdownMenu>
               {dropdownContent.intermediate.map((item) => (
-                <DropdownItem key={item.href} href={item.href}>
+                <DropdownItem 
+                  key={item.href} 
+                  href={item.href}
+                  onClick={handleDropdownItemClick}
+                >
                   {item.label}
                 </DropdownItem>
               ))}
@@ -339,7 +363,11 @@ const Navbar = () => {
           {activeDropdown === 'advanced' && (
             <DropdownMenu>
               {dropdownContent.advanced.map((item) => (
-                <DropdownItem key={item.href} href={item.href}>
+                <DropdownItem 
+                  key={item.href} 
+                  href={item.href}
+                  onClick={handleDropdownItemClick}
+                >
                   {item.label}
                 </DropdownItem>
               ))}
@@ -356,7 +384,11 @@ const Navbar = () => {
           {activeDropdown === 'spokenFinnish' && (
             <DropdownMenu>
               {dropdownContent.spokenFinnish.map((item) => (
-                <DropdownItem key={item.href} href={item.href}>
+                <DropdownItem 
+                  key={item.href} 
+                  href={item.href}
+                  onClick={handleDropdownItemClick}
+                >
                   {item.label}
                 </DropdownItem>
               ))}
