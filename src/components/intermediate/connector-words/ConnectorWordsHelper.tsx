@@ -21,12 +21,16 @@ interface ConnectorCategory {
 }
 
 // Styled components
-const Container = styled.div`
-  background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-`
+export const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  height: 100vh;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
@@ -94,8 +98,9 @@ const ContentGrid = styled.div`
 `
 
 const WordsContainer = styled.div`
-  max-height: 24rem;
+  max-height: 30rem;
   overflow-y: auto;
+  
 `
 
 const WordsTitle = styled.h3`

@@ -29,7 +29,7 @@ const Navbar = () => {
     basics: false,
     intermediate: false,
     advanced: false,
-    puhekieli: false,
+    spokenFinnish: false, // Changed from puhekieli to spokenFinnish
   });
 
   const toggleSidebar = () => {
@@ -98,26 +98,31 @@ const Navbar = () => {
       { href: '/intermediate/case-usage-helper', label: 'Case Usage Helper' },
       { href: '/intermediate/verb-conjugator', label: 'Verb Conjugator Helper' },
       { href: '/intermediate/connector-words', label: 'Connector Words Helper' },
-
-
-
     ],
     advanced: [
-      { href: '/advanced/complex-grammar', label: 'Complex Grammar' },
-      { href: '/advanced/conditional-mood', label: 'Conditional Mood' },
-      { href: '/advanced/passive-voice', label: 'Passive Voice' },
+      { href: '/advanced/noun-pluralization', label: 'Noun Pluralization' },
+      { href: '/advanced/noun-partitive-pluralization', label: 'Noun Partitive Pluralization' },
+      { href: '/advanced/noun-genetive-pluralization', label: 'Noun Genetive Pluralization' },
+      { href: '/advanced/noun-illative-pluralization', label: 'Noun Illative Pluralization' },
+      { href: '/advanced/noun-form-verb', label: 'Noun Form Of Verb' },
+      { href: '/advanced/conditional-tense', label: 'Conditional Tense' },
+      { href: '/advanced/verb-rections', label: 'Verb Rections' },
       { href: '/advanced/idioms', label: 'Idioms' },
-      { href: '/advanced/literature', label: 'Literature' },
       { href: '/advanced/business-finnish', label: 'Business Finnish' },
     ],
-    puhekieli: [
-      { href: '/puhekieli/pronunciation', label: 'Pronunciation' },
+    spokenFinnish: [ // Changed from puhekieli to spokenFinnish
       {
-        href: '/puhekieli/everyday-conversations',
+        href: '/spoken-finnish/everyday-conversations',
         label: 'Everyday Conversations',
       },
-      { href: '/puhekieli/informal-grammar', label: 'Informal Grammar' },
-      { href: '/puhekieli/spoken-finnish', label: 'Puhekieli' },
+      { 
+        href: '/spoken-finnish/informal-grammar', 
+        label: 'Informal Grammar' 
+      },
+      { 
+        href: '/spoken-finnish/puhekieli', 
+        label: 'Puhekieli' 
+      },
     ],
   };
 
@@ -132,8 +137,9 @@ const Navbar = () => {
       >
         <MobileLogoContainer>  
           <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-    OPI SUOMEA
-  </Link></MobileLogoContainer>
+            OPI SUOMEA
+          </Link>
+        </MobileLogoContainer>
         <BurgerContainer>
           <BurgerMenu onClick={toggleSidebar}>
             <span />
@@ -146,9 +152,11 @@ const Navbar = () => {
       <Sidebar className={sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}>
         <CloseButton onClick={toggleSidebar}>&times;</CloseButton>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <SidebarLogoContainer>  <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-    OPI SUOMEA
-  </Link></SidebarLogoContainer>
+          <SidebarLogoContainer>  
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              OPI SUOMEA
+            </Link>
+          </SidebarLogoContainer>
         </div>
         <div
           style={{
@@ -253,14 +261,14 @@ const Navbar = () => {
           {/* Spoken Finnish Dropdown in Sidebar */}
           <SidebarDropdown>
             <SidebarDropdownHeader
-              onClick={() => toggleMobileDropdown('puhekieli')}
+              onClick={() => toggleMobileDropdown('spokenFinnish')}
             >
-              Spoken Finnish {mobileDropdowns.puhekieli ? '▴' : '▾'}
+              Spoken Finnish {mobileDropdowns.spokenFinnish ? '▴' : '▾'}
             </SidebarDropdownHeader>
             <SidebarDropdownContent
-              className={mobileDropdowns.puhekieli ? 'open' : 'closed'}
+              className={mobileDropdowns.spokenFinnish ? 'open' : 'closed'}
             >
-              {dropdownContent.puhekieli.map((item) => (
+              {dropdownContent.spokenFinnish.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -341,13 +349,13 @@ const Navbar = () => {
 
         {/* Spoken Finnish Dropdown */}
         <DropdownContainer
-          onMouseEnter={() => handleDropdownEnter('puhekieli')}
+          onMouseEnter={() => handleDropdownEnter('spokenFinnish')}
           onMouseLeave={handleDropdownLeave}
         >
           <DropdownTrigger>Spoken Finnish ▾</DropdownTrigger>
-          {activeDropdown === 'puhekieli' && (
+          {activeDropdown === 'spokenFinnish' && (
             <DropdownMenu>
-              {dropdownContent.puhekieli.map((item) => (
+              {dropdownContent.spokenFinnish.map((item) => (
                 <DropdownItem key={item.href} href={item.href}>
                   {item.label}
                 </DropdownItem>
