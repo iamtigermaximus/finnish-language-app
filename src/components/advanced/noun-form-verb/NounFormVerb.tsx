@@ -310,111 +310,6 @@ const NounFormVerb = () => {
         <Title>Noun Form of Verbs</Title>
         <Subtitle>Learn how nouns are formed from verbs in Finnish</Subtitle>
       </Header>
-
-      <ContentContainer>
-        <p>
-          Verbal nouns (nomina verbalia) are nouns derived from verbs. They
-          allow us to talk about actions, processes, and results as if they were
-          things or concepts.
-        </p>
-
-        <UsageExplanation>
-          <UsageTitle>Types of Verbal Nouns in Finnish:</UsageTitle>
-          <UsageList>
-            <UsageListItem>
-              <strong>Action nouns (-minen)</strong>: Describe the action or
-              process itself (opiskeleminen - studying)
-            </UsageListItem>
-            <UsageListItem>
-              <strong>Result nouns (-ma/-mä, -os/-ös)</strong>: Describe the
-              result or product of an action (kirjoitus - writing, vastaus -
-              answer)
-            </UsageListItem>
-            <UsageListItem>
-              <strong>Abstract nouns (-us/-ys, -uus/-yys)</strong>: Describe
-              abstract concepts (elämä - life, ymmärrys - understanding)
-            </UsageListItem>
-            <UsageListItem>
-              <strong>Agent nouns (-ja/-jä)</strong>: Describe the person who
-              performs the action (opettaja - teacher)
-            </UsageListItem>
-          </UsageList>
-        </UsageExplanation>
-      </ContentContainer>
-
-      {verbalNounRules.map((rule, index) => (
-        <ContentContainer key={index}>
-          <RuleTitle>{rule.name}</RuleTitle>
-          <RuleDescription>{rule.description}</RuleDescription>
-
-          {/* Mobile Card View */}
-          <ExampleCardsContainer>
-            {rule.examples.map((example, idx) => (
-              <ExampleCard key={idx}>
-                <CardRow>
-                  <CardLabel>Verb:</CardLabel>
-                  <CardValue>
-                    {example.verb} ({example.english})
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Verbal Noun:</CardLabel>
-                  <CardValue>{example.verbalNoun}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Type:</CardLabel>
-                  <CardValue>{example.type}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Usage:</CardLabel>
-                  <CardValue>{example.usage}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example:</CardLabel>
-                  <CardValue>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Notes:</CardLabel>
-                  <CardValue>{example.notes}</CardValue>
-                </CardRow>
-              </ExampleCard>
-            ))}
-          </ExampleCardsContainer>
-
-          {/* Desktop Table View */}
-          <ExampleTable>
-            <thead>
-              <tr>
-                <TableHeader>Verb (English)</TableHeader>
-                <TableHeader>Verbal Noun</TableHeader>
-                <TableHeader>Type</TableHeader>
-                <TableHeader>Usage</TableHeader>
-                <TableHeader>Example</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {rule.examples.map((example, idx) => (
-                <tr key={idx}>
-                  <TableCell>
-                    {example.verb} ({example.english})
-                  </TableCell>
-                  <TableCell>{example.verbalNoun}</TableCell>
-                  <TableCell>{example.type}</TableCell>
-                  <TableCell>{example.usage}</TableCell>
-                  <TableCell>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </ExampleTable>
-        </ContentContainer>
-      ))}
-
       <PracticeContainer>
         <PracticeTitle>Practice Verbal Noun Formation</PracticeTitle>
         <p>Enter a Finnish verb to see its verbal noun forms:</p>
@@ -532,6 +427,109 @@ const NounFormVerb = () => {
           </ResultContainer>
         )}
       </PracticeContainer>
+
+      <ContentContainer>
+        <h3 style={{ padding: "10px 0", color: "#4b5563" }}>
+          Verbal nouns are nouns derived from verbs. They allow us to talk about
+          actions, processes, and results as if they were things or concepts.
+        </h3>
+
+        <UsageExplanation>
+          <UsageTitle>Types of Verbal Nouns in Finnish:</UsageTitle>
+          <UsageList>
+            <UsageListItem>
+              <strong>Action nouns (-minen)</strong>: Describe the action or
+              process itself (opiskeleminen - studying)
+            </UsageListItem>
+            <UsageListItem>
+              <strong>Result nouns (-ma/-mä, -os/-ös)</strong>: Describe the
+              result or product of an action (kirjoitus - writing, vastaus -
+              answer)
+            </UsageListItem>
+            <UsageListItem>
+              <strong>Abstract nouns (-us/-ys, -uus/-yys)</strong>: Describe
+              abstract concepts (elämä - life, ymmärrys - understanding)
+            </UsageListItem>
+            <UsageListItem>
+              <strong>Agent nouns (-ja/-jä)</strong>: Describe the person who
+              performs the action (opettaja - teacher)
+            </UsageListItem>
+          </UsageList>
+        </UsageExplanation>
+      </ContentContainer>
+
+      {verbalNounRules.map((rule, index) => (
+        <ContentContainer key={index}>
+          <RuleTitle>{rule.name}</RuleTitle>
+          <RuleDescription>{rule.description}</RuleDescription>
+
+          {/* Mobile Card View */}
+          <ExampleCardsContainer>
+            {rule.examples.map((example, idx) => (
+              <ExampleCard key={idx}>
+                <CardRow>
+                  <CardLabel>Verb:</CardLabel>
+                  <CardValue>
+                    {example.verb} ({example.english})
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Verbal Noun:</CardLabel>
+                  <CardValue>{example.verbalNoun}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Type:</CardLabel>
+                  <CardValue>{example.type}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Usage:</CardLabel>
+                  <CardValue>{example.usage}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example:</CardLabel>
+                  <CardValue>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Notes:</CardLabel>
+                  <CardValue>{example.notes}</CardValue>
+                </CardRow>
+              </ExampleCard>
+            ))}
+          </ExampleCardsContainer>
+
+          {/* Desktop Table View */}
+          <ExampleTable>
+            <thead>
+              <tr>
+                <TableHeader>Verb (English)</TableHeader>
+                <TableHeader>Verbal Noun</TableHeader>
+                <TableHeader>Type</TableHeader>
+                <TableHeader>Usage</TableHeader>
+                <TableHeader>Example</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              {rule.examples.map((example, idx) => (
+                <tr key={idx}>
+                  <TableCell>
+                    {example.verb} ({example.english})
+                  </TableCell>
+                  <TableCell>{example.verbalNoun}</TableCell>
+                  <TableCell>{example.type}</TableCell>
+                  <TableCell>{example.usage}</TableCell>
+                  <TableCell>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </TableCell>
+                </tr>
+              ))}
+            </tbody>
+          </ExampleTable>
+        </ContentContainer>
+      ))}
     </Container>
   );
 };

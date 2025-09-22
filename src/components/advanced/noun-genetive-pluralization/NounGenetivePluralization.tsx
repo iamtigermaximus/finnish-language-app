@@ -338,125 +338,6 @@ const NounGenitivePluralization = () => {
           Learn how to form and use the genitive case in Finnish
         </Subtitle>
       </Header>
-
-      <ContentContainer>
-        <p>
-          The genitive case is used to indicate possession, relationship, or
-          association in Finnish. It answers the question &quot;kenen?&quot;
-          (whose?) and is one of the most frequently used cases.
-        </p>
-
-        <UsageExplanation>
-          <UsageTitle>When to Use the Genitive Case:</UsageTitle>
-          <UsageList>
-            <UsageListItem>
-              Possession (the dog&apos;s house → koiran talo)
-            </UsageListItem>
-            <UsageListItem>
-              Relationships (the book&apos;s cover → kirjan kansi)
-            </UsageListItem>
-            <UsageListItem>
-              With certain postpositions (takia, vuoksi, etc.)
-            </UsageListItem>
-            <UsageListItem>
-              In compound nouns (kirjastonhoitaja - library caretaker)
-            </UsageListItem>
-            <UsageListItem>
-              To express quantity (litra maitoa - a liter of milk)
-            </UsageListItem>
-          </UsageList>
-        </UsageExplanation>
-      </ContentContainer>
-
-      {genitiveRules.map((rule, index) => (
-        <ContentContainer key={index}>
-          <RuleTitle>{rule.name}</RuleTitle>
-          <RuleDescription>{rule.description}</RuleDescription>
-
-          {/* Mobile Card View */}
-          <ExampleCardsContainer>
-            {rule.examples.map((example, idx) => (
-              <ExampleCard key={idx}>
-                <CardRow>
-                  <CardLabel>Noun:</CardLabel>
-                  <CardValue>
-                    {example.singular} ({example.english})
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Genitive:</CardLabel>
-                  <CardValue>{example.genitive}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Genitive Plural:</CardLabel>
-                  <CardValue>{example.genitivePlural}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Usage:</CardLabel>
-                  <CardValue>{example.usage}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example (singular):</CardLabel>
-                  <CardValue>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example (plural):</CardLabel>
-                  <CardValue>
-                    {example.genitivePluralExample}
-                    <ExampleSentence>
-                      {example.genitivePluralTranslation}
-                    </ExampleSentence>
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Notes:</CardLabel>
-                  <CardValue>{example.notes}</CardValue>
-                </CardRow>
-              </ExampleCard>
-            ))}
-          </ExampleCardsContainer>
-
-          {/* Desktop Table View */}
-          <ExampleTable>
-            <thead>
-              <tr>
-                <TableHeader>Noun (English)</TableHeader>
-                <TableHeader>Genitive</TableHeader>
-                <TableHeader>Genitive Plural</TableHeader>
-                <TableHeader>Usage</TableHeader>
-                <TableHeader>Example (Singular)</TableHeader>
-                <TableHeader>Example (Plural)</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {rule.examples.map((example, idx) => (
-                <tr key={idx}>
-                  <TableCell>
-                    {example.singular} ({example.english})
-                  </TableCell>
-                  <TableCell>{example.genitive}</TableCell>
-                  <TableCell>{example.genitivePlural}</TableCell>
-                  <TableCell>{example.usage}</TableCell>
-                  <TableCell>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </TableCell>
-                  <TableCell>
-                    {example.genitivePluralExample}
-                    <ExampleSentence>
-                      {example.genitivePluralTranslation}
-                    </ExampleSentence>
-                  </TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </ExampleTable>
-        </ContentContainer>
-      ))}
-
       <PracticeContainer>
         <PracticeTitle>Practice Genitive Formation</PracticeTitle>
         <p>Enter a Finnish noun to see its genitive form:</p>
@@ -592,6 +473,123 @@ const NounGenitivePluralization = () => {
           </ResultContainer>
         )}
       </PracticeContainer>
+      <ContentContainer>
+        <h3 style={{ padding: "10px 0", color: "#4b5563" }}>
+          The genitive case is used to indicate possession, relationship, or
+          association in Finnish. It answers the question &quot;kenen?&quot;
+          (whose?) and is one of the most frequently used cases.
+        </h3>
+
+        <UsageExplanation>
+          <UsageTitle>When to Use the Genitive Case:</UsageTitle>
+          <UsageList>
+            <UsageListItem>
+              Possession (the dog&apos;s house → koiran talo)
+            </UsageListItem>
+            <UsageListItem>
+              Relationships (the book&apos;s cover → kirjan kansi)
+            </UsageListItem>
+            <UsageListItem>
+              With certain postpositions (takia, vuoksi, etc.)
+            </UsageListItem>
+            <UsageListItem>
+              In compound nouns (kirjastonhoitaja - library caretaker)
+            </UsageListItem>
+            <UsageListItem>
+              To express quantity (litra maitoa - a liter of milk)
+            </UsageListItem>
+          </UsageList>
+        </UsageExplanation>
+      </ContentContainer>
+
+      {genitiveRules.map((rule, index) => (
+        <ContentContainer key={index}>
+          <RuleTitle>{rule.name}</RuleTitle>
+          <RuleDescription>{rule.description}</RuleDescription>
+
+          {/* Mobile Card View */}
+          <ExampleCardsContainer>
+            {rule.examples.map((example, idx) => (
+              <ExampleCard key={idx}>
+                <CardRow>
+                  <CardLabel>Noun:</CardLabel>
+                  <CardValue>
+                    {example.singular} ({example.english})
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Genitive:</CardLabel>
+                  <CardValue>{example.genitive}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Genitive Plural:</CardLabel>
+                  <CardValue>{example.genitivePlural}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Usage:</CardLabel>
+                  <CardValue>{example.usage}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example (singular):</CardLabel>
+                  <CardValue>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example (plural):</CardLabel>
+                  <CardValue>
+                    {example.genitivePluralExample}
+                    <ExampleSentence>
+                      {example.genitivePluralTranslation}
+                    </ExampleSentence>
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Notes:</CardLabel>
+                  <CardValue>{example.notes}</CardValue>
+                </CardRow>
+              </ExampleCard>
+            ))}
+          </ExampleCardsContainer>
+
+          {/* Desktop Table View */}
+          <ExampleTable>
+            <thead>
+              <tr>
+                <TableHeader>Noun (English)</TableHeader>
+                <TableHeader>Genitive</TableHeader>
+                <TableHeader>Genitive Plural</TableHeader>
+                <TableHeader>Usage</TableHeader>
+                <TableHeader>Example (Singular)</TableHeader>
+                <TableHeader>Example (Plural)</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              {rule.examples.map((example, idx) => (
+                <tr key={idx}>
+                  <TableCell>
+                    {example.singular} ({example.english})
+                  </TableCell>
+                  <TableCell>{example.genitive}</TableCell>
+                  <TableCell>{example.genitivePlural}</TableCell>
+                  <TableCell>{example.usage}</TableCell>
+                  <TableCell>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </TableCell>
+                  <TableCell>
+                    {example.genitivePluralExample}
+                    <ExampleSentence>
+                      {example.genitivePluralTranslation}
+                    </ExampleSentence>
+                  </TableCell>
+                </tr>
+              ))}
+            </tbody>
+          </ExampleTable>
+        </ContentContainer>
+      ))}
     </Container>
   );
 };

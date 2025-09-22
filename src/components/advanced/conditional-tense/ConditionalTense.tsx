@@ -7,6 +7,7 @@ import {
   CardRow,
   CardValue,
   Container,
+  ContentContainer,
   ErrorMessage,
   ExampleCard,
   ExampleCardsContainer,
@@ -264,112 +265,6 @@ const ConditionalTense = () => {
         </Subtitle>
       </Header>
 
-      <div>
-        <p>
-          The conditional mood is used to express hypothetical situations,
-          polite requests, and actions that would happen under certain
-          conditions.
-        </p>
-
-        <UsageExplanation>
-          <UsageTitle>When to Use the Conditional:</UsageTitle>
-          <UsageList>
-            <UsageListItem>
-              <strong>Hypothetical situations</strong>: &quot;I would go if I
-              had time&quot;
-            </UsageListItem>
-            <UsageListItem>
-              <strong>Polite requests</strong>: &quot;Would you help me?&quot;
-            </UsageListItem>
-            <UsageListItem>
-              <strong>Wishes and desires</strong>: &quot;I would like to
-              travel&quot;
-            </UsageListItem>
-            <UsageListItem>
-              <strong>Conditional statements</strong>: &quot;If it rained, we
-              would stay inside&quot;
-            </UsageListItem>
-          </UsageList>
-        </UsageExplanation>
-      </div>
-
-      {conditionalRules.map((rule, index) => (
-        <RuleContainer key={index}>
-          <RuleTitle>{rule.name}</RuleTitle>
-          <RuleDescription>{rule.description}</RuleDescription>
-
-          {/* Mobile Card View */}
-          <ExampleCardsContainer>
-            {rule.examples.map((example, idx) => (
-              <ExampleCard key={idx}>
-                <CardRow>
-                  <CardLabel>Verb (English):</CardLabel>
-                  <CardValue>{example.english}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Conditional:</CardLabel>
-                  <CardValue>{example.conditional}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Negative:</CardLabel>
-                  <CardValue>{example.negative}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Usage:</CardLabel>
-                  <CardValue>{example.usage}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example:</CardLabel>
-                  <CardValue>{example.example}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Negative Example:</CardLabel>
-                  <CardValue>
-                    {example.negative}
-                    <ExampleSentence>{example.negativeExample}</ExampleSentence>
-                  </CardValue>
-                </CardRow>
-              </ExampleCard>
-            ))}
-          </ExampleCardsContainer>
-
-          <ExampleTable>
-            <thead>
-              <tr>
-                <TableHeader>Verb (English)</TableHeader>
-                <TableHeader>Conditional</TableHeader>
-                <TableHeader>Negative</TableHeader>
-                <TableHeader>Usage</TableHeader>
-                <TableHeader>Example</TableHeader>
-                <TableHeader>Negative Example</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {rule.examples.map((example, idx) => (
-                <tr key={idx}>
-                  <TableCell>
-                    {example.verb} ({example.english})
-                  </TableCell>
-                  <TableCell>{example.conditional}</TableCell>
-                  <TableCell>{example.negative}</TableCell>
-                  <TableCell>{example.usage}</TableCell>
-                  <TableCell>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </TableCell>
-                  <TableCell>
-                    {example.negativeExample}
-                    <ExampleSentence>
-                      {example.negativeTranslation}
-                    </ExampleSentence>
-                  </TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </ExampleTable>
-        </RuleContainer>
-      ))}
-
       <PracticeContainer>
         <PracticeTitle>Practice Conditional Formation</PracticeTitle>
         <p>Enter a Finnish verb to see its conditional form:</p>
@@ -492,6 +387,112 @@ const ConditionalTense = () => {
           </ResultContainer>
         )}
       </PracticeContainer>
+
+      <ContentContainer>
+        <h3 style={{ padding: "10px 0", color: "#4b5563" }}>
+          The conditional mood is used to express hypothetical situations,
+          polite requests, and actions that would happen under certain
+          conditions.
+        </h3>
+
+        <UsageExplanation>
+          <UsageTitle>When to Use the Conditional:</UsageTitle>
+          <UsageList>
+            <UsageListItem>
+              <strong>Hypothetical situations</strong>: &quot;I would go if I
+              had time&quot;
+            </UsageListItem>
+            <UsageListItem>
+              <strong>Polite requests</strong>: &quot;Would you help me?&quot;
+            </UsageListItem>
+            <UsageListItem>
+              <strong>Wishes and desires</strong>: &quot;I would like to
+              travel&quot;
+            </UsageListItem>
+            <UsageListItem>
+              <strong>Conditional statements</strong>: &quot;If it rained, we
+              would stay inside&quot;
+            </UsageListItem>
+          </UsageList>
+        </UsageExplanation>
+      </ContentContainer>
+
+      {conditionalRules.map((rule, index) => (
+        <RuleContainer key={index}>
+          <RuleTitle>{rule.name}</RuleTitle>
+          <RuleDescription>{rule.description}</RuleDescription>
+
+          {/* Mobile Card View */}
+          <ExampleCardsContainer>
+            {rule.examples.map((example, idx) => (
+              <ExampleCard key={idx}>
+                <CardRow>
+                  <CardLabel>Verb (English):</CardLabel>
+                  <CardValue>{example.english}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Conditional:</CardLabel>
+                  <CardValue>{example.conditional}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Negative:</CardLabel>
+                  <CardValue>{example.negative}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Usage:</CardLabel>
+                  <CardValue>{example.usage}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example:</CardLabel>
+                  <CardValue>{example.example}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Negative Example:</CardLabel>
+                  <CardValue>
+                    {example.negative}
+                    <ExampleSentence>{example.negativeExample}</ExampleSentence>
+                  </CardValue>
+                </CardRow>
+              </ExampleCard>
+            ))}
+          </ExampleCardsContainer>
+
+          <ExampleTable>
+            <thead>
+              <tr>
+                <TableHeader>Verb (English)</TableHeader>
+                <TableHeader>Conditional</TableHeader>
+                <TableHeader>Negative</TableHeader>
+                <TableHeader>Usage</TableHeader>
+                <TableHeader>Example</TableHeader>
+                <TableHeader>Negative Example</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              {rule.examples.map((example, idx) => (
+                <tr key={idx}>
+                  <TableCell>
+                    {example.verb} ({example.english})
+                  </TableCell>
+                  <TableCell>{example.conditional}</TableCell>
+                  <TableCell>{example.negative}</TableCell>
+                  <TableCell>{example.usage}</TableCell>
+                  <TableCell>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </TableCell>
+                  <TableCell>
+                    {example.negativeExample}
+                    <ExampleSentence>
+                      {example.negativeTranslation}
+                    </ExampleSentence>
+                  </TableCell>
+                </tr>
+              ))}
+            </tbody>
+          </ExampleTable>
+        </RuleContainer>
+      ))}
     </Container>
   );
 };

@@ -1,4 +1,3 @@
-// components/RectionsPractice.tsx
 "use client";
 
 import { useState, FormEvent } from "react";
@@ -8,6 +7,7 @@ import {
   CardRow,
   CardValue,
   Container,
+  ContentContainer,
   ErrorMessage,
   ExampleCard,
   ExampleCardsContainer,
@@ -264,74 +264,6 @@ const VerbRections = () => {
           Learn the correct case to use with different Finnish verbs
         </Subtitle>
       </Header>
-
-      <div>
-        <p>
-          In Finnish, verbs determine the case of their objects. There are no
-          strict rules; you often have to memorize which case goes with which
-          verb.
-        </p>
-      </div>
-
-      {rectionRules.map((rule, idx) => (
-        <RuleContainer key={idx}>
-          <RuleTitle>{rule.name}</RuleTitle>
-          <RuleDescription>{rule.description}</RuleDescription>
-          {/* Mobile Card View */}
-          <ExampleCardsContainer>
-            {rule.examples.map((example, idx) => (
-              <ExampleCard key={idx}>
-                <CardRow>
-                  <CardLabel>Verb:</CardLabel>
-                  <CardValue>{example.verb}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Case:</CardLabel>
-                  <CardValue>{example.case}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>English:</CardLabel>
-                  <CardValue>{example.english}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Usage:</CardLabel>
-                  <CardValue>{example.usage}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example:</CardLabel>
-                  <CardValue>{example.example}</CardValue>
-                </CardRow>
-              </ExampleCard>
-            ))}
-          </ExampleCardsContainer>
-          <ExampleTable>
-            <thead>
-              <tr>
-                <TableHeader>Verb</TableHeader>
-                <TableHeader>Case</TableHeader>
-                <TableHeader>English</TableHeader>
-                <TableHeader>Usage</TableHeader>
-                <TableHeader>Example</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {rule.examples.map((ex, i) => (
-                <tr key={i}>
-                  <TableCell>{ex.verb}</TableCell>
-                  <TableCell>{ex.case}</TableCell>
-                  <TableCell>{ex.english}</TableCell>
-                  <TableCell>{ex.usage}</TableCell>
-                  <TableCell>
-                    {ex.example}
-                    <ExampleSentence>{ex.translation}</ExampleSentence>
-                  </TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </ExampleTable>
-        </RuleContainer>
-      ))}
-
       <PracticeContainer>
         <PracticeTitle>Practice Rections</PracticeTitle>
         <Form onSubmit={handleSubmit}>
@@ -428,6 +360,73 @@ const VerbRections = () => {
           </ResultContainer>
         )}
       </PracticeContainer>
+
+      <ContentContainer>
+        <h3 style={{ padding: "10px 0", color: "#4b5563" }}>
+          In Finnish, verbs determine the case of their objects. There are no
+          strict rules; you often have to memorize which case goes with which
+          verb.
+        </h3>
+      </ContentContainer>
+
+      {rectionRules.map((rule, idx) => (
+        <RuleContainer key={idx}>
+          <RuleTitle>{rule.name}</RuleTitle>
+          <RuleDescription>{rule.description}</RuleDescription>
+          {/* Mobile Card View */}
+          <ExampleCardsContainer>
+            {rule.examples.map((example, idx) => (
+              <ExampleCard key={idx}>
+                <CardRow>
+                  <CardLabel>Verb:</CardLabel>
+                  <CardValue>{example.verb}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Case:</CardLabel>
+                  <CardValue>{example.case}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>English:</CardLabel>
+                  <CardValue>{example.english}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Usage:</CardLabel>
+                  <CardValue>{example.usage}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example:</CardLabel>
+                  <CardValue>{example.example}</CardValue>
+                </CardRow>
+              </ExampleCard>
+            ))}
+          </ExampleCardsContainer>
+          <ExampleTable>
+            <thead>
+              <tr>
+                <TableHeader>Verb</TableHeader>
+                <TableHeader>Case</TableHeader>
+                <TableHeader>English</TableHeader>
+                <TableHeader>Usage</TableHeader>
+                <TableHeader>Example</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              {rule.examples.map((ex, i) => (
+                <tr key={i}>
+                  <TableCell>{ex.verb}</TableCell>
+                  <TableCell>{ex.case}</TableCell>
+                  <TableCell>{ex.english}</TableCell>
+                  <TableCell>{ex.usage}</TableCell>
+                  <TableCell>
+                    {ex.example}
+                    <ExampleSentence>{ex.translation}</ExampleSentence>
+                  </TableCell>
+                </tr>
+              ))}
+            </tbody>
+          </ExampleTable>
+        </RuleContainer>
+      ))}
     </Container>
   );
 };

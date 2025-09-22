@@ -340,125 +340,6 @@ const NounPartitivePluralization = () => {
           Learn how to form and use the partitive case in Finnish
         </Subtitle>
       </Header>
-
-      <ContentContainer>
-        <p>
-          The partitive case is one of the most important grammatical cases in
-          Finnish. It is used to indicate partial objects, indefinite amounts,
-          and in various other contexts.
-        </p>
-
-        <UsageExplanation>
-          <UsageTitle>When to Use the Partitive Case:</UsageTitle>
-          <UsageList>
-            <UsageListItem>
-              With indefinite quantities (some water, a few books)
-            </UsageListItem>
-            <UsageListItem>
-              With numbers greater than one (two apples, five houses)
-            </UsageListItem>
-            <UsageListItem>
-              In negative sentences (I don&apos;t have money)
-            </UsageListItem>
-            <UsageListItem>
-              With certain prepositions (without help, with friends)
-            </UsageListItem>
-            <UsageListItem>
-              To express ongoing actions (I&apos;m reading a book)
-            </UsageListItem>
-          </UsageList>
-        </UsageExplanation>
-      </ContentContainer>
-
-      {partitiveRules.map((rule, index) => (
-        <ContentContainer key={index}>
-          <RuleTitle>{rule.name}</RuleTitle>
-          <RuleDescription>{rule.description}</RuleDescription>
-
-          {/* Mobile Card View */}
-          <ExampleCardsContainer>
-            {rule.examples.map((example, idx) => (
-              <ExampleCard key={idx}>
-                <CardRow>
-                  <CardLabel>Noun:</CardLabel>
-                  <CardValue>
-                    {example.singular} ({example.english})
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Partitive:</CardLabel>
-                  <CardValue>{example.partitive}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Partitive Plural:</CardLabel>
-                  <CardValue>{example.partitivePlural}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Usage:</CardLabel>
-                  <CardValue>{example.usage}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example (singular):</CardLabel>
-                  <CardValue>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example (plural):</CardLabel>
-                  <CardValue>
-                    {example.partitiveExample}
-                    <ExampleSentence>
-                      {example.partitiveTranslation}
-                    </ExampleSentence>
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Notes:</CardLabel>
-                  <CardValue>{example.notes}</CardValue>
-                </CardRow>
-              </ExampleCard>
-            ))}
-          </ExampleCardsContainer>
-
-          {/* Desktop Table View */}
-          <ExampleTable>
-            <thead>
-              <tr>
-                <TableHeader>Noun (English)</TableHeader>
-                <TableHeader>Partitive</TableHeader>
-                <TableHeader>Partitive Plural</TableHeader>
-                <TableHeader>Usage</TableHeader>
-                <TableHeader>Example (Singular)</TableHeader>
-                <TableHeader>Example (Plural)</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {rule.examples.map((example, idx) => (
-                <tr key={idx}>
-                  <TableCell>
-                    {example.singular} ({example.english})
-                  </TableCell>
-                  <TableCell>{example.partitive}</TableCell>
-                  <TableCell>{example.partitivePlural}</TableCell>
-                  <TableCell>{example.usage}</TableCell>
-                  <TableCell>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </TableCell>
-                  <TableCell>
-                    {example.partitiveExample}
-                    <ExampleSentence>
-                      {example.partitiveTranslation}
-                    </ExampleSentence>
-                  </TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </ExampleTable>
-        </ContentContainer>
-      ))}
-
       <PracticeContainer>
         <PracticeTitle>Practice Partitive Formation</PracticeTitle>
         <p>Enter a Finnish or English noun to see its partitive form:</p>
@@ -594,6 +475,124 @@ const NounPartitivePluralization = () => {
           </ResultContainer>
         )}
       </PracticeContainer>
+
+      <ContentContainer>
+        <h3 style={{ padding: "10px 0", color: "#4b5563" }}>
+          The partitive case is one of the most important grammatical cases in
+          Finnish. It is used to indicate partial objects, indefinite amounts,
+          and in various other contexts.
+        </h3>
+
+        <UsageExplanation>
+          <UsageTitle>When to Use the Partitive Case:</UsageTitle>
+          <UsageList>
+            <UsageListItem>
+              With indefinite quantities (some water, a few books)
+            </UsageListItem>
+            <UsageListItem>
+              With numbers greater than one (two apples, five houses)
+            </UsageListItem>
+            <UsageListItem>
+              In negative sentences (I don&apos;t have money)
+            </UsageListItem>
+            <UsageListItem>
+              With certain prepositions (without help, with friends)
+            </UsageListItem>
+            <UsageListItem>
+              To express ongoing actions (I&apos;m reading a book)
+            </UsageListItem>
+          </UsageList>
+        </UsageExplanation>
+      </ContentContainer>
+
+      {partitiveRules.map((rule, index) => (
+        <ContentContainer key={index}>
+          <RuleTitle>{rule.name}</RuleTitle>
+          <RuleDescription>{rule.description}</RuleDescription>
+
+          {/* Mobile Card View */}
+          <ExampleCardsContainer>
+            {rule.examples.map((example, idx) => (
+              <ExampleCard key={idx}>
+                <CardRow>
+                  <CardLabel>Noun:</CardLabel>
+                  <CardValue>
+                    {example.singular} ({example.english})
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Partitive:</CardLabel>
+                  <CardValue>{example.partitive}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Partitive Plural:</CardLabel>
+                  <CardValue>{example.partitivePlural}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Usage:</CardLabel>
+                  <CardValue>{example.usage}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example (singular):</CardLabel>
+                  <CardValue>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example (plural):</CardLabel>
+                  <CardValue>
+                    {example.partitiveExample}
+                    <ExampleSentence>
+                      {example.partitiveTranslation}
+                    </ExampleSentence>
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Notes:</CardLabel>
+                  <CardValue>{example.notes}</CardValue>
+                </CardRow>
+              </ExampleCard>
+            ))}
+          </ExampleCardsContainer>
+
+          {/* Desktop Table View */}
+          <ExampleTable>
+            <thead>
+              <tr>
+                <TableHeader>Noun (English)</TableHeader>
+                <TableHeader>Partitive</TableHeader>
+                <TableHeader>Partitive Plural</TableHeader>
+                <TableHeader>Usage</TableHeader>
+                <TableHeader>Example (Singular)</TableHeader>
+                <TableHeader>Example (Plural)</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              {rule.examples.map((example, idx) => (
+                <tr key={idx}>
+                  <TableCell>
+                    {example.singular} ({example.english})
+                  </TableCell>
+                  <TableCell>{example.partitive}</TableCell>
+                  <TableCell>{example.partitivePlural}</TableCell>
+                  <TableCell>{example.usage}</TableCell>
+                  <TableCell>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </TableCell>
+                  <TableCell>
+                    {example.partitiveExample}
+                    <ExampleSentence>
+                      {example.partitiveTranslation}
+                    </ExampleSentence>
+                  </TableCell>
+                </tr>
+              ))}
+            </tbody>
+          </ExampleTable>
+        </ContentContainer>
+      ))}
     </Container>
   );
 };

@@ -498,111 +498,6 @@ const NounPluralization = () => {
         <Subtitle>Learn how to form plural stems and cases in Finnish</Subtitle>
       </Header>
 
-      <ContentContainer>
-        <UsageExplanation>
-          <p>
-            In Finnish, we need to find the plural stem before adding case
-            suffixes. To transform the singular stem into the plural stem, we
-            typically add the letter &quot;i&quot;, but there are several
-            important rules to follow.
-          </p>
-
-          <p>
-            The following diagrams show the transformation process:
-            <br />
-            <strong>
-              Perusmuoto (Basic form) → Yksikön vartalo (Singular stem) →
-              Monikon vartalo (Plural stem) → Monikon inessiivi (-ssa/ssä) or
-              adessiivi (-lla/llä)
-            </strong>
-          </p>
-        </UsageExplanation>
-      </ContentContainer>
-
-      {pluralizationRules.map((rule, index) => (
-        <ContentContainer key={index}>
-          <RuleTitle>{rule.name}</RuleTitle>
-          <RuleDescription>{rule.description}</RuleDescription>
-
-          {/* Mobile Card View */}
-          <ExampleCardsContainer>
-            {rule.examples.map((example, idx) => (
-              <ExampleCard key={idx}>
-                <CardRow>
-                  <CardLabel>Perusmuoto:</CardLabel>
-                  <CardValue>{example.singular}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>English:</CardLabel>
-                  <CardValue>{example.english}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Yksikön vartalo:</CardLabel>
-                  <CardValue>{example.singularStem}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Monikon vartalo:</CardLabel>
-                  <CardValue>{example.pluralStem}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Monikon inessiivi/adessiivi:</CardLabel>
-                  <CardValue>
-                    {example.inessive}/{example.adessive}
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Sääntö:</CardLabel>
-                  <CardValue>{example.rule}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example:</CardLabel>
-                  <CardValue>
-                    {example.exampleSentence}
-                    <ExampleSentence>
-                      {example.exampleTranslation}
-                    </ExampleSentence>
-                  </CardValue>
-                </CardRow>
-              </ExampleCard>
-            ))}
-          </ExampleCardsContainer>
-
-          {/* Desktop Table View */}
-          <ExampleTable>
-            <thead>
-              <tr>
-                <TableHeader>Perusmuoto (Basic form)</TableHeader>
-                <TableHeader>English</TableHeader>
-                <TableHeader>Yksikön vartalo (Singular stem)</TableHeader>
-                <TableHeader>Monikon vartalo (Plural stem)</TableHeader>
-                <TableHeader>Monikon inessiivi/adessiivi</TableHeader>
-                <TableHeader>Sääntö (Rule)</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {rule.examples.map((example, idx) => (
-                <tr key={idx}>
-                  <TableCell>
-                    {example.singular}
-                    <ExampleSentence>{example.exampleSentence}</ExampleSentence>
-                    <ExampleSentence>
-                      {example.exampleTranslation}
-                    </ExampleSentence>
-                  </TableCell>
-                  <TableCell>{example.english}</TableCell>
-                  <TableCell>{example.singularStem}</TableCell>
-                  <TableCell>{example.pluralStem}</TableCell>
-                  <TableCell>
-                    {example.inessive}/{example.adessive}
-                  </TableCell>
-                  <TableCell>{example.rule}</TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </ExampleTable>
-        </ContentContainer>
-      ))}
-
       <PracticeContainer>
         <PracticeTitle>Practice Plural Stem Formation</PracticeTitle>
         <p>Enter a Finnish noun to see its plural stem and case forms:</p>
@@ -720,6 +615,111 @@ const NounPluralization = () => {
           </ResultContainer>
         )}
       </PracticeContainer>
+
+      <ContentContainer>
+        <UsageExplanation>
+          <p>
+            In Finnish, we need to find the plural stem before adding case
+            suffixes. To transform the singular stem into the plural stem, we
+            typically add the letter &quot;i&quot;, but there are several
+            important rules to follow.
+          </p>
+
+          <p>
+            The following diagrams show the transformation process:
+            <br />
+            <strong>
+              Perusmuoto (Basic form) → Yksikön vartalo (Singular stem) →
+              Monikon vartalo (Plural stem) → Monikon inessiivi (-ssa/ssä) or
+              adessiivi (-lla/llä)
+            </strong>
+          </p>
+        </UsageExplanation>
+      </ContentContainer>
+
+      {pluralizationRules.map((rule, index) => (
+        <ContentContainer key={index}>
+          <RuleTitle>{rule.name}</RuleTitle>
+          <RuleDescription>{rule.description}</RuleDescription>
+
+          {/* Mobile Card View */}
+          <ExampleCardsContainer>
+            {rule.examples.map((example, idx) => (
+              <ExampleCard key={idx}>
+                <CardRow>
+                  <CardLabel>Perusmuoto:</CardLabel>
+                  <CardValue>{example.singular}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>English:</CardLabel>
+                  <CardValue>{example.english}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Yksikön vartalo:</CardLabel>
+                  <CardValue>{example.singularStem}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Monikon vartalo:</CardLabel>
+                  <CardValue>{example.pluralStem}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Monikon inessiivi/adessiivi:</CardLabel>
+                  <CardValue>
+                    {example.inessive}/{example.adessive}
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Sääntö:</CardLabel>
+                  <CardValue>{example.rule}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example:</CardLabel>
+                  <CardValue>
+                    {example.exampleSentence}
+                    <ExampleSentence>
+                      {example.exampleTranslation}
+                    </ExampleSentence>
+                  </CardValue>
+                </CardRow>
+              </ExampleCard>
+            ))}
+          </ExampleCardsContainer>
+
+          {/* Desktop Table View */}
+          <ExampleTable>
+            <thead>
+              <tr>
+                <TableHeader>Perusmuoto (Basic form)</TableHeader>
+                <TableHeader>English</TableHeader>
+                <TableHeader>Yksikön vartalo (Singular stem)</TableHeader>
+                <TableHeader>Monikon vartalo (Plural stem)</TableHeader>
+                <TableHeader>Monikon inessiivi/adessiivi</TableHeader>
+                <TableHeader>Sääntö (Rule)</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              {rule.examples.map((example, idx) => (
+                <tr key={idx}>
+                  <TableCell>
+                    {example.singular}
+                    <ExampleSentence>{example.exampleSentence}</ExampleSentence>
+                    <ExampleSentence>
+                      {example.exampleTranslation}
+                    </ExampleSentence>
+                  </TableCell>
+                  <TableCell>{example.english}</TableCell>
+                  <TableCell>{example.singularStem}</TableCell>
+                  <TableCell>{example.pluralStem}</TableCell>
+                  <TableCell>
+                    {example.inessive}/{example.adessive}
+                  </TableCell>
+                  <TableCell>{example.rule}</TableCell>
+                </tr>
+              ))}
+            </tbody>
+          </ExampleTable>
+        </ContentContainer>
+      ))}
     </Container>
   );
 };

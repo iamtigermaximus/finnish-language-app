@@ -27,6 +27,7 @@ export const ContentContainer = styled.div`
     padding-top: 2rem;
     padding-bottom: 2rem;
   } */
+  margin: 20px 0;
 `;
 
 export const Header = styled.header`

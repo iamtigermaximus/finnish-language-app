@@ -341,126 +341,6 @@ const IllativeTutorial = () => {
         </Subtitle>
       </Header>
 
-      <ContentContainer>
-        <p>
-          The illative case is one of the six locative cases in Finnish and
-          indicates movement into or toward something. It answers the question
-          &quot;mihin?&quot; (where to?) and is essential for expressing
-          direction.
-        </p>
-
-        <UsageExplanation>
-          <UsageTitle>When to Use the Illative Case:</UsageTitle>
-          <UsageList>
-            <UsageListItem>
-              Movement into something (Menen taloon. - I go into the house.)
-            </UsageListItem>
-            <UsageListItem>
-              Movement toward something (Kävelen kouluun. - I walk to school.)
-            </UsageListItem>
-            <UsageListItem>
-              Figurative movement (Rakastuin häneen. - I fell in love with
-              him/her.)
-            </UsageListItem>
-            <UsageListItem>
-              Change of state (Jäädyin jääksi. - I froze into ice.)
-            </UsageListItem>
-            <UsageListItem>
-              With certain verbs (uskoa johonkin - to believe in something)
-            </UsageListItem>
-          </UsageList>
-        </UsageExplanation>
-      </ContentContainer>
-
-      {illativeRules.map((rule, index) => (
-        <ContentContainer key={index}>
-          <RuleTitle>{rule.name}</RuleTitle>
-          <RuleDescription>{rule.description}</RuleDescription>
-
-          {/* Mobile Card View */}
-          <ExampleCardsContainer>
-            {rule.examples.map((example, idx) => (
-              <ExampleCard key={idx}>
-                <CardRow>
-                  <CardLabel>Noun:</CardLabel>
-                  <CardValue>
-                    {example.singular} ({example.english})
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Illative:</CardLabel>
-                  <CardValue>{example.illative}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Illative Plural:</CardLabel>
-                  <CardValue>{example.illativePlural}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Usage:</CardLabel>
-                  <CardValue>{example.usage}</CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example (singular):</CardLabel>
-                  <CardValue>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Example (plural):</CardLabel>
-                  <CardValue>
-                    {example.illativePluralExample}
-                    <ExampleSentence>
-                      {example.illativePluralTranslation}
-                    </ExampleSentence>
-                  </CardValue>
-                </CardRow>
-                <CardRow>
-                  <CardLabel>Notes:</CardLabel>
-                  <CardValue>{example.notes}</CardValue>
-                </CardRow>
-              </ExampleCard>
-            ))}
-          </ExampleCardsContainer>
-
-          {/* Desktop Table View */}
-          <ExampleTable>
-            <thead>
-              <tr>
-                <TableHeader>Noun (English)</TableHeader>
-                <TableHeader>Illative</TableHeader>
-                <TableHeader>Illative Plural</TableHeader>
-                <TableHeader>Usage</TableHeader>
-                <TableHeader>Example (Singular)</TableHeader>
-                <TableHeader>Example (Plural)</TableHeader>
-              </tr>
-            </thead>
-            <tbody>
-              {rule.examples.map((example, idx) => (
-                <tr key={idx}>
-                  <TableCell>
-                    {example.singular} ({example.english})
-                  </TableCell>
-                  <TableCell>{example.illative}</TableCell>
-                  <TableCell>{example.illativePlural}</TableCell>
-                  <TableCell>{example.usage}</TableCell>
-                  <TableCell>
-                    {example.example}
-                    <ExampleSentence>{example.translation}</ExampleSentence>
-                  </TableCell>
-                  <TableCell>
-                    {example.illativePluralExample}
-                    <ExampleSentence>
-                      {example.illativePluralTranslation}
-                    </ExampleSentence>
-                  </TableCell>
-                </tr>
-              ))}
-            </tbody>
-          </ExampleTable>
-        </ContentContainer>
-      ))}
-
       <PracticeContainer>
         <PracticeTitle>Practice Illative Formation</PracticeTitle>
         <p>Enter a Finnish noun to see its illative form:</p>
@@ -598,6 +478,126 @@ const IllativeTutorial = () => {
           </ResultContainer>
         )}
       </PracticeContainer>
+
+      <ContentContainer>
+        <h3 style={{ padding: "10px 0", color: "#4b5563" }}>
+          The illative case is one of the six locative cases in Finnish and
+          indicates movement into or toward something. It answers the question
+          &quot;mihin?&quot; (where to?) and is essential for expressing
+          direction.
+        </h3>
+
+        <UsageExplanation>
+          <UsageTitle>When to Use the Illative Case:</UsageTitle>
+          <UsageList>
+            <UsageListItem>
+              Movement into something (Menen taloon. - I go into the house.)
+            </UsageListItem>
+            <UsageListItem>
+              Movement toward something (Kävelen kouluun. - I walk to school.)
+            </UsageListItem>
+            <UsageListItem>
+              Figurative movement (Rakastuin häneen. - I fell in love with
+              him/her.)
+            </UsageListItem>
+            <UsageListItem>
+              Change of state (Jäädyin jääksi. - I froze into ice.)
+            </UsageListItem>
+            <UsageListItem>
+              With certain verbs (uskoa johonkin - to believe in something)
+            </UsageListItem>
+          </UsageList>
+        </UsageExplanation>
+      </ContentContainer>
+
+      {illativeRules.map((rule, index) => (
+        <ContentContainer key={index}>
+          <RuleTitle>{rule.name}</RuleTitle>
+          <RuleDescription>{rule.description}</RuleDescription>
+
+          {/* Mobile Card View */}
+          <ExampleCardsContainer>
+            {rule.examples.map((example, idx) => (
+              <ExampleCard key={idx}>
+                <CardRow>
+                  <CardLabel>Noun:</CardLabel>
+                  <CardValue>
+                    {example.singular} ({example.english})
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Illative:</CardLabel>
+                  <CardValue>{example.illative}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Illative Plural:</CardLabel>
+                  <CardValue>{example.illativePlural}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Usage:</CardLabel>
+                  <CardValue>{example.usage}</CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example (singular):</CardLabel>
+                  <CardValue>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Example (plural):</CardLabel>
+                  <CardValue>
+                    {example.illativePluralExample}
+                    <ExampleSentence>
+                      {example.illativePluralTranslation}
+                    </ExampleSentence>
+                  </CardValue>
+                </CardRow>
+                <CardRow>
+                  <CardLabel>Notes:</CardLabel>
+                  <CardValue>{example.notes}</CardValue>
+                </CardRow>
+              </ExampleCard>
+            ))}
+          </ExampleCardsContainer>
+
+          {/* Desktop Table View */}
+          <ExampleTable>
+            <thead>
+              <tr>
+                <TableHeader>Noun (English)</TableHeader>
+                <TableHeader>Illative</TableHeader>
+                <TableHeader>Illative Plural</TableHeader>
+                <TableHeader>Usage</TableHeader>
+                <TableHeader>Example (Singular)</TableHeader>
+                <TableHeader>Example (Plural)</TableHeader>
+              </tr>
+            </thead>
+            <tbody>
+              {rule.examples.map((example, idx) => (
+                <tr key={idx}>
+                  <TableCell>
+                    {example.singular} ({example.english})
+                  </TableCell>
+                  <TableCell>{example.illative}</TableCell>
+                  <TableCell>{example.illativePlural}</TableCell>
+                  <TableCell>{example.usage}</TableCell>
+                  <TableCell>
+                    {example.example}
+                    <ExampleSentence>{example.translation}</ExampleSentence>
+                  </TableCell>
+                  <TableCell>
+                    {example.illativePluralExample}
+                    <ExampleSentence>
+                      {example.illativePluralTranslation}
+                    </ExampleSentence>
+                  </TableCell>
+                </tr>
+              ))}
+            </tbody>
+          </ExampleTable>
+        </ContentContainer>
+      ))}
     </Container>
   );
 };

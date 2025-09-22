@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Link from "next/link";
 import {
   Navigation,
   MenuContainer,
@@ -20,7 +20,7 @@ import {
   SidebarDropdownContent,
   SidebarDropdownHeader,
   BurgerContainer,
-} from './Navbar.styles';
+} from "./Navbar.styles";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -61,12 +61,12 @@ const Navbar = () => {
         advanced: false,
         spokenFinnish: false,
       };
-      
+
       // If the clicked dropdown wasn't already open, open it
       if (!prev[dropdownName]) {
         newState[dropdownName] = true;
       }
-      
+
       return newState;
     });
   };
@@ -74,70 +74,89 @@ const Navbar = () => {
   // Dropdown content for each section
   const dropdownContent = {
     basics: [
-      { href: '/basics/greetings', label: 'Greetings' },
-      { href: '/basics/numbers-colors', label: 'Numbers and Colors' },
-      { href: '/basics/days-months', label: 'Days and Months' },
-      { href: '/basics/time', label: 'Time' },
-      { href: '/basics/directions', label: 'Directions' },
-      { href: '/basics/personal-pronouns', label: 'Personal Pronouns' },
+      { href: "/basics/greetings", label: "Greetings" },
+      { href: "/basics/numbers-colors", label: "Numbers and Colors" },
+      { href: "/basics/days-months", label: "Days and Months" },
+      { href: "/basics/time", label: "Time" },
+      { href: "/basics/directions", label: "Directions" },
+      { href: "/basics/personal-pronouns", label: "Personal Pronouns" },
       {
-        href: '/basics/demonstrative-pronouns',
-        label: 'Demonstrative Pronouns',
+        href: "/basics/demonstrative-pronouns",
+        label: "Demonstrative Pronouns",
       },
       {
-        href: '/basics/interrogative-pronouns',
-        label: 'Interrogative Pronouns',
+        href: "/basics/interrogative-pronouns",
+        label: "Interrogative Pronouns",
       },
-      { href: '/basics/basic-verbs', label: 'Basic Verbs' },
-      { href: '/basics/adjectives', label: 'Adjectives' },
-      { href: '/basics/useful-words', label: 'Useful Words' },
+      { href: "/basics/basic-verbs", label: "Basic Verbs" },
+      { href: "/basics/adjectives", label: "Adjectives" },
+      { href: "/basics/useful-words", label: "Useful Words" },
     ],
     intermediate: [
-      { href: '/intermediate/kpt', label: 'KPT' },
+      { href: "/intermediate/kpt", label: "KPT" },
       {
-        href: '/intermediate/verbtypes-present',
-        label: 'Verb Types and the Present Tense',
+        href: "/intermediate/verbtypes-present",
+        label: "Verb Types and the Present Tense",
       },
-      { href: '/intermediate/past-tense', label: 'Past Tense' },
-      { href: '/intermediate/perfect-tense', label: 'Perfect Tense' },
+      { href: "/intermediate/past-tense", label: "Past Tense" },
+      { href: "/intermediate/perfect-tense", label: "Perfect Tense" },
       {
-        href: '/intermediate/past-perfect-tense',
-        label: 'Past Perfect Tense',
+        href: "/intermediate/past-perfect-tense",
+        label: "Past Perfect Tense",
       },
-      { href: '/intermediate/partitive', label: 'Partitive' },
-      { href: '/intermediate/word-types', label: 'Word Types' },
-      { href: '/intermediate/passive', label: 'Passive' },
-      { href: '/intermediate/necessive', label: 'Necessive' },
-      { href: '/intermediate/imperative', label: 'Imperative' },
-      { href: '/intermediate/object', label: 'Object' },
-      { href: '/intermediate/adverb', label: 'Adverb' },
-      { href: '/intermediate/case-usage-helper', label: 'Case Usage Helper' },
-      { href: '/intermediate/verb-conjugator', label: 'Verb Conjugator Helper' },
-      { href: '/intermediate/connector-words', label: 'Connector Words Helper' },
+      { href: "/intermediate/partitive", label: "Partitive" },
+      { href: "/intermediate/word-types", label: "Word Types" },
+      { href: "/intermediate/passive", label: "Passive" },
+      { href: "/intermediate/necessive", label: "Necessive" },
+      { href: "/intermediate/imperative", label: "Imperative" },
+      { href: "/intermediate/object", label: "Object" },
+      { href: "/intermediate/adverb", label: "Adverb" },
+      { href: "/intermediate/case-usage-helper", label: "Case Usage Helper" },
+      {
+        href: "/intermediate/verb-conjugator",
+        label: "Verb Conjugator Helper",
+      },
+      {
+        href: "/intermediate/connector-words",
+        label: "Connector Words Helper",
+      },
     ],
     advanced: [
-      { href: '/advanced/noun-pluralization', label: 'Noun Pluralization' },
-      { href: '/advanced/noun-partitive-pluralization', label: 'Noun Partitive Pluralization' },
-      { href: '/advanced/noun-genetive-pluralization', label: 'Noun Genetive Pluralization' },
-      { href: '/advanced/noun-illative-pluralization', label: 'Noun Illative Pluralization' },
-      { href: '/advanced/noun-form-verb', label: 'Noun Form Of Verb' },
-      { href: '/advanced/conditional-tense', label: 'Conditional Tense' },
-      { href: '/advanced/verb-rections', label: 'Verb Rections' },
-      { href: '/advanced/idioms', label: 'Idioms' },
-      { href: '/advanced/business-finnish', label: 'Business Finnish' },
+      { href: "/advanced/noun-pluralization", label: "Noun Pluralization" },
+      {
+        href: "/advanced/noun-partitive-pluralization",
+        label: "Noun Partitive Pluralization",
+      },
+      {
+        href: "/advanced/noun-genetive-pluralization",
+        label: "Noun Genetive Pluralization",
+      },
+      {
+        href: "/advanced/noun-illative-pluralization",
+        label: "Noun Illative Pluralization",
+      },
+      { href: "/advanced/noun-form-verb", label: "Noun Form Of Verb" },
+      { href: "/advanced/conditional-tense", label: "Conditional Tense" },
+      { href: "/advanced/verb-rections", label: "Verb Rections" },
+      { href: "/advanced/idioms", label: "Idioms" },
+      { href: "/advanced/business-finnish", label: "Business Finnish" },
     ],
     spokenFinnish: [
       {
-        href: '/spoken-finnish/everyday-conversations',
-        label: 'Everyday Conversations',
+        href: "/spoken-finnish/everyday-conversations",
+        label: "Everyday Conversations",
       },
-      { 
-        href: '/spoken-finnish/informal-grammar', 
-        label: 'Informal Grammar' 
+      {
+        href: "/spoken-finnish/informal-grammar",
+        label: "Informal Grammar",
       },
-      { 
-        href: '/spoken-finnish/puhekieli', 
-        label: 'Puhekieli' 
+      {
+        href: "/spoken-finnish/puhekieli",
+        label: "Puhekieli",
+      },
+      {
+        href: "/spoken-finnish/sentence-analyzer",
+        label: "Sentence Construction Helper",
       },
     ],
   };
@@ -146,13 +165,13 @@ const Navbar = () => {
     <Navigation>
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <MobileLogoContainer>  
-          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <MobileLogoContainer>
+          <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
             OPI SUOMEA
           </Link>
         </MobileLogoContainer>
@@ -165,27 +184,27 @@ const Navbar = () => {
         </BurgerContainer>
       </div>
 
-      <Sidebar className={sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}>
+      <Sidebar className={sidebarOpen ? "sidebar-open" : "sidebar-closed"}>
         <CloseButton onClick={toggleSidebar}>&times;</CloseButton>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <SidebarLogoContainer>  
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <SidebarLogoContainer>
+            <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
               OPI SUOMEA
             </Link>
           </SidebarLogoContainer>
         </div>
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'column',
+            display: "flex",
+            flexDirection: "column",
             gap: 10,
-            color: '#002E83',
+            color: "#002E83",
           }}
         >
           <Link
             href="/"
             onClick={closeSidebar}
-            style={{ color: '#002e83', fontSize: '16px' }}
+            style={{ color: "#002e83", fontSize: "16px" }}
           >
             Home
           </Link>
@@ -193,12 +212,12 @@ const Navbar = () => {
           {/* Basics Dropdown in Sidebar */}
           <SidebarDropdown>
             <SidebarDropdownHeader
-              onClick={() => toggleMobileDropdown('basics')}
+              onClick={() => toggleMobileDropdown("basics")}
             >
-              The Basics {mobileDropdowns.basics ? '▴' : '▾'}
+              The Basics {mobileDropdowns.basics ? "▴" : "▾"}
             </SidebarDropdownHeader>
             <SidebarDropdownContent
-              className={mobileDropdowns.basics ? 'open' : 'closed'}
+              className={mobileDropdowns.basics ? "open" : "closed"}
             >
               {dropdownContent.basics.map((item) => (
                 <Link
@@ -206,10 +225,10 @@ const Navbar = () => {
                   href={item.href}
                   onClick={closeSidebar}
                   style={{
-                    paddingLeft: '20px',
-                    display: 'block',
-                    fontSize: '14px',
-                    marginBottom: '8px',
+                    paddingLeft: "20px",
+                    display: "block",
+                    fontSize: "14px",
+                    marginBottom: "8px",
                   }}
                 >
                   {item.label}
@@ -221,12 +240,12 @@ const Navbar = () => {
           {/* Intermediate Dropdown in Sidebar */}
           <SidebarDropdown>
             <SidebarDropdownHeader
-              onClick={() => toggleMobileDropdown('intermediate')}
+              onClick={() => toggleMobileDropdown("intermediate")}
             >
-              Intermediate {mobileDropdowns.intermediate ? '▴' : '▾'}
+              Intermediate {mobileDropdowns.intermediate ? "▴" : "▾"}
             </SidebarDropdownHeader>
             <SidebarDropdownContent
-              className={mobileDropdowns.intermediate ? 'open' : 'closed'}
+              className={mobileDropdowns.intermediate ? "open" : "closed"}
             >
               {dropdownContent.intermediate.map((item) => (
                 <Link
@@ -234,10 +253,10 @@ const Navbar = () => {
                   href={item.href}
                   onClick={closeSidebar}
                   style={{
-                    paddingLeft: '20px',
-                    display: 'block',
-                    fontSize: '14px',
-                    marginBottom: '8px',
+                    paddingLeft: "20px",
+                    display: "block",
+                    fontSize: "14px",
+                    marginBottom: "8px",
                   }}
                 >
                   {item.label}
@@ -249,12 +268,12 @@ const Navbar = () => {
           {/* Advanced Dropdown in Sidebar */}
           <SidebarDropdown>
             <SidebarDropdownHeader
-              onClick={() => toggleMobileDropdown('advanced')}
+              onClick={() => toggleMobileDropdown("advanced")}
             >
-              Advanced {mobileDropdowns.advanced ? '▴' : '▾'}
+              Advanced {mobileDropdowns.advanced ? "▴" : "▾"}
             </SidebarDropdownHeader>
             <SidebarDropdownContent
-              className={mobileDropdowns.advanced ? 'open' : 'closed'}
+              className={mobileDropdowns.advanced ? "open" : "closed"}
             >
               {dropdownContent.advanced.map((item) => (
                 <Link
@@ -262,10 +281,10 @@ const Navbar = () => {
                   href={item.href}
                   onClick={closeSidebar}
                   style={{
-                    paddingLeft: '20px',
-                    display: 'block',
-                    fontSize: '14px',
-                    marginBottom: '8px',
+                    paddingLeft: "20px",
+                    display: "block",
+                    fontSize: "14px",
+                    marginBottom: "8px",
                   }}
                 >
                   {item.label}
@@ -277,12 +296,12 @@ const Navbar = () => {
           {/* Spoken Finnish Dropdown in Sidebar */}
           <SidebarDropdown>
             <SidebarDropdownHeader
-              onClick={() => toggleMobileDropdown('spokenFinnish')}
+              onClick={() => toggleMobileDropdown("spokenFinnish")}
             >
-              Spoken Finnish {mobileDropdowns.spokenFinnish ? '▴' : '▾'}
+              Spoken Finnish {mobileDropdowns.spokenFinnish ? "▴" : "▾"}
             </SidebarDropdownHeader>
             <SidebarDropdownContent
-              className={mobileDropdowns.spokenFinnish ? 'open' : 'closed'}
+              className={mobileDropdowns.spokenFinnish ? "open" : "closed"}
             >
               {dropdownContent.spokenFinnish.map((item) => (
                 <Link
@@ -290,10 +309,10 @@ const Navbar = () => {
                   href={item.href}
                   onClick={closeSidebar}
                   style={{
-                    paddingLeft: '20px',
-                    display: 'block',
-                    fontSize: '14px',
-                    marginBottom: '8px',
+                    paddingLeft: "20px",
+                    display: "block",
+                    fontSize: "14px",
+                    marginBottom: "8px",
                   }}
                 >
                   {item.label}
@@ -305,7 +324,7 @@ const Navbar = () => {
       </Sidebar>
 
       <Backdrop
-        className={sidebarOpen ? 'backdrop-open' : 'backdrop-closed'}
+        className={sidebarOpen ? "backdrop-open" : "backdrop-closed"}
         onClick={closeSidebar}
       />
 
@@ -314,15 +333,15 @@ const Navbar = () => {
 
         {/* Basics Dropdown */}
         <DropdownContainer
-          onMouseEnter={() => handleDropdownEnter('basics')}
+          onMouseEnter={() => handleDropdownEnter("basics")}
           onMouseLeave={handleDropdownLeave}
         >
           <DropdownTrigger>The Basics ▾</DropdownTrigger>
-          {activeDropdown === 'basics' && (
+          {activeDropdown === "basics" && (
             <DropdownMenu>
               {dropdownContent.basics.map((item) => (
-                <DropdownItem 
-                  key={item.href} 
+                <DropdownItem
+                  key={item.href}
                   href={item.href}
                   onClick={handleDropdownItemClick}
                 >
@@ -335,15 +354,15 @@ const Navbar = () => {
 
         {/* Intermediate Dropdown */}
         <DropdownContainer
-          onMouseEnter={() => handleDropdownEnter('intermediate')}
+          onMouseEnter={() => handleDropdownEnter("intermediate")}
           onMouseLeave={handleDropdownLeave}
         >
           <DropdownTrigger>Intermediate ▾</DropdownTrigger>
-          {activeDropdown === 'intermediate' && (
+          {activeDropdown === "intermediate" && (
             <DropdownMenu>
               {dropdownContent.intermediate.map((item) => (
-                <DropdownItem 
-                  key={item.href} 
+                <DropdownItem
+                  key={item.href}
                   href={item.href}
                   onClick={handleDropdownItemClick}
                 >
@@ -356,15 +375,15 @@ const Navbar = () => {
 
         {/* Advanced Dropdown */}
         <DropdownContainer
-          onMouseEnter={() => handleDropdownEnter('advanced')}
+          onMouseEnter={() => handleDropdownEnter("advanced")}
           onMouseLeave={handleDropdownLeave}
         >
           <DropdownTrigger>Advanced ▾</DropdownTrigger>
-          {activeDropdown === 'advanced' && (
+          {activeDropdown === "advanced" && (
             <DropdownMenu>
               {dropdownContent.advanced.map((item) => (
-                <DropdownItem 
-                  key={item.href} 
+                <DropdownItem
+                  key={item.href}
                   href={item.href}
                   onClick={handleDropdownItemClick}
                 >
@@ -377,15 +396,15 @@ const Navbar = () => {
 
         {/* Spoken Finnish Dropdown */}
         <DropdownContainer
-          onMouseEnter={() => handleDropdownEnter('spokenFinnish')}
+          onMouseEnter={() => handleDropdownEnter("spokenFinnish")}
           onMouseLeave={handleDropdownLeave}
         >
           <DropdownTrigger>Spoken Finnish ▾</DropdownTrigger>
-          {activeDropdown === 'spokenFinnish' && (
+          {activeDropdown === "spokenFinnish" && (
             <DropdownMenu>
               {dropdownContent.spokenFinnish.map((item) => (
-                <DropdownItem 
-                  key={item.href} 
+                <DropdownItem
+                  key={item.href}
                   href={item.href}
                   onClick={handleDropdownItemClick}
                 >

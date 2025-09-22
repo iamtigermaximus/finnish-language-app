@@ -10,6 +10,24 @@ export const Container = styled.div`
   margin-bottom: 20px;
 `;
 
+export const ContentContainer = styled.div`
+  /* max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  } */
+  margin: 20px 0;
+`;
+
 export const Header = styled.header`
   margin-bottom: 2rem;
 `;
