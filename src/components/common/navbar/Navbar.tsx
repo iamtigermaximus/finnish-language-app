@@ -298,7 +298,7 @@ const Navbar = () => {
             <SidebarDropdownHeader
               onClick={() => toggleMobileDropdown("spokenFinnish")}
             >
-              Spoken Finnish {mobileDropdowns.spokenFinnish ? "▴" : "▾"}
+              Learning Tools {mobileDropdowns.spokenFinnish ? "▴" : "▾"}
             </SidebarDropdownHeader>
             <SidebarDropdownContent
               className={mobileDropdowns.spokenFinnish ? "open" : "closed"}
@@ -399,7 +399,7 @@ const Navbar = () => {
           onMouseEnter={() => handleDropdownEnter("spokenFinnish")}
           onMouseLeave={handleDropdownLeave}
         >
-          <DropdownTrigger>Spoken Finnish ▾</DropdownTrigger>
+          <DropdownTrigger>Learning Tools ▾</DropdownTrigger>
           {activeDropdown === "spokenFinnish" && (
             <DropdownMenu>
               {dropdownContent.spokenFinnish.map((item) => (
