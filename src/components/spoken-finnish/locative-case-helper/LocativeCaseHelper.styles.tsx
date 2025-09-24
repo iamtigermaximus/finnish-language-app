@@ -77,7 +77,6 @@ export const FilterButton = styled.button<{ $active: boolean }>`
 //     grid-template-columns: 1fr 1fr;
 //   }
 // `;
-
 export const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;

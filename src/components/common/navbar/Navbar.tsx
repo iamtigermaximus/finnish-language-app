@@ -158,6 +158,10 @@ const Navbar = () => {
         href: "/spoken-finnish/sentence-analyzer",
         label: "Sentence Construction Helper",
       },
+      {
+        href: "/spoken-finnish/locative-case-helper",
+        label: "Locative Case Helper",
+      },
     ],
   };
 
