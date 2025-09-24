@@ -210,8 +210,8 @@ const SentenceAnalyzer = () => {
       <PracticeContainer>
         <PracticeTitle>Analyze Your Sentence</PracticeTitle>
         <p>
-          Enter a Finnish sentence to see AI corrections, translation, pattern,
-          and suffix notes:
+          Enter a Finnish sentence to see corrections, translation, pattern, and
+          suffix notes:
         </p>
 
         <Form onSubmit={handleSubmit}>
@@ -230,9 +230,47 @@ const SentenceAnalyzer = () => {
             </Button>
           </InputContainer>
         </Form>
-
         {loading && (
-          <LoadingContainer>Analyzing your sentence...</LoadingContainer>
+          <LoadingContainer>
+            <div
+              style={{
+                animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              }}
+            >
+              <div
+                style={{
+                  borderRadius: "9999px",
+                  backgroundColor: "#bfdbfe",
+                  height: "3rem",
+                  width: "3rem",
+                  marginBottom: "1rem",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              ></div>
+              <div
+                style={{
+                  height: "1rem",
+                  backgroundColor: "#bfdbfe",
+                  borderRadius: "0.25rem",
+                  width: "75%",
+                  marginBottom: "0.5rem",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              ></div>
+              <div
+                style={{
+                  height: "1rem",
+                  backgroundColor: "#bfdbfe",
+                  borderRadius: "0.25rem",
+                  width: "50%",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              ></div>
+            </div>
+          </LoadingContainer>
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
         {success && <SuccessMessage>{success}</SuccessMessage>}

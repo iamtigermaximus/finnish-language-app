@@ -304,6 +304,7 @@ export const TipContainer = styled.div`
   padding: 1rem;
   border: 1px solid #fcd34d;
   border-radius: 0.5rem;
+  margin: 20px 0;
 `;
 
 export const TipTitle = styled.h3`

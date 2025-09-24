@@ -162,6 +162,10 @@ const Navbar = () => {
         href: "/spoken-finnish/locative-case-helper",
         label: "Locative Case Helper",
       },
+      {
+        href: "/spoken-finnish/question-builder-helper",
+        label: "Question Builder  Helper",
+      },
     ],
   };
 
