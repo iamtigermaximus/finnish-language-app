@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // import styled from 'styled-components';
 
@@ -89,7 +89,7 @@
 //     width: 60%;
 //   }
 // `;
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -100,6 +100,16 @@ export const Container = styled.div`
   color: #333;
 `;
 
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
+`;
 export const ExplanationSection = styled.div`
   background: white;
   /* padding: 30px;
@@ -151,13 +161,13 @@ export const SummaryBox = styled.div`
 
 export const CaseBadge = styled.div`
   display: inline-block;
-  background-color:  #0066cc;
+  background-color: #0066cc;
   color: white;
   padding: 6px 12px;
   border-radius: 20px;
   font-weight: bold;
   margin: 15px 0 10px 0;
-  font-size: '1.1rem';
+  font-size: "1.1rem";
 `;
 
 export const SectionDivider = styled.hr`
@@ -173,7 +183,7 @@ export const FunFactBox = styled.div`
   border-radius: 8px;
   margin: 15px 0;
   /* border-left: 4px solid #1890ff; */
-  
+
   span {
     font-weight: bold;
     color: #1890ff;
@@ -199,7 +209,7 @@ export const TwoColumnLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -233,16 +243,16 @@ export const TabsContainer = styled.div`
 
 export const TabButton = styled.button<{ active: boolean }>`
   padding: 12px 20px;
-  background-color: ${props => props.active ? '#0066cc' : '#f0f0f0'};
-  color: ${props => props.active ? 'white' : '#333'};
+  background-color: ${(props) => (props.active ? "#0066cc" : "#f0f0f0")};
+  color: ${(props) => (props.active ? "white" : "#333")};
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: ${props => props.active ? 'bold' : 'normal'};
+  font-weight: ${(props) => (props.active ? "bold" : "normal")};
   transition: all 0.3s;
-  
+
   &:hover {
-    background-color: ${props => props.active ? '#0066cc' : '#e0e0e0'};
+    background-color: ${(props) => (props.active ? "#0066cc" : "#e0e0e0")};
   }
 `;
 
@@ -252,7 +262,7 @@ export const WarningBox = styled.div`
   border-radius: 8px;
   border-left: 4px solid #ffa940;
   margin: 15px 0;
-  
+
   span {
     font-weight: bold;
     color: #ffa940;
@@ -266,18 +276,18 @@ export const PriorityIndicator = styled.div`
   border: 1px solid #d3adf7;
   margin: 20px 0;
   text-align: center;
-  
+
   .priority-chain {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    
+
     .priority-item {
       display: flex;
       align-items: center;
       margin: 0 10px;
-      
+
       .number {
         display: inline-block;
         width: 25px;
@@ -288,12 +298,12 @@ export const PriorityIndicator = styled.div`
         line-height: 25px;
         margin-right: 8px;
       }
-      
+
       .case {
         font-weight: bold;
         color: #722ed1;
       }
-      
+
       .arrow {
         margin-left: 10px;
         color: #722ed1;
@@ -301,7 +311,7 @@ export const PriorityIndicator = styled.div`
       }
     }
   }
-  
+
   .explanation {
     font-style: italic;
     color: #722ed1;

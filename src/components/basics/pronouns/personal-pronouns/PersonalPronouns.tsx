@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   CaseTitle,
   Container,
@@ -10,131 +10,132 @@ import {
   StyledTable,
   StyledTableCell,
   StyledTableHeader,
-} from './PersonalPronouns.styles';
+  Title,
+} from "./PersonalPronouns.styles";
 
 const tableData = [
   {
-    case: 'Nominative',
-    i: 'minä',
-    you: 'sinä',
-    heShe: 'hän',
-    we: 'me',
-    youPlural: 'te',
-    they: 'he',
+    case: "Nominative",
+    i: "minä",
+    you: "sinä",
+    heShe: "hän",
+    we: "me",
+    youPlural: "te",
+    they: "he",
   },
   {
-    case: 'Stem',
-    i: 'minu',
-    you: 'sinu',
-    heShe: 'häne',
-    we: 'mei',
-    youPlural: 'tei',
-    they: 'hei',
+    case: "Stem",
+    i: "minu",
+    you: "sinu",
+    heShe: "häne",
+    we: "mei",
+    youPlural: "tei",
+    they: "hei",
   },
   {
-    case: 'Partitive',
-    i: 'minua',
-    you: 'sinua',
-    heShe: 'häntä',
-    we: 'meitä',
-    youPlural: 'teitä',
-    they: 'heitä',
+    case: "Partitive",
+    i: "minua",
+    you: "sinua",
+    heShe: "häntä",
+    we: "meitä",
+    youPlural: "teitä",
+    they: "heitä",
   },
   {
-    case: 'Genitive',
-    i: 'minun',
-    you: 'sinun',
-    heShe: 'hänen',
-    we: 'meidän',
-    youPlural: 'teidän',
-    they: 'heidän',
+    case: "Genitive",
+    i: "minun",
+    you: "sinun",
+    heShe: "hänen",
+    we: "meidän",
+    youPlural: "teidän",
+    they: "heidän",
   },
   {
-    case: 'Accusative',
-    i: 'minut',
-    you: 'sinut',
-    heShe: 'hänet',
-    we: 'meidät',
-    youPlural: 'teidät',
-    they: 'heidät',
+    case: "Accusative",
+    i: "minut",
+    you: "sinut",
+    heShe: "hänet",
+    we: "meidät",
+    youPlural: "teidät",
+    they: "heidät",
   },
   {
-    case: 'Illative',
-    i: 'minuun',
-    you: 'sinuun',
-    heShe: 'häneen',
-    we: 'meihin',
-    youPlural: 'teihin',
-    they: 'heihin',
+    case: "Illative",
+    i: "minuun",
+    you: "sinuun",
+    heShe: "häneen",
+    we: "meihin",
+    youPlural: "teihin",
+    they: "heihin",
   },
   {
-    case: 'Inessive',
-    i: 'minussa',
-    you: 'sinussa',
-    heShe: 'hänessä',
-    we: 'meissä',
-    youPlural: 'teissä',
-    they: 'heissä',
+    case: "Inessive",
+    i: "minussa",
+    you: "sinussa",
+    heShe: "hänessä",
+    we: "meissä",
+    youPlural: "teissä",
+    they: "heissä",
   },
   {
-    case: 'Elative',
-    i: 'minusta',
-    you: 'sinusta',
-    heShe: 'hänestä',
-    we: 'meistä',
-    youPlural: 'teistä',
-    they: 'heistä',
+    case: "Elative",
+    i: "minusta",
+    you: "sinusta",
+    heShe: "hänestä",
+    we: "meistä",
+    youPlural: "teistä",
+    they: "heistä",
   },
   {
-    case: 'Allative',
-    i: 'minulle',
-    you: 'sinulle',
-    heShe: 'hänelle',
-    we: 'meille',
-    youPlural: 'teille',
-    they: 'heille',
+    case: "Allative",
+    i: "minulle",
+    you: "sinulle",
+    heShe: "hänelle",
+    we: "meille",
+    youPlural: "teille",
+    they: "heille",
   },
   {
-    case: 'Adessive',
-    i: 'minulla',
-    you: 'sinulla',
-    heShe: 'hänellä',
-    we: 'meillä',
-    youPlural: 'teillä',
-    they: 'heillä',
+    case: "Adessive",
+    i: "minulla",
+    you: "sinulla",
+    heShe: "hänellä",
+    we: "meillä",
+    youPlural: "teillä",
+    they: "heillä",
   },
   {
-    case: 'Ablative',
-    i: 'minulta',
-    you: 'sinulta',
-    heShe: 'häneltä',
-    we: 'meiltä',
-    youPlural: 'teiltä',
-    they: 'heiltä',
+    case: "Ablative",
+    i: "minulta",
+    you: "sinulta",
+    heShe: "häneltä",
+    we: "meiltä",
+    youPlural: "teiltä",
+    they: "heiltä",
   },
 ];
 
 const PersonalPronouns = () => {
   return (
     <Container>
-      <h2>Personal Pronouns</h2>
+      <Title>Personal Pronouns</Title>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Personal pronouns are small words like I, you, he, she, we, and they.
           They are among the most common words in any language, and Finnish is
           no exception. In Finnish, pronouns work a little differently than in
           English. There is no difference between he and she, since the word hän
           can mean both. In everyday spoken Finnish, people often use se, which
-          normally means “it,” to refer to people instead of hän.{' '}
+          normally means “it,” to refer to people instead of hän.{" "}
         </p>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Another important difference is that Finnish pronouns change their
           form depending on their role in the sentence. For example, minä means
           “I,” minut means “me” as the object of a sentence, and minulle means
           “to me.” This may feel unusual at first, but the good news is that
           these changes follow regular patterns.
         </p>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Learning Finnish personal pronouns is not only about memorizing words
           but also about understanding how they behave in sentences. Once you
           get used to them, you will find it much easier to talk about yourself,

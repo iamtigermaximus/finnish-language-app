@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // import styled from 'styled-components';
 
@@ -90,7 +90,7 @@
 //   }
 // `;
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -99,6 +99,17 @@ export const Container = styled.div`
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   margin-bottom: 20px;
   color: black;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
 `;
 
 export const ExplanationSection = styled.div`
@@ -162,7 +173,7 @@ export const FormationTableRow = styled.tr`
   &:nth-child(even) {
     background-color: #f8f9fa;
   }
-  
+
   &:hover {
     background-color: #e9ecef;
   }
@@ -220,7 +231,7 @@ export const FunFactBox = styled.div`
   border-radius: 8px;
   margin: 15px 0;
   /* border-left: 4px solid #1890ff; */
-  
+
   span {
     font-weight: bold;
     color: #1890ff;
@@ -254,7 +265,7 @@ export const TwoColumnLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }

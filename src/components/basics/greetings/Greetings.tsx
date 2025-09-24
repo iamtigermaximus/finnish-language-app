@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 import {
   // CaseTitle,
   Container,
@@ -11,135 +11,136 @@ import {
   StyledTable,
   StyledTableCell,
   StyledTableHeader,
-} from './Greetings.styles';
+  Title,
+} from "./Greetings.styles";
 
 const tableData = [
   {
-    english: 'Hi!',
-    finnish: 'Moi!',
+    english: "Hi!",
+    finnish: "Moi!",
   },
   {
-    english: 'Hi!',
-    finnish: 'Hei!',
+    english: "Hi!",
+    finnish: "Hei!",
   },
   {
-    english: 'Hello!',
-    finnish: 'Terve!',
+    english: "Hello!",
+    finnish: "Terve!",
   },
   {
-    english: 'Good day!',
-    finnish: 'Päivää!',
+    english: "Good day!",
+    finnish: "Päivää!",
   },
   {
-    english: 'Good day!',
-    finnish: 'Hyvää päivää!',
+    english: "Good day!",
+    finnish: "Hyvää päivää!",
   },
   {
-    english: 'Good morning!',
-    finnish: 'Huomenta!',
+    english: "Good morning!",
+    finnish: "Huomenta!",
   },
   {
-    english: 'Good evening!',
-    finnish: 'Hyvää iltaa!',
+    english: "Good evening!",
+    finnish: "Hyvää iltaa!",
   },
   {
-    english: 'Good night!',
-    finnish: 'Hyvää yötä!',
+    english: "Good night!",
+    finnish: "Hyvää yötä!",
   },
   {
-    english: 'Bye!',
-    finnish: 'Moi moi!/Hei hei!',
+    english: "Bye!",
+    finnish: "Moi moi!/Hei hei!",
   },
   {
-    english: 'Goodbye!',
-    finnish: 'Näkemiin!',
+    english: "Goodbye!",
+    finnish: "Näkemiin!",
   },
   {
-    english: 'See you!',
-    finnish: 'Nähdään!',
+    english: "See you!",
+    finnish: "Nähdään!",
   },
   {
-    english: 'See you later!',
-    finnish: 'Nähdään myöhemmin!',
+    english: "See you later!",
+    finnish: "Nähdään myöhemmin!",
   },
   {
-    english: 'See you soon!',
-    finnish: 'Nähdään pian!',
+    english: "See you soon!",
+    finnish: "Nähdään pian!",
   },
   {
-    english: 'See you tomorrow!',
-    finnish: 'Nähdään huomenna!',
+    english: "See you tomorrow!",
+    finnish: "Nähdään huomenna!",
   },
   {
-    english: 'Welcome',
-    finnish: 'Tervetuloa',
+    english: "Welcome",
+    finnish: "Tervetuloa",
   },
   {
-    english: 'Thank you',
-    finnish: 'Kiitos',
+    english: "Thank you",
+    finnish: "Kiitos",
   },
   {
     english: "You're welcome/There you go",
-    finnish: 'Ole hyvä',
+    finnish: "Ole hyvä",
   },
   {
-    english: 'No problem',
-    finnish: 'Ei se mitään',
+    english: "No problem",
+    finnish: "Ei se mitään",
   },
   {
-    english: 'How are you?',
-    finnish: 'Mitä kuuluu?',
+    english: "How are you?",
+    finnish: "Mitä kuuluu?",
   },
   {
-    english: 'Fine thanks',
-    finnish: 'Hyvää kiitos',
+    english: "Fine thanks",
+    finnish: "Hyvää kiitos",
   },
   {
     english: "How's it going?",
-    finnish: 'Miten menee?',
+    finnish: "Miten menee?",
   },
   {
-    english: 'Fine / going well',
-    finnish: 'Hyvin/hyvin menee',
+    english: "Fine / going well",
+    finnish: "Hyvin/hyvin menee",
   },
   {
-    english: 'Nice to meet you',
-    finnish: 'Hauska tutustua',
+    english: "Nice to meet you",
+    finnish: "Hauska tutustua",
   },
   {
-    english: 'Nice to meet you',
-    finnish: 'Hauska tavata',
+    english: "Nice to meet you",
+    finnish: "Hauska tavata",
   },
   {
-    english: 'Thanks, the same',
-    finnish: 'Kiitos samoin',
+    english: "Thanks, the same",
+    finnish: "Kiitos samoin",
   },
   {
-    english: 'Happy Birthday!',
-    finnish: 'Hyvää syntymäpäivää!',
+    english: "Happy Birthday!",
+    finnish: "Hyvää syntymäpäivää!",
   },
   {
-    english: 'Happy Christmas',
-    finnish: 'Hyvää Joulua!',
+    english: "Happy Christmas",
+    finnish: "Hyvää Joulua!",
   },
   {
-    english: 'Congratulations / good luck',
-    finnish: 'Onnea!',
+    english: "Congratulations / good luck",
+    finnish: "Onnea!",
   },
   {
-    english: 'Congratulations',
-    finnish: 'Onneksi olkoon!',
+    english: "Congratulations",
+    finnish: "Onneksi olkoon!",
   },
   {
     english: "Lot's of luck / many congratulations",
-    finnish: 'Paljon onnea!',
+    finnish: "Paljon onnea!",
   },
 ];
 
 const Greetings = () => {
   return (
     <Container>
-      <h2>Greetings -Tervehdykset</h2>
+      <Title>Greetings -Tervehdykset</Title>
 
       {/* Desktop Table (7 columns) - shows on larger screens */}
       <StyledTable>

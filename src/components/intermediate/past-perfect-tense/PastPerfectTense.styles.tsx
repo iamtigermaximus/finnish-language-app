@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -8,6 +8,17 @@ export const Container = styled.div`
   padding: 20px;
   /* height: 100vh; */
   margin-bottom: 20px;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
 `;
 
 // Desktop Table (7 columns) - shows on larger screens

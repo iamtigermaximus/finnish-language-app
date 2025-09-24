@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 // import { breakpoints as bp } from '../../../../lib/utils/layout';
 
 // export const Container = styled.div`
@@ -46,6 +46,17 @@ export const Container = styled.div`
   /* background-color: orange; */
   color: black;
   margin-bottom: 20px;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
 `;
 
 export const SectionTitle = styled.h3`

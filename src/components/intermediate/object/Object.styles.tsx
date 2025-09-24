@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // import styled from 'styled-components';
 
@@ -89,7 +89,7 @@
 //     width: 60%;
 //   }
 // `;
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -98,7 +98,17 @@ export const Container = styled.div`
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6; */
   color: #333;
-  
+`;
+
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
 `;
 
 export const ExplanationSection = styled.div`
@@ -163,7 +173,7 @@ export const FormationTableRow = styled.tr`
   &:nth-child(even) {
     background-color: #f8f9fa;
   }
-  
+
   &:hover {
     background-color: #e9ecef;
   }
@@ -221,7 +231,7 @@ export const FunFactBox = styled.div`
   border-radius: 8px;
   margin: 15px 0;
   /* border-left: 4px solid #1890ff; */
-  
+
   span {
     font-weight: bold;
     color: #1890ff;
@@ -255,7 +265,7 @@ export const TwoColumnLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -287,7 +297,7 @@ export const ColorCodedExample = styled.div`
   border: 1px solid #ddd;
   margin: 15px 0;
   line-height: 2;
-  
+
   div {
     margin: 8px 0;
   }
@@ -302,16 +312,16 @@ export const TabsContainer = styled.div`
 
 export const TabButton = styled.button<{ active: boolean }>`
   padding: 12px 20px;
-  background-color: ${props => props.active ? ' #0066cc' : '#f0f0f0'};
-  color: ${props => props.active ? 'white' : '#333'};
+  background-color: ${(props) => (props.active ? " #0066cc" : "#f0f0f0")};
+  color: ${(props) => (props.active ? "white" : "#333")};
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: ${props => props.active ? 'bold' : 'normal'};
+  font-weight: ${(props) => (props.active ? "bold" : "normal")};
   transition: all 0.3s;
-  
+
   &:hover {
-    background-color: ${props => props.active ? '#6f42c1' : '#e0e0e0'};
+    background-color: ${(props) => (props.active ? "#6f42c1" : "#e0e0e0")};
   }
 `;
 
@@ -321,26 +331,26 @@ export const InteractiveExample = styled.div`
   border-radius: 8px;
   border: 1px solid #4682b4;
   margin: 20px 0;
-  
+
   .exercise {
     margin: 15px 0;
     padding: 10px;
     background-color: white;
     border-radius: 6px;
-    
+
     .options {
       display: flex;
       gap: 10px;
       margin-top: 10px;
       flex-wrap: wrap;
-      
+
       button {
         padding: 8px 12px;
         background-color: #e6f7ff;
         border: 1px solid #91d5ff;
         border-radius: 4px;
         cursor: pointer;
-        
+
         &:hover {
           background-color: #bae7ff;
         }
@@ -355,7 +365,7 @@ export const WarningBox = styled.div`
   border-radius: 8px;
   border-left: 4px solid #ffa940;
   margin: 15px 0;
-  
+
   span {
     font-weight: bold;
     color: #ffa940;
@@ -369,19 +379,19 @@ export const PriorityIndicator = styled.div`
   /* border: 1px solid #d3adf7; */
   margin: 20px 0;
   text-align: center;
-  overflow:word-wrap;
-  
+  overflow: word-wrap;
+
   .priority-chain {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-    
+
     .priority-item {
       display: flex;
       align-items: center;
       margin: 0 10px;
-      
+
       .number {
         display: inline-block;
         width: 25px;
@@ -392,12 +402,12 @@ export const PriorityIndicator = styled.div`
         line-height: 25px;
         margin-right: 8px;
       }
-      
+
       .case {
         font-weight: bold;
         color: #722ed1;
       }
-      
+
       .arrow {
         margin-left: 10px;
         color: #722ed1;
@@ -405,7 +415,7 @@ export const PriorityIndicator = styled.div`
       }
     }
   }
-  
+
   .explanation {
     font-style: italic;
     color: #722ed1;

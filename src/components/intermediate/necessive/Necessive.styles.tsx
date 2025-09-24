@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // import styled from 'styled-components';
 
@@ -89,7 +89,7 @@
 //     width: 60%;
 //   }
 // `;
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -99,6 +99,17 @@ export const Container = styled.div`
   line-height: 1.6; */
   color: #333;
   margin-bottom: 20px;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
 `;
 
 export const ExplanationSection = styled.div`
@@ -163,14 +174,14 @@ export const FormationTableRow = styled.tr`
   &:nth-child(even) {
     background-color: #f8f9fa;
   }
-  
+
   &:hover {
     background-color: #e9ecef;
   }
 `;
 
 export const FormationTableHeader = styled.th`
-  background-color:  #0066cc;
+  background-color: #0066cc;
   color: white;
   padding: 12px 15px;
   text-align: left;
@@ -221,7 +232,7 @@ export const FunFactBox = styled.div`
   border-radius: 8px;
   margin: 15px 0;
   /* border-left: 4px solid #1890ff; */
-  
+
   span {
     font-weight: bold;
     color: #1890ff;
@@ -255,7 +266,7 @@ export const TwoColumnLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }

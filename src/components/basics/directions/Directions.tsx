@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 import {
   CaseTitle,
   Container,
@@ -11,140 +11,141 @@ import {
   StyledTable,
   StyledTableCell,
   StyledTableHeader,
-} from './Directions.styles';
+  Title,
+} from "./Directions.styles";
 
 const directionsData = [
   {
-    english: 'Ahead, forward',
-    finnish: 'Edessä, eteenpäin',
+    english: "Ahead, forward",
+    finnish: "Edessä, eteenpäin",
   },
   {
-    english: 'Behind, backward',
-    finnish: 'Takana, taaksepäin',
+    english: "Behind, backward",
+    finnish: "Takana, taaksepäin",
   },
   {
-    english: 'Left',
-    finnish: 'Vasen',
+    english: "Left",
+    finnish: "Vasen",
   },
   {
-    english: 'To the left, turn left',
-    finnish: 'Tasemmalle, käänny vasemmalle',
+    english: "To the left, turn left",
+    finnish: "Tasemmalle, käänny vasemmalle",
   },
   {
-    english: 'Right',
-    finnish: 'Oikea',
+    english: "Right",
+    finnish: "Oikea",
   },
   {
-    english: 'To the right, turn right',
-    finnish: 'Oikealle, käänny oikealle',
+    english: "To the right, turn right",
+    finnish: "Oikealle, käänny oikealle",
   },
   {
-    english: 'North',
-    finnish: 'Pohjoinen',
+    english: "North",
+    finnish: "Pohjoinen",
   },
   {
-    english: 'East',
-    finnish: 'Itä',
+    english: "East",
+    finnish: "Itä",
   },
   {
-    english: 'South',
-    finnish: 'Etelä',
+    english: "South",
+    finnish: "Etelä",
   },
   {
-    english: 'West',
-    finnish: 'Länsi',
+    english: "West",
+    finnish: "Länsi",
   },
   {
-    english: 'North-east',
-    finnish: 'Koillinen',
+    english: "North-east",
+    finnish: "Koillinen",
   },
   {
-    english: 'North-west',
-    finnish: 'Luode',
+    english: "North-west",
+    finnish: "Luode",
   },
   {
-    english: 'South-east',
-    finnish: 'Kaakko',
+    english: "South-east",
+    finnish: "Kaakko",
   },
   {
-    english: 'South-west',
-    finnish: 'Lounas',
+    english: "South-west",
+    finnish: "Lounas",
   },
 ];
 
 const navigationData = [
   {
-    english: 'Which way',
-    finnish: 'Mikä suuntaan',
+    english: "Which way",
+    finnish: "Mikä suuntaan",
   },
   {
-    english: 'Where is',
-    finnish: 'Missä on',
+    english: "Where is",
+    finnish: "Missä on",
   },
   {
-    english: 'Over there (nearby, pointable)',
-    finnish: 'Tuolla',
+    english: "Over there (nearby, pointable)",
+    finnish: "Tuolla",
   },
   {
-    english: 'Over there (far away, out of sight)',
-    finnish: 'Siellä',
+    english: "Over there (far away, out of sight)",
+    finnish: "Siellä",
   },
   {
-    english: 'Can you show me on the map?',
-    finnish: 'Voitko näyttää minulle kartalla?',
+    english: "Can you show me on the map?",
+    finnish: "Voitko näyttää minulle kartalla?",
   },
   {
-    english: 'Welcome',
-    finnish: 'Tervetuloa',
+    english: "Welcome",
+    finnish: "Tervetuloa",
   },
   {
-    english: 'Entrance',
-    finnish: 'Sisään',
+    english: "Entrance",
+    finnish: "Sisään",
   },
   {
-    english: 'Exit',
-    finnish: 'Ulos',
+    english: "Exit",
+    finnish: "Ulos",
   },
   {
-    english: 'Emergency exit',
-    finnish: 'Varauloskäynti',
+    english: "Emergency exit",
+    finnish: "Varauloskäynti",
   },
   {
-    english: 'Push',
-    finnish: 'Työnnä',
+    english: "Push",
+    finnish: "Työnnä",
   },
   {
-    english: 'Pull',
-    finnish: 'Vedä',
+    english: "Pull",
+    finnish: "Vedä",
   },
   {
-    english: 'Bathroom',
-    finnish: 'Vessa, WC',
+    english: "Bathroom",
+    finnish: "Vessa, WC",
   },
   {
-    english: 'Reserved',
-    finnish: 'Varattu',
+    english: "Reserved",
+    finnish: "Varattu",
   },
   {
-    english: 'Escalator',
-    finnish: 'Rullaportaat',
+    english: "Escalator",
+    finnish: "Rullaportaat",
   },
   {
-    english: 'Elevator',
-    finnish: 'Hissi',
+    english: "Elevator",
+    finnish: "Hissi",
   },
   {
-    english: 'Queue number',
-    finnish: 'Vuoronumero',
+    english: "Queue number",
+    finnish: "Vuoronumero",
   },
 ];
 
 const Directions = () => {
   return (
     <Container>
-      <h2>Directions</h2>
+      <Title>Directions</Title>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Directional terms in Finnish with their English equivalents.
         </p>
       </div>
@@ -192,7 +193,7 @@ const Directions = () => {
 
       <h2>Navigation</h2>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Navigational terms in Finnish with their English equivalents.
         </p>
       </div>

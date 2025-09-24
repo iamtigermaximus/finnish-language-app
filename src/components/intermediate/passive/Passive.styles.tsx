@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -8,6 +8,17 @@ export const Container = styled.div`
   padding: 20px;
   /* height: 100vh; */
   margin-bottom: 20px;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
 `;
 
 // Desktop Table (7 columns) - shows on larger screens
@@ -91,7 +102,6 @@ export const MobileTableCell = styled.td`
   }
 `;
 
-
 export const ExplanationSection = styled.div`
   /* margin-top: 40px; */
   /* padding: 25px; */
@@ -104,7 +114,7 @@ export const ExplanationTitle = styled.h2`
   color: black;
   margin-top: 25px;
   margin-bottom: 10px;
-  
+
   &:first-child {
     margin-top: 0;
   }
@@ -144,8 +154,6 @@ export const SummaryBox = styled.div`
   margin-top: 20px;
 `;
 
-
-
 export const FormationTable = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -159,7 +167,7 @@ export const FormationTableRow = styled.tr`
   &:nth-child(even) {
     background-color: #f8f9fa;
   }
-  
+
   &:hover {
     background-color: #e9ecef;
   }
@@ -206,16 +214,16 @@ export const TabsContainer = styled.div`
 
 export const TabButton = styled.button<{ active: boolean }>`
   padding: 12px 20px;
-  background-color: ${props => props.active ? '#6f42c1' : '#f0f0f0'};
-  color: ${props => props.active ? 'white' : '#333'};
+  background-color: ${(props) => (props.active ? "#6f42c1" : "#f0f0f0")};
+  color: ${(props) => (props.active ? "white" : "#333")};
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: ${props => props.active ? 'bold' : 'normal'};
+  font-weight: ${(props) => (props.active ? "bold" : "normal")};
   transition: all 0.3s;
-  
+
   &:hover {
-    background-color: ${props => props.active ? '#6f42c1' : '#e0e0e0'};
+    background-color: ${(props) => (props.active ? "#6f42c1" : "#e0e0e0")};
   }
 `;
 
@@ -239,7 +247,7 @@ export const FunFactBox = styled.div`
   border-radius: 8px;
   margin: 15px 0;
   /* border-left: 4px solid #1890ff; */
-  
+
   span {
     font-weight: bold;
     color: #1890ff;
@@ -273,7 +281,7 @@ export const TwoColumnLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }

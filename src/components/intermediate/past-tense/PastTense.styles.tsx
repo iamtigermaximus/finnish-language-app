@@ -12,6 +12,17 @@ export const Container = styled.div`
   margin-bottom: 20px;
 `;
 
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.875rem;
+  }
+`;
+
 export const ContentContainer = styled.div`
   /* max-width: 56rem;
   margin-left: auto;
@@ -41,16 +52,16 @@ export const Header = styled.header`
   margin-bottom: 20px;
 `;
 
-export const Title = styled.h2`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1e40af;
-  margin-bottom: 1rem;
+// export const Title = styled.h2`
+//   font-size: 1.5rem;
+//   font-weight: bold;
+//   color: #1e40af;
+//   margin-bottom: 1rem;
 
-  @media (min-width: 640px) {
-    font-size: 1.875rem;
-  }
-`;
+//   @media (min-width: 640px) {
+//     font-size: 1.875rem;
+//   }
+// `;
 
 export const Subtitle = styled.p`
   font-size: 1.125rem;

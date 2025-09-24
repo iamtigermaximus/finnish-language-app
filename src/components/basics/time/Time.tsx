@@ -1,4 +1,4 @@
-'use client';
+"use client";
 // import React from 'react';
 // import {
 //   CaseTitle,
@@ -390,7 +390,7 @@
 // };
 
 // export default Time;
-import React from 'react';
+import React from "react";
 import {
   CaseTitle,
   Container,
@@ -402,267 +402,268 @@ import {
   StyledTable,
   StyledTableCell,
   StyledTableHeader,
-} from './Time.styles';
+  Title,
+} from "./Time.styles";
 
 const partsOfDayData = [
   {
-    english: 'Morning, during the morning',
-    finnish: 'Aamu, aamulla',
+    english: "Morning, during the morning",
+    finnish: "Aamu, aamulla",
   },
   {
-    english: 'Before midday, during the time before midday',
-    finnish: 'Aamupäivä, aamupäivällä',
+    english: "Before midday, during the time before midday",
+    finnish: "Aamupäivä, aamupäivällä",
   },
   {
-    english: 'Day, during the day',
-    finnish: 'Päivä, päivällä',
+    english: "Day, during the day",
+    finnish: "Päivä, päivällä",
   },
   {
-    english: 'Afternoon, during the afternoon',
-    finnish: 'Iltapäivä, iltapäivällä',
+    english: "Afternoon, during the afternoon",
+    finnish: "Iltapäivä, iltapäivällä",
   },
   {
-    english: 'Evening, during the evening',
-    finnish: 'Ilta, illalla',
+    english: "Evening, during the evening",
+    finnish: "Ilta, illalla",
   },
   {
-    english: 'Night, during the night',
-    finnish: 'Yö, yöllä',
+    english: "Night, during the night",
+    finnish: "Yö, yöllä",
   },
   {
-    english: 'Before morning, during the time before morning',
-    finnish: 'Aamuyö, aamuyöllä',
+    english: "Before morning, during the time before morning",
+    finnish: "Aamuyö, aamuyöllä",
   },
 ];
 
 const whatTimeData = [
   {
-    english: '2.00 (2.00 AM)',
-    finnish: 'Kello on kaksi',
+    english: "2.00 (2.00 AM)",
+    finnish: "Kello on kaksi",
   },
   {
-    english: '13.00 (1.00 PM)',
-    finnish: 'Kello on yksitoista',
+    english: "13.00 (1.00 PM)",
+    finnish: "Kello on yksitoista",
   },
   {
-    english: '15.15 (3.15 PM)',
-    finnish: 'Kello on varttia yli kolme',
+    english: "15.15 (3.15 PM)",
+    finnish: "Kello on varttia yli kolme",
   },
   {
-    english: '15.30 (3.30 PM)',
-    finnish: 'Kello on puoli neljä',
+    english: "15.30 (3.30 PM)",
+    finnish: "Kello on puoli neljä",
   },
   {
-    english: '15.45 (3.45 PM)',
-    finnish: 'Kello on varttia vaille neljä',
+    english: "15.45 (3.45 PM)",
+    finnish: "Kello on varttia vaille neljä",
   },
 ];
 
 const atWhatTimeData = [
   {
-    english: 'At 1.00',
-    finnish: 'Kello yksi, Yhdeltä',
+    english: "At 1.00",
+    finnish: "Kello yksi, Yhdeltä",
   },
   {
-    english: 'At 2.00',
-    finnish: 'Kello kaksi, Kahdeltä',
+    english: "At 2.00",
+    finnish: "Kello kaksi, Kahdeltä",
   },
   {
-    english: 'At 3.00',
-    finnish: 'Kello kolme, Kolmelta',
+    english: "At 3.00",
+    finnish: "Kello kolme, Kolmelta",
   },
   {
-    english: 'At 4.00',
-    finnish: 'Kello neljä, Neljältä',
+    english: "At 4.00",
+    finnish: "Kello neljä, Neljältä",
   },
   {
-    english: 'At 5.00',
-    finnish: 'Kello viisi, Viideltä',
+    english: "At 5.00",
+    finnish: "Kello viisi, Viideltä",
   },
   {
-    english: 'At 6.00',
-    finnish: 'Kello kuusi, Kuudelta',
+    english: "At 6.00",
+    finnish: "Kello kuusi, Kuudelta",
   },
   {
-    english: 'At 7.00',
-    finnish: 'Kello seitsemän, Seitsemältä',
+    english: "At 7.00",
+    finnish: "Kello seitsemän, Seitsemältä",
   },
   {
-    english: 'At 8.00',
-    finnish: 'Kello kahdeksan, Kahdeksalta',
+    english: "At 8.00",
+    finnish: "Kello kahdeksan, Kahdeksalta",
   },
   {
-    english: 'At 9.00',
-    finnish: 'Kello yhdeksän, Yhdeksältä',
+    english: "At 9.00",
+    finnish: "Kello yhdeksän, Yhdeksältä",
   },
   {
-    english: 'At 10.00',
-    finnish: 'Kello kymmenen, Kymmeneltä',
+    english: "At 10.00",
+    finnish: "Kello kymmenen, Kymmeneltä",
   },
   {
-    english: 'At 11.00',
-    finnish: 'Kello yksitoista, Yhdeltätoista',
+    english: "At 11.00",
+    finnish: "Kello yksitoista, Yhdeltätoista",
   },
   {
-    english: 'At 12.00',
-    finnish: 'Kello kaksitoista, Kahdeltatoista',
+    english: "At 12.00",
+    finnish: "Kello kaksitoista, Kahdeltatoista",
   },
 ];
 
 const dayRelativeData = [
   {
-    english: 'Today',
-    finnish: 'Tänään',
+    english: "Today",
+    finnish: "Tänään",
   },
   {
-    english: 'Yesterday',
-    finnish: 'Eilen',
+    english: "Yesterday",
+    finnish: "Eilen",
   },
   {
-    english: 'The day before yesterday',
-    finnish: 'Toissapäivänä',
+    english: "The day before yesterday",
+    finnish: "Toissapäivänä",
   },
   {
-    english: 'Tomorrow',
-    finnish: 'Huomenna',
+    english: "Tomorrow",
+    finnish: "Huomenna",
   },
   {
-    english: 'The day after tomorrow',
-    finnish: 'Ylihuomenna',
+    english: "The day after tomorrow",
+    finnish: "Ylihuomenna",
   },
 ];
 
 const presentRefData = [
   {
-    english: 'Now',
-    finnish: 'Nyt',
+    english: "Now",
+    finnish: "Nyt",
   },
   {
-    english: 'Nowadays',
-    finnish: 'Nykyään',
+    english: "Nowadays",
+    finnish: "Nykyään",
   },
   {
-    english: 'At present',
-    finnish: 'Nykyisessä',
+    english: "At present",
+    finnish: "Nykyisessä",
   },
   {
-    english: 'At this time, at this moment',
-    finnish: 'Tällä hetkellä',
+    english: "At this time, at this moment",
+    finnish: "Tällä hetkellä",
   },
   {
-    english: 'These days',
-    finnish: 'Näinä päivinä',
+    english: "These days",
+    finnish: "Näinä päivinä",
   },
   {
-    english: 'As I speak, as we speak',
-    finnish: 'Kuten minä puhun, kuten me puhumme',
+    english: "As I speak, as we speak",
+    finnish: "Kuten minä puhun, kuten me puhumme",
   },
   {
-    english: 'For now, for the time being',
-    finnish: 'Toistaiseksi',
+    english: "For now, for the time being",
+    finnish: "Toistaiseksi",
   },
   {
-    english: 'During this week',
-    finnish: 'Tämän viikon aikana',
+    english: "During this week",
+    finnish: "Tämän viikon aikana",
   },
   {
-    english: 'During this month',
-    finnish: 'Tämän kuun aikana',
+    english: "During this month",
+    finnish: "Tämän kuun aikana",
   },
   {
-    english: 'During this year',
-    finnish: 'Tämän vuoden aikana',
+    english: "During this year",
+    finnish: "Tämän vuoden aikana",
   },
 ];
 
 const pastRefData = [
   {
-    english: 'Before',
-    finnish: 'Ennen',
+    english: "Before",
+    finnish: "Ennen",
   },
   {
-    english: 'A long time ago',
-    finnish: 'Kauan sitten',
+    english: "A long time ago",
+    finnish: "Kauan sitten",
   },
   {
-    english: 'In the past',
-    finnish: 'Menneisyydessä',
+    english: "In the past",
+    finnish: "Menneisyydessä",
   },
   {
-    english: 'Once upon a time',
-    finnish: 'Olipa kerran',
+    english: "Once upon a time",
+    finnish: "Olipa kerran",
   },
   {
-    english: 'Those days',
-    finnish: 'Niinä päivinä',
+    english: "Those days",
+    finnish: "Niinä päivinä",
   },
   {
-    english: 'During last week',
-    finnish: 'Viime viikon aikana',
+    english: "During last week",
+    finnish: "Viime viikon aikana",
   },
   {
-    english: 'During last month',
-    finnish: 'Viime kuun aikana',
+    english: "During last month",
+    finnish: "Viime kuun aikana",
   },
   {
-    english: 'During last year',
-    finnish: 'Viime vuoden aikana',
+    english: "During last year",
+    finnish: "Viime vuoden aikana",
   },
 ];
 
 const futureRefData = [
   {
-    english: 'Soon',
-    finnish: 'Pian, kohta',
+    english: "Soon",
+    finnish: "Pian, kohta",
   },
   {
-    english: 'In the future',
-    finnish: 'Tulevaisuudessa',
+    english: "In the future",
+    finnish: "Tulevaisuudessa",
   },
   {
-    english: 'Later',
-    finnish: 'Myöhemmin',
+    english: "Later",
+    finnish: "Myöhemmin",
   },
   {
-    english: 'In a few minutes',
-    finnish: 'Muutaman minuutin kuluttua',
+    english: "In a few minutes",
+    finnish: "Muutaman minuutin kuluttua",
   },
   {
-    english: 'In an hour',
-    finnish: 'Tunnissa',
+    english: "In an hour",
+    finnish: "Tunnissa",
   },
   {
-    english: 'Later today',
-    finnish: 'Myöhemmin tänään',
+    english: "Later today",
+    finnish: "Myöhemmin tänään",
   },
   {
-    english: 'Later this week',
-    finnish: 'Myöhemmin tällä viikolla',
+    english: "Later this week",
+    finnish: "Myöhemmin tällä viikolla",
   },
   {
-    english: 'Eventually',
-    finnish: 'Lopulta',
+    english: "Eventually",
+    finnish: "Lopulta",
   },
   {
-    english: 'During next week',
-    finnish: 'Ensi viikon aikana',
+    english: "During next week",
+    finnish: "Ensi viikon aikana",
   },
   {
-    english: 'During next month',
-    finnish: 'Ensi kuun aikana',
+    english: "During next month",
+    finnish: "Ensi kuun aikana",
   },
   {
-    english: 'During next year',
-    finnish: 'Ensi vuoden aikana',
+    english: "During next year",
+    finnish: "Ensi vuoden aikana",
   },
 ];
 
 const Time = () => {
   return (
     <Container>
-      <h2>Parts of the Day</h2>
+      <Title>Parts of the Day</Title>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Referenceable parts of the day in Finnish.
         </p>
       </div>
@@ -710,7 +711,7 @@ const Time = () => {
 
       <h2>What Time Is It</h2>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Examples for telling what time it is in Finnish.
         </p>
       </div>
@@ -758,7 +759,7 @@ const Time = () => {
 
       <h2>At What Time Something Occurs</h2>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Examples to describe at what time something occurs in Finnish.
         </p>
       </div>
@@ -806,7 +807,7 @@ const Time = () => {
 
       <h2>By Day Relative to Today</h2>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Terms by day relative to today in Finnish.
         </p>
       </div>
@@ -854,7 +855,7 @@ const Time = () => {
 
       <h2>Referencing the Present</h2>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Terms that reference the present in Finnish.
         </p>
       </div>
@@ -902,7 +903,7 @@ const Time = () => {
 
       <h2>Referencing the Past</h2>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Terms that reference the past in Finnish.
         </p>
       </div>
@@ -950,7 +951,7 @@ const Time = () => {
 
       <h2>Referencing the Future</h2>
       <div>
-        <p style={{ padding: '10px 0' }}>
+        <p style={{ padding: "10px 0" }}>
           Terms that reference the future in Finnish.
         </p>
       </div>

@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 import {
   Container,
   ExplanationSection,
@@ -20,27 +20,32 @@ import {
   Highlight,
   VerbTypeContainer,
   TwoColumnLayout,
-  Column
-} from './Passive.styles';
+  Column,
+  Title,
+} from "./Passive.styles";
 
 const Passive = () => {
   return (
     <Container>
       <ExplanationSection>
-        <ExplanationTitle>Finnish Passive Voice</ExplanationTitle>
-        
+        <Title>Finnish Passive Voice</Title>
+
         <ExplanationContent>
-          The passive voice in Finnish is used when the subject is not specified or when we want to emphasize the action rather than who performed it. Don&apos;t worry if it seems challenging at first - with practice, you&apos;ll find it&apos;s quite logical and consistent!
+          The passive voice in Finnish is used when the subject is not specified
+          or when we want to emphasize the action rather than who performed it.
+          Don&apos;t worry if it seems challenging at first - with practice,
+          you&apos;ll find it&apos;s quite logical and consistent!
         </ExplanationContent>
 
         <FunFactBox>
           <span> Did you know? </span>
-          The Finnish passive is often called &quot;impersonal&quot; because it doesn&apos;t specify who is performing the action. This makes it perfect for general statements and instructions!
+          The Finnish passive is often called &quot;impersonal&quot; because it
+          doesn&apos;t specify who is performing the action. This makes it
+          perfect for general statements and instructions!
         </FunFactBox>
 
-
         <ExplanationTitle>Formation Rules by Verb Type</ExplanationTitle>
-        
+
         <TwoColumnLayout>
           <Column>
             {/* Verb Type 1 */}
@@ -102,7 +107,9 @@ const Passive = () => {
             {/* Verb Type 3 */}
             <VerbTypeContainer>
               <VerbTypeBadge>Verb Type 3</VerbTypeBadge>
-              <KeyPoint>Rule: Remove last two letters + add -laan/-lään or -taan/-tään</KeyPoint>
+              <KeyPoint>
+                Rule: Remove last two letters + add -laan/-lään or -taan/-tään
+              </KeyPoint>
               <FormationTable>
                 <thead>
                   <FormationTableRow>
@@ -120,7 +127,9 @@ const Passive = () => {
                     <FormationTableCell>mennään</FormationTableCell>
                   </FormationTableRow>
                   <FormationTableRow>
-                    <FormationTableCell>opiskella (to study)</FormationTableCell>
+                    <FormationTableCell>
+                      opiskella (to study)
+                    </FormationTableCell>
                     <FormationTableCell>opiskellaan</FormationTableCell>
                   </FormationTableRow>
                 </tbody>
@@ -178,7 +187,9 @@ const Passive = () => {
                     <FormationTableCell>valitaan</FormationTableCell>
                   </FormationTableRow>
                   <FormationTableRow>
-                    <FormationTableCell>mainita (to mention)</FormationTableCell>
+                    <FormationTableCell>
+                      mainita (to mention)
+                    </FormationTableCell>
                     <FormationTableCell>mainitaan</FormationTableCell>
                   </FormationTableRow>
                 </tbody>
@@ -215,18 +226,20 @@ const Passive = () => {
           </Column>
         </TwoColumnLayout>
 
-     
-
-
         <ExplanationTitle>Negative Forms</ExplanationTitle>
-        
+
         <NegativeFormationSection>
-          <KeyPoint>Rule: Use <Highlight>ei</Highlight> + passive stem + <Highlight>-ta/-tä</Highlight> (without the -an/-än ending)</KeyPoint>
-          
+          <KeyPoint>
+            Rule: Use <Highlight>ei</Highlight> + passive stem +{" "}
+            <Highlight>-ta/-tä</Highlight> (without the -an/-än ending)
+          </KeyPoint>
+
           <ExplanationContent>
-            Forming negatives might seem tricky at first, but it follows a clear pattern. You simply take the passive stem and add the negative ending.
+            Forming negatives might seem tricky at first, but it follows a clear
+            pattern. You simply take the passive stem and add the negative
+            ending.
           </ExplanationContent>
-          
+
           <FormationTable>
             <thead>
               <FormationTableRow>
@@ -258,78 +271,119 @@ const Passive = () => {
               </FormationTableRow>
             </tbody>
           </FormationTable>
-          
+
           <NegativeExample>
-            <ExampleText>Täällä ei puhuta englantia → English is not spoken here</ExampleText>
-            <ExampleText>Koulussa ei syödä makeisia → Candy is not eaten at school</ExampleText>
-            <ExampleText>Talvella ei uida → People don&apos;t swim in winter</ExampleText>
+            <ExampleText>
+              Täällä ei puhuta englantia → English is not spoken here
+            </ExampleText>
+            <ExampleText>
+              Koulussa ei syödä makeisia → Candy is not eaten at school
+            </ExampleText>
+            <ExampleText>
+              Talvella ei uida → People don&apos;t swim in winter
+            </ExampleText>
           </NegativeExample>
-          
+
           <ExampleBox>
-            <ExampleText>Remember: The negative form uses the same stem as the affirmative, just without the -an/-än ending!</ExampleText>
+            <ExampleText>
+              Remember: The negative form uses the same stem as the affirmative,
+              just without the -an/-än ending!
+            </ExampleText>
           </ExampleBox>
         </NegativeFormationSection>
 
-
         <ExplanationTitle>When to Use the Passive Voice</ExplanationTitle>
-        
+
         <KeyPoint>1. When the subject is unknown or unimportant</KeyPoint>
         <ExampleBox>
-          <ExampleText>Ovi avattiin → The door was opened (by someone unknown)</ExampleText>
-          <ExampleText>Suomessa puhutaan suomea → Finnish is spoken in Finland</ExampleText>
+          <ExampleText>
+            Ovi avattiin → The door was opened (by someone unknown)
+          </ExampleText>
+          <ExampleText>
+            Suomessa puhutaan suomea → Finnish is spoken in Finland
+          </ExampleText>
         </ExampleBox>
-        
+
         <KeyPoint>2. For general rules and instructions</KeyPoint>
         <ExampleBox>
           <ExampleText>Täällä ei polteta → No smoking here</ExampleText>
           <ExampleText>Asemalla odotetaan → Wait at the station</ExampleText>
         </ExampleBox>
-        
+
         <KeyPoint>3. For polite suggestions</KeyPoint>
         <ExampleBox>
-          <ExampleText>Nyt mentäisiin kotiin → Maybe we should go home now</ExampleText>
-          <ExampleText>Syötäisiin jäätelöä! → How about we eat some ice cream?</ExampleText>
+          <ExampleText>
+            Nyt mentäisiin kotiin → Maybe we should go home now
+          </ExampleText>
+          <ExampleText>
+            Syötäisiin jäätelöä! → How about we eat some ice cream?
+          </ExampleText>
         </ExampleBox>
-        
+
         <KeyPoint>4. In formal or written language</KeyPoint>
         <ExampleBox>
-          <ExampleText>Kokous pidettiin torstaina → The meeting was held on Thursday</ExampleText>
-          <ExampleText>Päätös tehtiään huomisessa kokouksessa → The decision will be made in tomorrow&apos;s meeting</ExampleText>
+          <ExampleText>
+            Kokous pidettiin torstaina → The meeting was held on Thursday
+          </ExampleText>
+          <ExampleText>
+            Päätös tehtiään huomisessa kokouksessa → The decision will be made
+            in tomorrow&apos;s meeting
+          </ExampleText>
         </ExampleBox>
 
-
         <ExplanationTitle>Practice Examples in Context</ExplanationTitle>
-        
+
         <ExampleBox>
-          <ExampleText>1. Suomessa juodaan paljon kahvia → In Finland, a lot of coffee is drunk</ExampleText>
-          <ExampleText>2. Kirjastossa puhutaan hiljaa → In the library, people speak quietly</ExampleText>
-          <ExampleText>3. Bussissa ei polteta → Smoking is not allowed on the bus</ExampleText>
-          <ExampleText>4. Koulussa opetetaan monia aineita → Many subjects are taught at school</ExampleText>
-          <ExampleText>5. Juhlissa soitettiin hyvää musiikkia → Good music was played at the party</ExampleText>
+          <ExampleText>
+            1. Suomessa juodaan paljon kahvia → In Finland, a lot of coffee is
+            drunk
+          </ExampleText>
+          <ExampleText>
+            2. Kirjastossa puhutaan hiljaa → In the library, people speak
+            quietly
+          </ExampleText>
+          <ExampleText>
+            3. Bussissa ei polteta → Smoking is not allowed on the bus
+          </ExampleText>
+          <ExampleText>
+            4. Koulussa opetetaan monia aineita → Many subjects are taught at
+            school
+          </ExampleText>
+          <ExampleText>
+            5. Juhlissa soitettiin hyvää musiikkia → Good music was played at
+            the party
+          </ExampleText>
         </ExampleBox>
 
         <SummaryBox>
           <ExplanationTitle>Key Takeaways</ExplanationTitle>
           <ExplanationContent>
-            ✅ Each verb type follows specific but consistent rules for passive formation
+            ✅ Each verb type follows specific but consistent rules for passive
+            formation
           </ExplanationContent>
           <ExplanationContent>
             ✅ Negative forms use &quot;ei&quot; + the passive stem + -ta/-tä
           </ExplanationContent>
           <ExplanationContent>
-            ✅ The passive is used when the subject is unknown, unimportant, or for general statements
+            ✅ The passive is used when the subject is unknown, unimportant, or
+            for general statements
           </ExplanationContent>
           <ExplanationContent>
-            ✅ With regular practice, forming passive sentences will become second nature
+            ✅ With regular practice, forming passive sentences will become
+            second nature
           </ExplanationContent>
           <ExplanationContent>
-            ✅ Remember that making mistakes is part of learning - every attempt brings you closer to mastery!
+            ✅ Remember that making mistakes is part of learning - every attempt
+            brings you closer to mastery!
           </ExplanationContent>
         </SummaryBox>
 
         <FunFactBox>
           <span>🌟 Pro Tip: </span>
-          When in doubt, listen to how native speakers use passive forms in everyday situations like announcements, instructions, and general conversations. This will help you develop a natural feel for when and how to use them!
+          When in doubt, listen to how native speakers use passive forms in
+          everyday situations like announcements, instructions, and general
+          conversations. This will help you develop a natural feel for when and
+          how to use them!
         </FunFactBox>
       </ExplanationSection>
     </Container>

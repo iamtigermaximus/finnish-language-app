@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 import {
   // CaseTitle,
   Container,
@@ -11,159 +11,162 @@ import {
   StyledTable,
   StyledTableCell,
   StyledTableHeader,
-} from './Kpt.styles';
+  Title,
+} from "./Kpt.styles";
 
 const consonantGradationData = [
   {
-    strong: 'KK',
-    weak: 'K',
-    example: 'Pakkaus',
-    result: 'Pakasta'
+    strong: "KK",
+    weak: "K",
+    example: "Pakkaus",
+    result: "Pakasta",
   },
   {
-    strong: 'PP',
-    weak: 'P',
-    example: 'Kauppa',
-    result: 'Kaupassa'
+    strong: "PP",
+    weak: "P",
+    example: "Kauppa",
+    result: "Kaupassa",
   },
   {
-    strong: 'TT',
-    weak: 'T',
-    example: 'Mittari',
-    result: 'Mitalla'
+    strong: "TT",
+    weak: "T",
+    example: "Mittari",
+    result: "Mitalla",
   },
   {
-    strong: 'K',
-    weak: '-',
-    example: 'Joki',
-    result: 'Joessa'
+    strong: "K",
+    weak: "-",
+    example: "Joki",
+    result: "Joessa",
   },
   {
-    strong: 'P',
-    weak: 'V',
-    example: 'Lepinkäinen',
-    result: 'Levingästä'
+    strong: "P",
+    weak: "V",
+    example: "Lepinkäinen",
+    result: "Levingästä",
   },
   {
-    strong: 'T',
-    weak: 'D',
-    example: 'Koti',
-    result: 'Kodissa'
+    strong: "T",
+    weak: "D",
+    example: "Koti",
+    result: "Kodissa",
   },
   {
-    strong: 'NK',
-    weak: 'NG',
-    example: 'Kenkä',
-    result: 'Kengän'
+    strong: "NK",
+    weak: "NG",
+    example: "Kenkä",
+    result: "Kengän",
   },
   {
-    strong: 'NT',
-    weak: 'NN',
-    example: 'Lentokone',
-    result: 'Lennon'
+    strong: "NT",
+    weak: "NN",
+    example: "Lentokone",
+    result: "Lennon",
   },
   {
-    strong: 'MP',
-    weak: 'MM',
-    example: 'Kampi',
-    result: 'Kammion'
+    strong: "MP",
+    weak: "MM",
+    example: "Kampi",
+    result: "Kammion",
   },
   {
-    strong: 'LT',
-    weak: 'LL',
-    example: 'Kulta',
-    result: 'Kullan'
+    strong: "LT",
+    weak: "LL",
+    example: "Kulta",
+    result: "Kullan",
   },
   {
-    strong: 'RT',
-    weak: 'RR',
-    example: 'Parta',
-    result: 'Parran'
+    strong: "RT",
+    weak: "RR",
+    example: "Parta",
+    result: "Parran",
   },
   {
-    strong: 'HT',
-    weak: 'HD',
-    example: 'Lahti',
-    result: 'Lahden'
+    strong: "HT",
+    weak: "HD",
+    example: "Lahti",
+    result: "Lahden",
   },
   {
-    strong: 'LKI',
-    weak: 'LJE',
-    example: 'Jälki',
-    result: 'Jäljen'
+    strong: "LKI",
+    weak: "LJE",
+    example: "Jälki",
+    result: "Jäljen",
   },
   {
-    strong: 'RKI',
-    weak: 'RJE',
-    example: 'Järki',
-    result: 'Järjen'
+    strong: "RKI",
+    weak: "RJE",
+    example: "Järki",
+    result: "Järjen",
   },
   {
-    strong: 'LJE',
-    weak: 'LKE',
-    example: 'Hylje',
-    result: 'Hylkeen'
+    strong: "LJE",
+    weak: "LKE",
+    example: "Hylje",
+    result: "Hylkeen",
   },
   {
-    strong: 'HJE',
-    weak: 'HKE',
-    example: 'Lahje',
-    result: 'Lahkeen'
+    strong: "HJE",
+    weak: "HKE",
+    example: "Lahje",
+    result: "Lahkeen",
   },
   {
-    strong: 'UKU',
-    weak: 'UVU',
-    example: 'Luku',
-    result: 'Luvun'
+    strong: "UKU",
+    weak: "UVU",
+    example: "Luku",
+    result: "Luvun",
   },
   {
-    strong: 'YKY',
-    weak: 'YVY',
-    example: 'Kyky',
-    result: 'Kyvyn'
-  }
+    strong: "YKY",
+    weak: "YVY",
+    example: "Kyky",
+    result: "Kyvyn",
+  },
 ];
 
 const exceptionData = [
   {
-    word: 'Kioski',
-    inflected: 'Kioskin',
-    explanation: 'No gradation with -sk cluster'
+    word: "Kioski",
+    inflected: "Kioskin",
+    explanation: "No gradation with -sk cluster",
   },
   {
-    word: 'Kasvi',
-    inflected: 'Kasvin',
-    explanation: 'No gradation with -sv cluster'
+    word: "Kasvi",
+    inflected: "Kasvin",
+    explanation: "No gradation with -sv cluster",
   },
   {
-    word: 'Neste',
-    inflected: 'Nesteen',
-    explanation: 'No gradation with -st cluster'
+    word: "Neste",
+    inflected: "Nesteen",
+    explanation: "No gradation with -st cluster",
   },
   {
-    word: 'Matka',
-    inflected: 'Matkan',
-    explanation: 'No gradation with -tk cluster'
-  }
+    word: "Matka",
+    inflected: "Matkan",
+    explanation: "No gradation with -tk cluster",
+  },
 ];
 
 const Kpt = () => {
   return (
     <Container>
-      <h2>KPT Consonant Gradation</h2>
+      <Title>KPT Consonant Gradation</Title>
       <div>
-        <p style={{ padding: '10px 0' }}>
-          In Finnish, words often change their spelling slightly when you add endings to them. 
-          This is called <strong>consonant gradation</strong>, and it mostly affects the letters K, P, and T.
+        <p style={{ padding: "10px 0" }}>
+          In Finnish, words often change their spelling slightly when you add
+          endings to them. This is called <strong>consonant gradation</strong>,
+          and it mostly affects the letters K, P, and T.
         </p>
-        <p style={{ padding: '10px 0' }}>
-          Think of it like the words are putting on different outfits for different occasions! 
-          The &quot;strong&quot; form is for everyday use, and the &quot;weak&quot; form is for when we add endings.
+        <p style={{ padding: "10px 0" }}>
+          Think of it like the words are putting on different outfits for
+          different occasions! The &quot;strong&quot; form is for everyday use,
+          and the &quot;weak&quot; form is for when we add endings.
         </p>
       </div>
 
       <h3>How Letters Change</h3>
-      
+
       {/* Desktop Table for Consonant Gradation */}
       <StyledTable>
         <thead>
@@ -193,7 +196,7 @@ const Kpt = () => {
             <MobileTable>
               <thead>
                 <tr>
-                  <MobileTableHeader >
+                  <MobileTableHeader>
                     {row.strong} → {row.weak}
                   </MobileTableHeader>
                 </tr>
@@ -214,9 +217,9 @@ const Kpt = () => {
       </MobileTableContainer>
 
       <h3>Special Cases That Don&apos;t Change</h3>
-      <p style={{ padding: '10px 0' }}>
-        Some words are special and don&apos;t change their letters, even when you add endings. 
-        These usually have -sk, -sp, -st, or -tk in them.
+      <p style={{ padding: "10px 0" }}>
+        Some words are special and don&apos;t change their letters, even when
+        you add endings. These usually have -sk, -sp, -st, or -tk in them.
       </p>
 
       {/* Desktop Table for Exceptions */}
@@ -246,7 +249,7 @@ const Kpt = () => {
             <MobileTable>
               <thead>
                 <tr>
-                  <MobileTableHeader >Exception: {row.word}</MobileTableHeader>
+                  <MobileTableHeader>Exception: {row.word}</MobileTableHeader>
                 </tr>
               </thead>
               <tbody>
@@ -264,11 +267,19 @@ const Kpt = () => {
         ))}
       </MobileTableContainer>
 
-      <div style={{ marginTop: '30px', padding: '15px', backgroundColor: '#f0f9ff', borderRadius: '8px' }}>
+      <div
+        style={{
+          marginTop: "30px",
+          padding: "15px",
+          backgroundColor: "#f0f9ff",
+          borderRadius: "8px",
+        }}
+      >
         <h3>Remember This!</h3>
         <p>
-          Consonant gradation might seem tricky at first, but with practice, you&apos;ll start to notice the patterns. 
-          Try to listen for these changes when you hear Finnish people speak!
+          Consonant gradation might seem tricky at first, but with practice,
+          you&apos;ll start to notice the patterns. Try to listen for these
+          changes when you hear Finnish people speak!
         </p>
       </div>
     </Container>
