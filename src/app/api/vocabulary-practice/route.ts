@@ -63,6 +63,7 @@ IMPORTANT:
 - Return completely new words each time
 - Do not repeat words or base words when generating new list
 - Always provide example_translation for every word
+- AVOID overly common beginner words
 
 JSON format only:
 [
