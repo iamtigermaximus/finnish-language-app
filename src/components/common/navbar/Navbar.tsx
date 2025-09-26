@@ -166,6 +166,10 @@ const Navbar = () => {
         href: "/spoken-finnish/question-builder-helper",
         label: "Question Builder  Helper",
       },
+      {
+        href: "/spoken-finnish/vocabulary-practice",
+        label: "Vocabulary Builder",
+      },
     ],
   };
 
