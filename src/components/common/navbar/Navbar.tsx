@@ -111,15 +111,6 @@ const Navbar = () => {
       { href: "/intermediate/imperative", label: "Imperative" },
       { href: "/intermediate/object", label: "Object" },
       { href: "/intermediate/adverb", label: "Adverb" },
-      { href: "/intermediate/case-usage-helper", label: "Case Usage Helper" },
-      {
-        href: "/intermediate/verb-conjugator",
-        label: "Verb Conjugator Helper",
-      },
-      {
-        href: "/intermediate/connector-words",
-        label: "Connector Words Helper",
-      },
     ],
     advanced: [
       { href: "/advanced/noun-pluralization", label: "Noun Pluralization" },
@@ -140,8 +131,37 @@ const Navbar = () => {
       { href: "/advanced/verb-rections", label: "Verb Rections" },
       { href: "/advanced/idioms", label: "Idioms" },
       { href: "/advanced/business-finnish", label: "Business Finnish" },
+      {
+        href: "/advanced/puhekieli",
+        label: "Puhekieli",
+      },
     ],
     spokenFinnish: [
+      { href: "/spoken-finnish/case-usage-helper", label: "Case Usage Helper" },
+      {
+        href: "/spoken-finnish/verb-conjugator",
+        label: "Verb Conjugator Helper",
+      },
+      {
+        href: "/spoken-finnish/locative-case-helper",
+        label: "Locative Case Helper",
+      },
+      {
+        href: "/spoken-finnish/connector-words",
+        label: "Connector Words Helper",
+      },
+      {
+        href: "/spoken-finnish/vocabulary-practice",
+        label: "Vocabulary Builder",
+      },
+      {
+        href: "/spoken-finnish/sentence-analyzer",
+        label: "Sentence Construction Helper",
+      },
+      {
+        href: "/spoken-finnish/question-builder-helper",
+        label: "Question Builder  Helper",
+      },
       {
         href: "/spoken-finnish/everyday-conversations",
         label: "Everyday Conversations",
@@ -149,26 +169,6 @@ const Navbar = () => {
       {
         href: "/spoken-finnish/informal-grammar",
         label: "Informal Grammar",
-      },
-      {
-        href: "/spoken-finnish/puhekieli",
-        label: "Puhekieli",
-      },
-      {
-        href: "/spoken-finnish/sentence-analyzer",
-        label: "Sentence Construction Helper",
-      },
-      {
-        href: "/spoken-finnish/locative-case-helper",
-        label: "Locative Case Helper",
-      },
-      {
-        href: "/spoken-finnish/question-builder-helper",
-        label: "Question Builder  Helper",
-      },
-      {
-        href: "/spoken-finnish/vocabulary-practice",
-        label: "Vocabulary Builder",
       },
     ],
   };
