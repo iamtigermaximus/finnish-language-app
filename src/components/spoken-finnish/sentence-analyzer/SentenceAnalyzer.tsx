@@ -209,7 +209,7 @@ const SentenceAnalyzer = () => {
       {/* Interactive sentence analyzer */}
       <PracticeContainer>
         <PracticeTitle>Analyze Your Sentence</PracticeTitle>
-        <p>
+        <p style={{ color: "white" }}>
           Enter a Finnish sentence to see corrections, translation, pattern, and
           suffix notes:
         </p>

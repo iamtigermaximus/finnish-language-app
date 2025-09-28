@@ -5,8 +5,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: white;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
   padding: 1.5rem;
+  padding-bottom: 0;
   height: 100vh;
 `;
 
@@ -48,12 +49,19 @@ export const Subtitle = styled.p`
 
 export const Form = styled.form`
   margin-bottom: 2rem;
+  background-color: #1e40af;
+  padding: 20px 10px;
+  border-radius: 8px;
+
+  @media (min-width: 768px) {
+    padding: 30px 20px;
+  }
 `;
 
 export const FormLabel = styled.label`
   font-size: 1rem;
   font-weight: 500;
-  color: #374151;
+  color: white;
 `;
 
 export const InputContainer = styled.div`
@@ -90,9 +98,10 @@ export const Button = styled.button<{ $primary?: boolean }>`
   color: ${(props) => (props.$primary ? "white" : "#374151")};
   font-weight: 500;
   border-radius: 0.5rem;
-  border: none;
+  /* border: none; */
   cursor: pointer;
   font-size: 1rem;
+  border: 1px solid white;
 
   &:hover {
     background-color: ${(props) => (props.$primary ? "#1d4ed8" : "#d1d5db")};
@@ -136,7 +145,7 @@ export const ResultContainer = styled.div`
 
 export const ResultHeader = styled.div`
   padding: 1.5rem;
-  background-color: #1d4ed8;
+  background-color: #1e40af;
   color: white;
 `;
 

@@ -166,7 +166,7 @@ export const ExampleSentence = styled.div`
 `;
 
 export const PracticeContainer = styled.div`
-  background-color: #f8f9fa;
+  background-color: #1e40af;
   border-radius: 0.75rem;
   padding: 1rem;
   margin-top: 1.5rem;
@@ -180,7 +180,7 @@ export const PracticeContainer = styled.div`
 export const PracticeTitle = styled.h3`
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1e40af;
+  color: white;
   margin-bottom: 1rem;
 
   @media (min-width: 640px) {
@@ -198,7 +198,7 @@ export const Form = styled.form`
 export const FormLabel = styled.label`
   font-size: 0.95rem;
   font-weight: 500;
-  color: #374151;
+  color: white;
 
   @media (min-width: 640px) {
     font-size: 1rem;
@@ -239,7 +239,7 @@ export const Button = styled.button<{ $primary?: boolean }>`
   color: ${(props) => (props.$primary ? "white" : "#374151")};
   font-weight: 500;
   border-radius: 0.5rem;
-  border: none;
+  border: 1px solid white;
   cursor: pointer;
   font-size: 1rem;
   white-space: nowrap;
