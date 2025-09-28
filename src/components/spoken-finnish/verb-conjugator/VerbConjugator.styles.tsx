@@ -7,6 +7,7 @@ export const Container = styled.div`
   border-radius: 0.75rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
+  height: 100vh;
 `;
 
 export const ContentContainer = styled.div`

@@ -1,6 +1,6 @@
-'use client';
-import Image from 'next/image';
-import styled from 'styled-components';
+"use client";
+import Image from "next/image";
+import styled from "styled-components";
 
 const Page = styled.div`
   display: flex;
@@ -8,6 +8,7 @@ const Page = styled.div`
   align-items: center;
   text-align: center;
   padding: 2rem;
+  height: 100vh;
 `;
 
 // const Title = styled.h1`

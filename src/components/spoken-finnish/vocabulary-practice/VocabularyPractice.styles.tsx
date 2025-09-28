@@ -10,6 +10,7 @@ export const Container = styled.div`
   /* background-color: orange; */
   color: black;
   margin-bottom: 20px;
+  height: 100vh;
 `;
 
 export const Title = styled.h2`
