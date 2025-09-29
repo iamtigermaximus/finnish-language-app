@@ -235,22 +235,22 @@ export const Input = styled.input`
 
 export const Button = styled.button<{ $primary?: boolean }>`
   padding: 0.75rem 1.5rem;
-  background-color: ${(props) => (props.$primary ? "#0066cc" : "#e5e7eb")};
+  background-color: ${(props) => (props.$primary ? "tomato" : "#e5e7eb")};
   color: ${(props) => (props.$primary ? "white" : "#374151")};
   font-weight: 500;
   border-radius: 0.5rem;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   cursor: pointer;
   font-size: 1rem;
   white-space: nowrap;
 
   &:hover {
-    background-color: ${(props) => (props.$primary ? "#1d4ed8" : "#d1d5db")};
+    background-color: ${(props) => (props.$primary ? "tomato" : "#d1d5db")};
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    /* box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); */
   }
 
   &:disabled {

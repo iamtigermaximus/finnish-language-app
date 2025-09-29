@@ -3,6 +3,7 @@
 import { useState } from "react";
 import {
   Button,
+  ButtonContainer,
   Container,
   Description,
   ExampleEnglish,
@@ -92,15 +93,15 @@ const CaseUsageHelper = () => {
           </Select>
         </InputGroup>
       </InputGrid>
-
-      <Button
-        $primary
-        onClick={getCaseExplanation}
-        disabled={loading || !word.trim()}
-      >
-        {loading ? "Analyzing..." : "Explain Cases"}
-      </Button>
-
+      <ButtonContainer>
+        <Button
+          $primary
+          onClick={getCaseExplanation}
+          disabled={loading || !word.trim()}
+        >
+          {loading ? "Analyzing..." : "Explain Cases"}
+        </Button>
+      </ButtonContainer>
       {explanation && (
         <ExplanationContainer>
           <ExplanationTitle>

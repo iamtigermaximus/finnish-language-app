@@ -29,6 +29,7 @@ import {
   ResultSubtitle,
   ResultTitle,
   Subtitle,
+  TenseButton,
   TenseButtonsContainer,
   TenseTitle,
   Title,
@@ -359,13 +360,13 @@ const VerbConjugator = () => {
   };
 
   const renderTenseButton = (tense: string, label: string) => (
-    <Button
+    <TenseButton
       key={tense}
       onClick={() => setActiveTense(tense)}
-      $primary={activeTense === tense}
+      $active={activeTense === tense}
     >
       {label}
-    </Button>
+    </TenseButton>
   );
 
   const renderConjugationTable = (conjugations: VerbConjugations) => (
@@ -475,15 +476,15 @@ const VerbConjugator = () => {
               <ResultContent>
                 <TenseButtonsContainer>
                   {renderTenseButton("present", "Present")}
-                  {renderTenseButton("past", "Past")}
                   {renderTenseButton("negative", "Negative")}
+                  {renderTenseButton("past", "Past")}
                   {renderTenseButton("negativePast", "Negative Past")}
                 </TenseButtonsContainer>
 
                 <TenseTitle>
                   {activeTense === "present" && "Present Tense"}
-                  {activeTense === "past" && "Past Tense"}
                   {activeTense === "negative" && "Negative Present"}
+                  {activeTense === "past" && "Past Tense"}
                   {activeTense === "negativePast" && "Negative Past"}
                 </TenseTitle>
 

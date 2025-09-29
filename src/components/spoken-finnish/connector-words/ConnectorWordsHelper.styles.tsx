@@ -55,7 +55,7 @@ export const FilterButtonsContainer = styled.div`
 
 export const FilterButton = styled.button<{ $active: boolean }>`
   padding: 0.5rem 0.75rem;
-  background-color: ${(props) => (props.$active ? "#2563eb" : "#e5e7eb")};
+  background-color: ${(props) => (props.$active ? "#1e40af" : "#e5e7eb")};
   color: ${(props) => (props.$active ? "white" : "#374151")};
   border-radius: 0.5rem;
   border: none;

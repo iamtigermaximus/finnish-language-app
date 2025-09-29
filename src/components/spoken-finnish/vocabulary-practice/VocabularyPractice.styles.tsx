@@ -35,7 +35,7 @@ export const Subtitle = styled.p`
 `;
 export const Button = styled.button<{ $primary?: boolean }>`
   padding: 0.75rem 1.5rem;
-  background-color: ${(props) => (props.$primary ? "#0066cc" : "#e5e7eb")};
+  background-color: ${(props) => (props.$primary ? "#1e40af" : "#e5e7eb")};
   color: ${(props) => (props.$primary ? "white" : "#374151")};
   font-weight: 500;
   border-radius: 0.5rem;

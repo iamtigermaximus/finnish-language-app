@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, FormEvent, useRef, useEffect } from 'react';
-import styled from 'styled-components';
+import { useState, FormEvent, useRef, useEffect } from "react";
+import styled from "styled-components";
 
 interface Feedback {
   grammar: string;
@@ -9,7 +9,7 @@ interface Feedback {
 }
 
 interface ConversationMessage {
-  sender: 'user' | 'ai';
+  sender: "user" | "ai";
   message: string;
   translation?: string;
   suggestion?: string;
@@ -19,17 +19,17 @@ interface ConversationMessage {
 }
 
 const scenarios = [
-  'Coffee Shop',
-  'Restaurant',
-  'Grocery Store',
-  'Public Transport',
-  'Airport / Train Station',
-  'Hotel / Accommodation',
-  'Health / Pharmacy / Doctor',
-  'Bank / Post Office',
-  'Friend / Casual Conversation',
-  'Family Conversation',
-  'Emergency / Help Needed'
+  "Coffee Shop",
+  "Restaurant",
+  "Grocery Store",
+  "Public Transport",
+  "Airport / Train Station",
+  "Hotel / Accommodation",
+  "Health / Pharmacy / Doctor",
+  "Bank / Post Office",
+  "Friend / Casual Conversation",
+  "Family Conversation",
+  "Emergency / Help Needed",
 ];
 
 const Container = styled.div`
@@ -80,15 +80,15 @@ const Input = styled.input`
 
 const Button = styled.button<{ $primary?: boolean }>`
   padding: 0.75rem 1.5rem;
-  background-color: ${(props) => (props.$primary ? '#0066cc' : '#e5e7eb')};
-  color: ${(props) => (props.$primary ? 'white' : '#374151')};
+  background-color: ${(props) => (props.$primary ? "#1e40af" : "#e5e7eb")};
+  color: ${(props) => (props.$primary ? "white" : "#374151")};
   font-weight: 500;
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => (props.$primary ? '#1d4ed8' : '#d1d5db')};
+    background-color: ${(props) => (props.$primary ? "#1d4ed8" : "#d1d5db")};
   }
 `;
 
@@ -101,16 +101,18 @@ const ConversationContainer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const Message = styled.div<{ $sender: 'user' | 'ai' }>`
+const Message = styled.div<{ $sender: "user" | "ai" }>`
   display: flex;
   flex-direction: column;
-  align-items: ${(props) => (props.$sender === 'user' ? 'flex-end' : 'flex-start')};
+  align-items: ${(props) =>
+    props.$sender === "user" ? "flex-end" : "flex-start"};
   margin-bottom: 1rem;
 `;
 
-const MessageBubble = styled.div<{ $sender: 'user' | 'ai' }>`
-  background-color: ${(props) => (props.$sender === 'user' ? '#1d4ed8' : '#e5e7eb')};
-  color: ${(props) => (props.$sender === 'user' ? 'white' : 'black')};
+const MessageBubble = styled.div<{ $sender: "user" | "ai" }>`
+  background-color: ${(props) =>
+    props.$sender === "user" ? "#1d4ed8" : "#e5e7eb"};
+  color: ${(props) => (props.$sender === "user" ? "white" : "black")};
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   max-width: 70%;
@@ -143,10 +145,12 @@ const FeedbackPanel = styled.div`
 
 export default function EverydayConversations() {
   const [scenario, setScenario] = useState(scenarios[0]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ConversationMessage[]>([]);
   const [loading, setLoading] = useState(false);
-  const [visibleFeedbacks, setVisibleFeedbacks] = useState<Set<number>>(new Set());
+  const [visibleFeedbacks, setVisibleFeedbacks] = useState<Set<number>>(
+    new Set()
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -168,31 +172,35 @@ export default function EverydayConversations() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage: ConversationMessage = { sender: 'user', message: input };
+    const userMessage: ConversationMessage = { sender: "user", message: input };
     setMessages((prev) => [...prev, userMessage]);
-    setInput('');
+    setInput("");
     setLoading(true);
 
     try {
-      const response = await fetch('/api/everyday-conversations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scenario, userMessage: input, history: messages })
+      const response = await fetch("/api/everyday-conversations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          scenario,
+          userMessage: input,
+          history: messages,
+        }),
       });
 
-      if (!response.ok) throw new Error('Failed to get AI response');
+      if (!response.ok) throw new Error("Failed to get AI response");
 
       const data: ConversationMessage = await response.json();
 
       // ✅ Ensure we never display raw JSON accidentally
       const cleaned: ConversationMessage = {
-        sender: 'ai',
-        message: data.message || '',
+        sender: "ai",
+        message: data.message || "",
         translation: data.translation || undefined,
         suggestion: data.suggestion || undefined,
         correction: data.correction || undefined,
         correctionTranslation: data.correctionTranslation || undefined,
-        feedback: data.feedback || undefined
+        feedback: data.feedback || undefined,
       };
 
       setMessages((prev) => [...prev, cleaned]);
@@ -208,13 +216,16 @@ export default function EverydayConversations() {
       <Header>
         <Title>Finnish Conversation Practice</Title>
         <Subtitle>
-          Choose a scenario and practice Finnish conversation with translations, corrections, and suggestions
+          Choose a scenario and practice Finnish conversation with translations,
+          corrections, and suggestions
         </Subtitle>
       </Header>
 
       <Select value={scenario} onChange={(e) => setScenario(e.target.value)}>
         {scenarios.map((sc, i) => (
-          <option key={i} value={sc}>{sc}</option>
+          <option key={i} value={sc}>
+            {sc}
+          </option>
         ))}
       </Select>
 
@@ -223,22 +234,31 @@ export default function EverydayConversations() {
           <Message key={idx} $sender={msg.sender}>
             <MessageBubble $sender={msg.sender}>{msg.message}</MessageBubble>
 
-            {msg.translation && <TranslationBox>Translation: {msg.translation}</TranslationBox>}
-            {msg.suggestion && <SuggestionBox>Suggestion: {msg.suggestion}</SuggestionBox>}
+            {msg.translation && (
+              <TranslationBox>Translation: {msg.translation}</TranslationBox>
+            )}
+            {msg.suggestion && (
+              <SuggestionBox>Suggestion: {msg.suggestion}</SuggestionBox>
+            )}
 
             {msg.correction && (
               <>
                 <Button
                   type="button"
                   onClick={() => toggleFeedback(idx)}
-                  style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}
+                  style={{ fontSize: "0.75rem", marginTop: "0.25rem" }}
                 >
-                  {visibleFeedbacks.has(idx) ? 'Hide Feedback' : 'Show Feedback'}
+                  {visibleFeedbacks.has(idx)
+                    ? "Hide Feedback"
+                    : "Show Feedback"}
                 </Button>
                 {visibleFeedbacks.has(idx) && (
                   <FeedbackPanel>
-                    <strong>Correction:</strong> {msg.correction}{' '}
-                    {msg.correctionTranslation && <>({msg.correctionTranslation})</>} <br />
+                    <strong>Correction:</strong> {msg.correction}{" "}
+                    {msg.correctionTranslation && (
+                      <>({msg.correctionTranslation})</>
+                    )}{" "}
+                    <br />
                     {msg.feedback?.grammar && (
                       <>
                         <strong>Grammar:</strong> {msg.feedback.grammar} <br />
@@ -266,7 +286,7 @@ export default function EverydayConversations() {
           disabled={loading}
         />
         <Button type="submit" $primary disabled={loading}>
-          {loading ? 'Sending...' : 'Send'}
+          {loading ? "Sending..." : "Send"}
         </Button>
       </Form>
     </Container>

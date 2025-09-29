@@ -6,8 +6,8 @@ export const Container = styled.div`
   background-color: white;
   border-radius: 0.75rem;
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
-  padding: 1.5rem;
-  padding-bottom: 0;
+  /* padding: 1.5rem; */
+  padding-bottom: 20px;
   height: 100vh;
 `;
 
@@ -94,27 +94,50 @@ export const Input = styled.input`
 
 export const Button = styled.button<{ $primary?: boolean }>`
   padding: 0.75rem 1.5rem;
-  background-color: ${(props) => (props.$primary ? "#0066cc" : "#e5e7eb")};
-  color: ${(props) => (props.$primary ? "white" : "#374151")};
+  background-color: ${(props) => (props.$primary ? "tomato" : "#e5e7eb")};
+  color: ${(props) => (props.$primary ? "white" : "white")};
   font-weight: 500;
   border-radius: 0.5rem;
   /* border: none; */
   cursor: pointer;
   font-size: 1rem;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 
   &:hover {
-    background-color: ${(props) => (props.$primary ? "#1d4ed8" : "#d1d5db")};
+    background-color: ${(props) => (props.$primary ? "tomato" : "#d1d5db")};
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    /* box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); */
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+`;
+
+export const TenseButton = styled.button<{ $active?: boolean }>`
+  padding: 10px;
+  background-color: ${(props) => (props.$active ? "tomato" : "#1e40af")};
+  color: white;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 120px;
+
+  &:hover {
+    background-color: tomato;
+    transform: translateY(-1px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
   }
 `;
 
@@ -174,6 +197,7 @@ export const TenseButtonsContainer = styled.div`
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  background-color: 1e40af;
 `;
 
 export const TenseTitle = styled.h3`

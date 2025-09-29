@@ -70,14 +70,15 @@ export const Subtitle = styled.p`
 
 export const Form = styled.form`
   margin-bottom: 2rem;
-  background-color: #f8f9fa;
+  background-color: #1e40af;
   padding: 30px 20px;
+  border-radius: 8px;
 `;
 
 export const FormLabel = styled.label`
   font-size: 1rem;
   font-weight: 500;
-  color: #374151;
+  color: white;
 `;
 
 export const InputContainer = styled.div`
@@ -110,7 +111,7 @@ export const Input = styled.input`
 
 export const Button = styled.button<{ $primary?: boolean }>`
   padding: 0.75rem 1.5rem;
-  background-color: ${(props) => (props.$primary ? "#0066cc" : "#e5e7eb")};
+  background-color: ${(props) => (props.$primary ? "tomato" : "#e5e7eb")};
   color: ${(props) => (props.$primary ? "white" : "#374151")};
   font-weight: 500;
   border-radius: 0.5rem;
@@ -119,7 +120,7 @@ export const Button = styled.button<{ $primary?: boolean }>`
   font-size: 1rem;
 
   &:hover {
-    background-color: ${(props) => (props.$primary ? "#1d4ed8" : "#d1d5db")};
+    background-color: ${(props) => (props.$primary ? "tomato" : "#d1d5db")};
   }
 
   &:focus {

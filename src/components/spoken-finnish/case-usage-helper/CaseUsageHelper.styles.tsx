@@ -84,23 +84,38 @@ export const Select = styled.select`
   }
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* background-color: pink; */
+  padding: 10px 0;
+`;
+
 export const Button = styled.button<{ $primary?: boolean }>`
   padding: 0.5rem 1rem;
-  background-color: ${(props) => (props.$primary ? "#0066cc" : "#e5e7eb")};
+  background-color: ${(props) => (props.$primary ? "tomato" : "#e5e7eb")};
   color: ${(props) => (props.$primary ? "white" : "#374151")};
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+  width: 100%;
+  padding: 14px;
 
   &:hover {
-    background-color: ${(props) => (props.$primary ? "#0066cc" : "#d1d5db")};
+    background-color: ${(props) => (props.$primary ? "tomato" : "#d1d5db")};
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  @media (min-width: 768px) {
+    width: 200px;
   }
 `;
 
