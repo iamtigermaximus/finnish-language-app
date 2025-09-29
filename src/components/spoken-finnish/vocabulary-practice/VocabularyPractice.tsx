@@ -15,7 +15,7 @@ type VocabWord = {
   pronoun?: string;
   translation: string;
   example: string;
-  example_translation: string; // NEW FIELD
+  example_translation: string;
   options?: string[];
 };
 
@@ -24,16 +24,19 @@ const VocabularyPractice = () => {
   const [answeredWords, setAnsweredWords] = useState<Set<string>>(new Set());
   const [feedback, setFeedback] = useState("");
   const [loading, setLoading] = useState(false);
+  const [incorrectAnswers, setIncorrectAnswers] = useState<Set<string>>(
+    new Set()
+  ); // NEW: Track incorrect answers
 
   const fetchWords = async () => {
     setLoading(true);
     setFeedback("");
     setAnsweredWords(new Set());
+    setIncorrectAnswers(new Set()); // NEW: Reset incorrect answers
     setWords([]);
 
     try {
       const res = await fetch("/api/vocabulary-practice", {
-        // Fixed URL to match API route
         method: "POST",
         headers: {
           "Cache-Control": "no-cache",
@@ -71,23 +74,48 @@ const VocabularyPractice = () => {
 
   const checkAnswer = (word: VocabWord, guess: string) => {
     const isCorrect = guess === word.translation;
-    setFeedback(
-      isCorrect
-        ? `✅ Correct! "${word.word}" means "${word.translation}"`
-        : `❌ Incorrect. Try again!`
-    );
 
     if (isCorrect) {
+      setFeedback(`✅ Correct! "${word.word}" means "${word.translation}"`);
       setAnsweredWords((prev) => new Set(prev).add(word.word));
+      setIncorrectAnswers((prev) => {
+        // NEW: Remove from incorrect if previously wrong
+        const newSet = new Set(prev);
+        newSet.delete(word.word);
+        return newSet;
+      });
+    } else {
+      // NEW: Set incorrect answer for this specific word
+      setIncorrectAnswers((prev) => new Set(prev).add(word.word));
+      // Keep the global feedback for correct answers, but don't show incorrect there
+      if (!feedback.includes("✅")) {
+        setFeedback("");
+      }
     }
   };
 
   const showAnswer = (word: VocabWord) => {
     setFeedback(`💡 "${word.word}" = "${word.translation}"`);
     setAnsweredWords((prev) => new Set(prev).add(word.word));
+    setIncorrectAnswers((prev) => {
+      // NEW: Remove from incorrect when showing answer
+      const newSet = new Set(prev);
+      newSet.delete(word.word);
+      return newSet;
+    });
   };
 
   const isAnswered = (word: string) => answeredWords.has(word);
+  const isIncorrect = (word: string) => incorrectAnswers.has(word); // NEW: Check if word has incorrect answer
+
+  const clearIncorrect = (word: string) => {
+    // NEW: Function to clear incorrect status
+    setIncorrectAnswers((prev) => {
+      const newSet = new Set(prev);
+      newSet.delete(word);
+      return newSet;
+    });
+  };
 
   return (
     <Container>
@@ -100,27 +128,31 @@ const VocabularyPractice = () => {
         {loading ? "Loading New Words..." : "Get New Words"}
       </Button>
 
-      {feedback && (
-        <div
-          style={{
-            marginTop: "15px",
-            padding: "10px",
-            borderRadius: "5px",
-            backgroundColor: feedback.includes("✅")
-              ? "#e6f4ea"
-              : feedback.includes("❌")
-              ? "#fce8e6"
-              : "#e8f4fd",
-            border: feedback.includes("✅")
-              ? "1px solid #34a853"
-              : feedback.includes("❌")
-              ? "1px solid #ea4335"
-              : "1px solid #1a73e8",
-          }}
-        >
-          {feedback}
-        </div>
-      )}
+      {/* Only show positive feedback at the top */}
+      {feedback &&
+        (feedback.includes("✅") ||
+          feedback.includes("💡") ||
+          feedback.includes("Loaded")) && (
+          <div
+            style={{
+              marginTop: "15px",
+              padding: "10px",
+              borderRadius: "5px",
+              backgroundColor: feedback.includes("✅")
+                ? "#e6f4ea"
+                : feedback.includes("💡")
+                ? "#e8f4fd"
+                : "#f0f8ff",
+              border: feedback.includes("✅")
+                ? "1px solid #34a853"
+                : feedback.includes("💡")
+                ? "1px solid #1a73e8"
+                : "1px solid #1a73e8",
+            }}
+          >
+            {feedback}
+          </div>
+        )}
 
       <div style={{ marginTop: "30px" }}>
         {words.map((w, idx) => (
@@ -157,6 +189,38 @@ const VocabularyPractice = () => {
                 <p style={{ fontWeight: "bold", marginBottom: "15px" }}>
                   What does this word mean?
                 </p>
+
+                {/* NEW: Incorrect feedback displayed within the card */}
+                {isIncorrect(w.word) && (
+                  <div
+                    style={{
+                      padding: "10px",
+                      backgroundColor: "#fce8e6",
+                      border: "1px solid #ea4335",
+                      borderRadius: "5px",
+                      marginBottom: "15px",
+                      color: "#c5221f",
+                    }}
+                  >
+                    ❌ Incorrect. Try again!
+                    <button
+                      onClick={() => clearIncorrect(w.word)}
+                      style={{
+                        marginLeft: "10px",
+                        padding: "2px 8px",
+                        fontSize: "12px",
+                        backgroundColor: "transparent",
+                        border: "1px solid #c5221f",
+                        borderRadius: "3px",
+                        color: "#c5221f",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Dismiss
+                    </button>
+                  </div>
+                )}
+
                 <div
                   style={{
                     display: "flex",
@@ -175,6 +239,13 @@ const VocabularyPractice = () => {
                         border: "1px solid #ddd",
                         backgroundColor: "white",
                         cursor: "pointer",
+                        transition: "all 0.2s",
+                      }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.backgroundColor = "#f5f5f5";
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.backgroundColor = "white";
                       }}
                     >
                       {option}
@@ -189,6 +260,8 @@ const VocabularyPractice = () => {
                     color: "#666",
                     border: "1px solid #ccc",
                     backgroundColor: "transparent",
+                    borderRadius: "5px",
+                    cursor: "pointer",
                   }}
                 >
                   Show answer
@@ -235,7 +308,6 @@ const VocabularyPractice = () => {
                   <strong>Example:</strong> &quot;{w.example}&quot;
                 </p>
 
-                {/* NEW: English translation of the example */}
                 <p
                   style={{
                     fontStyle: "italic",
@@ -287,17 +359,22 @@ const VocabularyPractice = () => {
                 )}
 
                 <button
-                  onClick={() =>
+                  onClick={() => {
                     setAnsweredWords((prev) => {
                       const newSet = new Set(prev);
                       newSet.delete(w.word);
                       return newSet;
-                    })
-                  }
+                    });
+                    clearIncorrect(w.word); // NEW: Also clear incorrect status
+                  }}
                   style={{
                     marginTop: "10px",
                     padding: "5px 12px",
                     fontSize: "14px",
+                    borderRadius: "5px",
+                    border: "1px solid #ccc",
+                    backgroundColor: "white",
+                    cursor: "pointer",
                   }}
                 >
                   Hide details
