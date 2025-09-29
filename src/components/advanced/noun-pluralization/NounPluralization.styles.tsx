@@ -349,3 +349,35 @@ export const LoadingContainer = styled.div`
     padding: 2rem;
   }
 `;
+
+// Add these to your existing styles file
+export const CaseExampleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+`;
+
+export const CaseExampleItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+`;
+
+export const CaseExampleLabel = styled(ResultLabel)`
+  min-width: 150px;
+  font-weight: 600;
+`;
+
+export const CaseExampleValue = styled(ResultValue)`
+  flex: 1;
+`;
