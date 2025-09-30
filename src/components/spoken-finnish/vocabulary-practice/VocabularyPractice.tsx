@@ -3,7 +3,11 @@
 import { useState } from "react";
 import {
   Button,
+  ButtonContainer,
   Container,
+  Header,
+  InstructionContainer,
+  InstructionText,
   Subtitle,
   Title,
 } from "./VocabularyPractice.styles";
@@ -119,15 +123,32 @@ const VocabularyPractice = () => {
 
   return (
     <Container>
-      <Title>Finnish Vocabulary Practice</Title>
-      <Subtitle>
-        Test your knowledge - details will appear after you answer!
-      </Subtitle>
-
-      <Button $primary onClick={fetchWords} disabled={loading}>
-        {loading ? "Loading New Words..." : "Get New Words"}
-      </Button>
-
+      <Header>
+        <Title>Finnish Vocabulary Practice</Title>
+        <Subtitle>
+          Test your knowledge - details will appear after you answer!
+        </Subtitle>
+      </Header>
+      <InstructionContainer>
+        <InstructionText>
+          <strong>How to practice:</strong>
+          <ul>
+            <li>
+              Click &quot;Generate New Words&quot; to get new Finnish words
+              practice set
+            </li>
+            <li>Read the Finnish sentence and guess the word&apos;s meaning</li>
+            <li>Choose from the multiple-choice options</li>
+            <li>Get instant feedback and learn word details</li>
+            <li>Track your progress with the completion counter</li>
+          </ul>
+        </InstructionText>
+        <ButtonContainer>
+          <Button $primary onClick={fetchWords} disabled={loading}>
+            {loading ? "Loading New Words..." : "Get New Words"}
+          </Button>
+        </ButtonContainer>
+      </InstructionContainer>
       {/* Only show positive feedback at the top */}
       {feedback &&
         (feedback.includes("✅") ||

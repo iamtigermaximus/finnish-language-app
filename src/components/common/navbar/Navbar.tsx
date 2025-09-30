@@ -170,6 +170,10 @@ const Navbar = () => {
         href: "/spoken-finnish/informal-grammar",
         label: "Informal Grammar",
       },
+      {
+        href: "/spoken-finnish/grammar-practice",
+        label: "Practice Grammar",
+      },
     ],
   };
 
