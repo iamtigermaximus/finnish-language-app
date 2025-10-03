@@ -138,11 +138,13 @@
 // };
 // app/api/noun-pluralization/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+// import OpenAI from "openai";
+import Groq from "groq-sdk";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 interface AnalyzeNounRequest {
   noun: string;
@@ -272,8 +274,8 @@ export const POST = async (request: NextRequest) => {
       - Return ONLY a valid JSON object with the structure requested.
     `;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+    const completion = await groq.chat.completions.create({
+      model: "deepseek-r1-distill-llama-70b",
       messages: [
         {
           role: "system",

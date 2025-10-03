@@ -1,8 +1,12 @@
 // /app/api/vocab-practice/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+// import OpenAI from "openai";
+import Groq from "groq-sdk";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 interface VocabWord {
   word: string;
@@ -85,10 +89,10 @@ JSON format only:
       },
     ];
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
       messages,
-      temperature: 1.0,
+      temperature: 0.3,
       max_tokens: 1000, // Increased for additional translations
     });
 

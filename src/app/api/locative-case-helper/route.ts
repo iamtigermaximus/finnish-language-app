@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+// import OpenAI from "openai";
+import Groq from "groq-sdk";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 interface CheckLocativeRequest {
   sentence: string;
@@ -56,13 +58,13 @@ export async function POST(request: NextRequest) {
       }
     `;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+    const completion = await groq.chat.completions.create({
+      model: "gemma2-9b-it",
       messages: [
         {
           role: "system",
           content:
-            "You are a helpful Finnish language teacher. Provide clear, focused feedback on Finnish locative case usage.",
+            "You are a Finnish grammar expert. Provide clear, focused feedback on Finnish locative case usage.",
         },
         {
           role: "user",

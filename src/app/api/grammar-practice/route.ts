@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+// import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
+
+import Groq from "groq-sdk";
+
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 interface GrammarExercise {
@@ -67,8 +73,8 @@ export async function POST(request: NextRequest) {
       - Make sure that the base word is always present when generating 
     `;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+    const completion = await groq.chat.completions.create({
+      model: "gemma2-9b-it",
       messages: [
         {
           role: "system",

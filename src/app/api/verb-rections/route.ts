@@ -1,10 +1,12 @@
 // app/api/verb-rections/route.ts
-import { NextRequest, NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { NextRequest, NextResponse } from "next/server";
+// import OpenAI from "openai";
+import Groq from "groq-sdk";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY,
+// });
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 // Request interface
 interface AnalyzeVerbRequest {
@@ -37,7 +39,9 @@ const isFinnishInput = (verb: string): boolean => {
 const fetchTranslation = async (verb: string): Promise<string | null> => {
   try {
     const res = await fetch(
-      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(verb)}&langpair=fi|en`
+      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(
+        verb
+      )}&langpair=fi|en`
     );
     const data = await res.json();
     return data?.responseData?.translatedText || null;
@@ -49,14 +53,15 @@ const fetchTranslation = async (verb: string): Promise<string | null> => {
 export const POST = async (request: NextRequest) => {
   try {
     const { verb }: AnalyzeVerbRequest = await request.json();
-    if (!verb) return NextResponse.json({ error: 'Verb is required' }, { status: 400 });
+    if (!verb)
+      return NextResponse.json({ error: "Verb is required" }, { status: 400 });
 
     const isFinnish = isFinnishInput(verb);
     const lowerVerb = verb.toLowerCase();
 
     // Step 1: Get English translation
     const english = (await fetchTranslation(lowerVerb)) || lowerVerb; // fallback to input
-       
+
     // Step 2: Ask OpenAI for rection info
     const prompt = `
       Analyze the Finnish verb: "${verb}".
@@ -84,11 +89,15 @@ export const POST = async (request: NextRequest) => {
       - Examples MUST use the verb exactly as given.
     `;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
       messages: [
-        { role: "system", content: "You are an expert in Finnish grammar. Always return valid JSON using the exact requested structure." },
-        { role: "user", content: prompt }
+        {
+          role: "system",
+          content:
+            "You are an expert in Finnish grammar. Always return valid JSON using the exact requested structure.",
+        },
+        { role: "user", content: prompt },
       ],
       temperature: 0.3,
       max_tokens: 1500,
@@ -97,7 +106,7 @@ export const POST = async (request: NextRequest) => {
     const responseText = completion.choices[0].message.content;
     const jsonMatch = responseText?.match(/\{[\s\S]*\}/);
     const jsonString = jsonMatch ? jsonMatch[0] : responseText;
-    if (!jsonString) throw new Error('No JSON received from AI');
+    if (!jsonString) throw new Error("No JSON received from AI");
 
     const result: RectionAnalysis = JSON.parse(jsonString);
 
@@ -106,16 +115,20 @@ export const POST = async (request: NextRequest) => {
     result.isFinnishInput = isFinnish;
 
     // Validate essential fields
-    if (!result.rection || !result.rection.case || !result.examples || !result.translations) {
-      throw new Error('Invalid JSON structure from AI');
+    if (
+      !result.rection ||
+      !result.rection.case ||
+      !result.examples ||
+      !result.translations
+    ) {
+      throw new Error("Invalid JSON structure from AI");
     }
 
     return NextResponse.json(result);
-
   } catch (error) {
-    console.error('Error in verb-rections route:', error);
+    console.error("Error in verb-rections route:", error);
     return NextResponse.json(
-      { error: 'Failed to analyze verb', details: (error as Error).message },
+      { error: "Failed to analyze verb", details: (error as Error).message },
       { status: 500 }
     );
   }
