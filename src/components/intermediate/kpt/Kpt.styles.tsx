@@ -24,16 +24,17 @@ export const Title = styled.h2`
 `;
 
 export const SectionTitle = styled.h3`
-  margin: 0 0 15px 0;
+  /* margin: 0 0 15px 0; */
   padding: 10px;
   background-color: #2c5aa0;
   color: white;
   text-align: center;
   border-radius: 4px;
   font-size: 1.1rem;
+  width: 100%;
 
   @media (max-width: 768px) {
-    display: none;
+    /* display: none; */
   }
 `;
 

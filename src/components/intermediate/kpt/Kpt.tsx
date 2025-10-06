@@ -8,6 +8,7 @@ import {
   MobileTableCell,
   MobileTableContainer,
   MobileTableHeader,
+  SectionTitle,
   StyledTable,
   StyledTableCell,
   StyledTableHeader,
@@ -165,7 +166,7 @@ const Kpt = () => {
         </p>
       </div>
 
-      <h3>How Letters Change</h3>
+      <SectionTitle>How Letters Change</SectionTitle>
 
       {/* Desktop Table for Consonant Gradation */}
       <StyledTable>
@@ -216,7 +217,7 @@ const Kpt = () => {
         ))}
       </MobileTableContainer>
 
-      <h3>Special Cases That Don&apos;t Change</h3>
+      <SectionTitle>Special Cases That Don&apos;t Change</SectionTitle>
       <p style={{ padding: "10px 0" }}>
         Some words are special and don&apos;t change their letters, even when
         you add endings. These usually have -sk, -sp, -st, or -tk in them.
