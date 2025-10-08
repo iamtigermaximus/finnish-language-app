@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
-import { breakpoints as bp } from '../../../lib/utils/layout';
-import Link from 'next/link';
+import styled from "styled-components";
+import { breakpoints as bp } from "../../../lib/utils/layout";
+import Link from "next/link";
 
 export const Navigation = styled.div`
   position: relative;
@@ -75,7 +75,7 @@ export const MenuLink = styled(Link)`
   font-weight: bold;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
-  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   padding: 8px 16px;
   display: inline-flex;
   align-items: center;
@@ -118,6 +118,41 @@ export const BurgerMenu = styled.div`
   }
 `;
 
+// export const Sidebar = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 300px;
+//   height: 100vh;
+//   background-color: white;
+//   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 20px;
+//   transform: translateX(-100%);
+//   transition: transform 0.3s ease;
+//   z-index: 1002;
+//   gap: 20px;
+
+//   &.sidebar-open {
+//     transform: translateX(0);
+//   }
+
+//   a {
+//     color: #636363;
+//     text-decoration: none;
+//     font-size: 1.25rem;
+//     font-weight: bold;
+//     &:hover {
+//       color: tomato;
+//     }
+//   }
+
+//   @media (min-width: ${bp.md}) {
+//     display: none;
+//   }
+// `;
 export const Sidebar = styled.div`
   position: fixed;
   top: 0;
@@ -134,6 +169,7 @@ export const Sidebar = styled.div`
   transition: transform 0.3s ease;
   z-index: 1002;
   gap: 20px;
+  overflow-y: auto; /* Add this line */
 
   &.sidebar-open {
     transform: translateX(0);
@@ -343,7 +379,7 @@ export const DropdownTrigger = styled.div`
   font-weight: bold;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
-  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   cursor: pointer;
   padding: 8px 16px;
   display: inline-flex;

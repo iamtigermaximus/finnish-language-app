@@ -111,6 +111,26 @@ const Navbar = () => {
       { href: "/intermediate/imperative", label: "Imperative" },
       { href: "/intermediate/object", label: "Object" },
       { href: "/intermediate/adverb", label: "Adverb" },
+      {
+        href: "/intermediate/concrete-postpositions",
+        label: "Concrete Postpositions",
+      },
+      {
+        href: "/intermediate/abstract-postpositions",
+        label: "Abstract Postpositions",
+      },
+      {
+        href: "/intermediate/movement-postpositions",
+        label: "Movement Expressing Postpositions",
+      },
+      {
+        href: "/intermediate/time-postpositions",
+        label: "Time Postpositions",
+      },
+      {
+        href: "/intermediate/postposition-inflections",
+        label: "Postpositions Inflections",
+      },
     ],
     advanced: [
       { href: "/advanced/noun-pluralization", label: "Noun Pluralization" },
