@@ -184,8 +184,8 @@ export async function POST(request: NextRequest) {
           content: prompt,
         },
       ],
-      temperature: 0.3,
-      max_tokens: 1500,
+      temperature: 0,
+      max_tokens: 1000,
     });
 
     const responseText = completion.choices[0].message.content;

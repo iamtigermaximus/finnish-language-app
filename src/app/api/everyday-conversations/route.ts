@@ -188,9 +188,9 @@ Rules:
     ];
 
     const completion = await groq.chat.completions.create({
-      model: "gemma2-9b-it",
+      model: "llama-3.3-70b-versatile",
       messages: messagesForAPI,
-      temperature: 0.5,
+      temperature: 0,
       max_tokens: 800,
       response_format: { type: "json_object" }, // ✅ Force JSON-only output
     });

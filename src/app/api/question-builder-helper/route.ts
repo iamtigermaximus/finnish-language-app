@@ -78,7 +78,7 @@ IMPORTANT: Return ONLY the JSON object, no additional text, thinking, or explana
         },
         { role: "user", content: prompt },
       ],
-      temperature: 0.3, // Lower for more consistent output
+      temperature: 0, // Lower for more consistent output
       max_tokens: 1000,
     });
 

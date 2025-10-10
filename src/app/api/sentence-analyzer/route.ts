@@ -74,7 +74,7 @@ Rules:
     const completion = await groq.chat.completions.create({
       model: "llama-3.3-70b-versatile",
       messages: messagesForAPI,
-      temperature: 0.3,
+      temperature: 0,
       max_tokens: 800,
     });
 

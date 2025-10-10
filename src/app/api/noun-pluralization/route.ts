@@ -275,7 +275,7 @@ export const POST = async (request: NextRequest) => {
     `;
 
     const completion = await groq.chat.completions.create({
-      model: "deepseek-r1-distill-llama-70b",
+      model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",
@@ -284,7 +284,7 @@ export const POST = async (request: NextRequest) => {
         },
         { role: "user", content: prompt },
       ],
-      temperature: 0.3,
+      temperature: 0,
       max_tokens: 2000,
     });
 

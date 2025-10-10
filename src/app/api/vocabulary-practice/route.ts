@@ -92,7 +92,7 @@ JSON format only:
     const completion = await groq.chat.completions.create({
       model: "llama-3.3-70b-versatile",
       messages,
-      temperature: 0.3,
+      temperature: 0,
       max_tokens: 1000, // Increased for additional translations
     });
 

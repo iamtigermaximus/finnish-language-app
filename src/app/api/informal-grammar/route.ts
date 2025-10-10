@@ -275,7 +275,7 @@ Be thorough and authentic! Convert every appropriate element to natural puhekiel
 `;
 
     const completion = await groq.chat.completions.create({
-      model: "gemma2-9b-it",
+      model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",
@@ -283,7 +283,7 @@ Be thorough and authentic! Convert every appropriate element to natural puhekiel
         },
         { role: "user", content: prompt },
       ],
-      temperature: 0.4, // Slightly higher for more creative/authentic output
+      temperature: 0, // Slightly higher for more creative/authentic output
       max_tokens: 1500,
     });
 

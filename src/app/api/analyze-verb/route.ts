@@ -189,7 +189,7 @@ Now analyze: "${verb}"
 `;
 
     const completion = await groq.chat.completions.create({
-      model: "gemma2-9b-it",
+      model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",
@@ -198,7 +198,7 @@ Now analyze: "${verb}"
         },
         { role: "user", content: prompt },
       ],
-      temperature: 1,
+      temperature: 0,
       max_tokens: 500,
     });
 

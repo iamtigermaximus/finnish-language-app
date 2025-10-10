@@ -189,7 +189,7 @@ Now analyze: "${noun}"
         { role: "user", content: prompt },
       ],
       temperature: 0, // Maximum accuracy for grammar
-      max_tokens: 2000,
+      max_tokens: 1000,
     });
 
     const responseText = completion.choices[0]?.message?.content?.trim();

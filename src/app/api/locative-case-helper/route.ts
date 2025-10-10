@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
     `;
 
     const completion = await groq.chat.completions.create({
-      model: "gemma2-9b-it",
+      model: "llama-3.3-70b-versatile",
       messages: [
         {
           role: "system",
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
           content: prompt,
         },
       ],
-      temperature: 0.7,
+      temperature: 0,
       max_tokens: 500,
     });
 
