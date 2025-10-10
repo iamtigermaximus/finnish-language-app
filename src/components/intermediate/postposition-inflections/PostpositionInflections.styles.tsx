@@ -221,7 +221,7 @@ export const MobilePostpositionCell = styled.div`
 
 export const MobileInflectionCell = styled.div`
   color: #333;
-  font-family: "Courier New", monospace;
+  /* font-family: "Courier New", monospace; */
   font-size: 0.9rem;
   flex: 1;
 `;

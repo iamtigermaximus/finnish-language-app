@@ -91,6 +91,22 @@ const Navbar = () => {
       { href: "/basics/basic-verbs", label: "Basic Verbs" },
       { href: "/basics/adjectives", label: "Adjectives" },
       { href: "/basics/useful-words", label: "Useful Words" },
+      {
+        href: "/basics/family-relationships",
+        label: "Family and Relationships",
+      },
+      {
+        href: "/basics/housing",
+        label: "Housing",
+      },
+      {
+        href: "/basics/holidays-celebrations",
+        label: "Holidays and Celebrations",
+      },
+      {
+        href: "/basics/anatomy",
+        label: "Anatomy",
+      },
     ],
     intermediate: [
       { href: "/intermediate/kpt", label: "KPT" },
