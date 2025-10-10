@@ -165,6 +165,19 @@ const Navbar = () => {
       { href: "/advanced/noun-form-verb", label: "Noun Form Of Verb" },
       { href: "/advanced/conditional-tense", label: "Conditional Tense" },
       { href: "/advanced/verb-rections", label: "Verb Rections" },
+      {
+        href: "/advanced/adjective-comparisons",
+        label: "Adjective Comparisons",
+      },
+      {
+        href: "/advanced/adjective-comparisons-list",
+        label: "Adjective Comparisons List",
+      },
+      {
+        href: "/advanced/adjectives-opposites",
+        label: "Adjectives and Opposites",
+      },
+
       { href: "/advanced/idioms", label: "Idioms" },
       { href: "/advanced/business-finnish", label: "Business Finnish" },
       {
